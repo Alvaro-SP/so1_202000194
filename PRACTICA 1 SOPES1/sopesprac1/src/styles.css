@@ -1,0 +1,46 @@
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 375px;
+    /* height: 500px; */
+    margin: 0 auto;
+}
+
+    input[type='text'] {
+    width: 100%;
+    font-size: 24px;
+    text-align: right;
+    padding: 20px;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+    margin: 10px;
+}
+.data-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.data-table thead th {
+background-color: #333;
+color: white;
+padding: 10px;
+text-align: center;
+}
+
+.data-table tbody tr td {
+border: 1px solid #333;
+padding: 10px;
+text-align: center;
+}
+
+.data-table tbody tr:nth-child(even) {
+background-color: #f2f2f2;
+}
