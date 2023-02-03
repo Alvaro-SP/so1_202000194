@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 const DataTable = () => {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-    const fetchData = async () => {
-        const result = await fetch('https://your-api-url.com/data');
-        const data = await result.json();
-        setData(data);
-    };
-    fetchData();
-    }, []);
+    // useEffect(() => {
+    // const fetchData = async () => {
+    //     const result = await fetch('https://your-api-url.com/data');
+    //     const data = await result.json();
+    //     setData(data);
+    // };
+    // fetchData();
+    // }, []);
 
     return (
     <table className="data-table">

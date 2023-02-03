@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
     const [numin1, setNumin1] = useState('');
     const [operator, setOperator] = useState('');
     const [numin2, setNumin2] = useState('');
-
+    
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
@@ -14,41 +14,82 @@ const Calculator = () => {
         setDisplayValue('0');
     };
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:8080/${numin1}/${numin2}/${operator}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            setResultado(response);
+            // setDisplayValue(result.result);
+            alert(response);
+        } catch (error) {
+            console.error(error);
+            alert("ERRORRRR: "+error);
+        }
+    };
+
+
     const handleEvaluate = () => {
         //  displayValue this is my evaluation
-        if (eval(displayValue).toString() === "Infinity") {
+        try {
+            if (eval(displayValue).toString() === "Infinity") {
             alert("Error: division por cero");
             return;
         }
+        } catch (e) {
+        // manejar el error aquí
+        }
         //  match es mi lista de valores algo asi: 
         const match = displayValue.match(/^(\d+)\s*([+\-*/])\s*(\d+)$/);
-        console.log(match);
         if (match) {
-            setNumin1(match[1]);
-            setOperator(match[2]);
-            setNumin2(match[3]);
+            // setNumin1(match[1]);
+            // setOperator(match[2]);
+            // setNumin2(match[3]);
+            // alert(match);
         } else {
             alert("Error: Ingrese una expresion valida, Gracias :D");
         }
-        fetch('API_URL', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                num1: numin1,
-                operator: operator,
-                num2: numin2,
-                result: eval(displayValue).toString()
-            })
-        })
-        .then((response) => {
-            console.log(response);
-            setDisplayValue(response);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+        let operator2;
+        switch (match[2]) {
+            case "+":
+                operator2 = "suma";
+            break;
+            case "-":
+                operator2 = "resta";
+            break;
+            case "*":
+                operator2 = "multi";
+            break;
+            case "/":
+                operator2 = "divi";
+            break;
+            default:
+                operator2 = "";
+            break;
+        }
+
+        match[2] = operator2;
+
+        setNumin1(match[1]);
+        setOperator(match[2]);
+        setNumin2(match[3]);
+        fetchData();
+
+        // fetch(`http://localhost:8080/${match[1]}/${match[2]}/${match[3]}`, {
+        //     method: 'GET',
+        //     credentials: 'include'
+        // })
+        // .then((response) => {
+        //     console.log(response);
+        //     res=response.result;
+        //     setDisplayValue(response);
+        // })
+        // .catch((error) => {
+        //     console.error(error);
+        //     alert("ERRORRRR: "+error);
+        // });
+        // alert(res);
     };
 
     return (
