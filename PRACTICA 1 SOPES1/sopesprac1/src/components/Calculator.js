@@ -5,7 +5,7 @@ const Calculator = () => {
     const [numin1, setNumin1] = useState('');
     const [operator, setOperator] = useState('');
     const [numin2, setNumin2] = useState('');
-    
+    const [resfin, setResfin] = useState('');
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
@@ -13,23 +13,6 @@ const Calculator = () => {
     const LIMPIECITA = () => {
         setDisplayValue('0');
     };
-
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8080/${numin1}/${numin2}/${operator}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            setResultado(response);
-            // setDisplayValue(result.result);
-            alert(response);
-        } catch (error) {
-            console.error(error);
-            alert("ERRORRRR: "+error);
-        }
-    };
-
-
     const handleEvaluate = () => {
         //  displayValue this is my evaluation
         try {
@@ -41,7 +24,7 @@ const Calculator = () => {
         // manejar el error aquí
         }
         //  match es mi lista de valores algo asi: 
-        const match = displayValue.match(/^(\d+)\s*([+\-*/])\s*(\d+)$/);
+        const match = displayValue.match(/^(\-?\d+\.?\d*)\s*([+\-*/])\s*(\-?\d+\.?\d*)$/);
         if (match) {
             // setNumin1(match[1]);
             // setOperator(match[2]);
@@ -74,22 +57,17 @@ const Calculator = () => {
         setNumin1(match[1]);
         setOperator(match[2]);
         setNumin2(match[3]);
-        fetchData();
+        axios.get(`http://localhost:8080/${match[1]}/${match[2]}/${match[3]}`)
+        .then(response => {
+            console.log(response.data.result.toString());
+            setDisplayValue(response.data.result.toString());
+        })
+        .catch(error => {
+            console.error(error);
+        });
+        // console.log(resfin);
+        
 
-        // fetch(`http://localhost:8080/${match[1]}/${match[2]}/${match[3]}`, {
-        //     method: 'GET',
-        //     credentials: 'include'
-        // })
-        // .then((response) => {
-        //     console.log(response);
-        //     res=response.result;
-        //     setDisplayValue(response);
-        // })
-        // .catch((error) => {
-        //     console.error(error);
-        //     alert("ERRORRRR: "+error);
-        // });
-        // alert(res);
     };
 
     return (
