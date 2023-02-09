@@ -9,10 +9,10 @@ import (
 	_ "github.com/go-sql-driver/mysql" // La librería que nos permite conectar a MySQL
 	"github.com/gorilla/mux"
 
-	// "time"
 	"log"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var result float64
@@ -62,6 +62,28 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(data)
 }
 
+// ! Funcion para meter datos a la base de datos
+func insertValues(num1 string, num2 string, operator string, result string, date time.Time) error {
+	db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/database_name")
+	if err != nil {
+		return err
+	}
+	defer db.Close()
+
+	stmt, err := db.Prepare("INSERT INTO tabla_name (num1, num2, operator, resultado, fechayhora) VALUES (?, ?, ?, ?, ?)")
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(num1, num2, operator, result, date.Format("Monday, 02/01/2006"))
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ! Funcion para realizar la suma y guardar en la base de datos
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
@@ -98,11 +120,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 	// Realiza la operación
 	if num2 == 0 {
 		// insert to the database the data
-		_, err = db.Exec("INSERT INTO data VALUES (?,?,?)", num1, num1, operation)
-		if err != nil {
-			w.WriteHeader(http.StatusBadRequest)
-			return
-		}
+
 		return
 	}
 	switch operation {
