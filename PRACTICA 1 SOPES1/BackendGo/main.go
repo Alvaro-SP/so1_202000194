@@ -64,12 +64,6 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 
 // ! Funcion para meter datos a la base de datos
 func insertValues(num1 string, num2 string, operator string, result string, date time.Time) error {
-	db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/database_name")
-	if err != nil {
-		return err
-	}
-	defer db.Close()
-
 	stmt, err := db.Prepare("INSERT INTO tabla_name (num1, num2, operator, resultado, fechayhora) VALUES (?, ?, ?, ?, ?)")
 	if err != nil {
 		return err
