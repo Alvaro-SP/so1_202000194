@@ -74,7 +74,6 @@ func insertValues(num1 string, num2 string, operator string, result string, date
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
 
