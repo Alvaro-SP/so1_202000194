@@ -1,21 +1,68 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"net/http"
 
+	_ "github.com/go-sql-driver/mysql" // La librería que nos permite conectar a MySQL
 	"github.com/gorilla/mux"
 
-	// "database/sql"
 	// "time"
+	"log"
 	"strconv"
 	"strings"
 )
 
-// Struct que contiene los datos enviados por React
 var result float64
+var db *sql.DB
 
+type Data struct {
+	Num1       string `json:"num1"`
+	Num2       string `json:"num2"`
+	Operator   string `json:"operator"`
+	Resultado  string `json:"resultado"`
+	FechaYHora string `json:"fechayhora"`
+}
+
+// funcion para obtener conexion de la base de datos
+func obtenerBaseDeDatos() (db *sql.DB, e error) {
+	usuario := "root"
+	pass := "2412"
+	host := "tcp(127.0.0.1:3306)"
+	nombreBaseDeDatos := "mydb"
+	// Debe tener la forma usuario:contraseña@host/nombreBaseDeDatos
+	dbtemp, err := sql.Open("mysql", fmt.Sprintf("%s:%s@%s/%s", usuario, pass, host, nombreBaseDeDatos))
+	if err != nil {
+		return nil, err
+	}
+	return dbtemp, nil
+}
+
+// ! Funcion para mandar los logs almacenados en la base de datos
+func logsfetch(w http.ResponseWriter, r *http.Request) {
+	rows, err := db.Query("SELECT num1, num2, operator, resultado, fechayhora FROM mydb")
+	if err != nil {
+		log.Fatalf("Error al ejecutar la consulta: %v", err)
+	}
+	defer rows.Close()
+
+	var data []Data
+	for rows.Next() {
+		var d Data
+		err := rows.Scan(&d.Num1, &d.Num2, &d.Operator, &d.Resultado, &d.FechaYHora)
+		if err != nil {
+			log.Fatalf("Error al escanear los resultados: %v", err)
+		}
+		data = append(data, d)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(data)
+}
+
+// ! Funcion para realizar la suma y guardar en la base de datos
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
@@ -49,7 +96,15 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 	operation := operationprev
 	// Realiza la operación
-
+	if num2 == 0 {
+		// insert to the database the data
+		_, err = db.Exec("INSERT INTO data VALUES (?,?,?)", num1, num1, operation)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		return
+	}
 	switch operation {
 	case "suma":
 		fmt.Println("Se hizo una suma")
@@ -82,10 +137,31 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	var err error
+	db, err = obtenerBaseDeDatos()
+	if err != nil {
+		fmt.Printf("Error obteniendo base de datos: %v", err)
+		return
+	}
+	// Terminar conexión al terminar función
+	defer db.Close()
+
+	// Ahora vemos si tenemos conexión
+	err = db.Ping()
+	if err != nil {
+		fmt.Printf("Error conectando: %v", err)
+		return
+	}
+	// Listo, aquí ya podemos usar a db!
+	fmt.Printf("Conectado correctamente a la base de datos")
+
 	r := mux.NewRouter()
 	r.HandleFunc("/{num1}/{operation}/{num2}", home).Methods("GET")
+	r.HandleFunc("/logsget", logsfetch).Methods("GET")
+	// intentar conectar a la base de datos
+
 	fmt.Println("Servidor iniciado en http://localhost:8080")
-	err := http.ListenAndServe(":8080", r)
+	err = http.ListenAndServe(":8080", r)
 	if err != nil {
 		fmt.Println(err)
 	}

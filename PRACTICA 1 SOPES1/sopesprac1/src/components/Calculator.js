@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
-    const [numin1, setNumin1] = useState('');
-    const [operator, setOperator] = useState('');
-    const [numin2, setNumin2] = useState('');
-    const [resfin, setResfin] = useState('');
+    const [data, setData] = useState([]);
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
@@ -18,7 +15,8 @@ const Calculator = () => {
         try {
             if (eval(displayValue).toString() === "Infinity") {
             alert("Error: division por cero");
-            return;
+
+            // return;
         }
         } catch (e) {
         // manejar el error aquí
@@ -66,10 +64,15 @@ const Calculator = () => {
             console.error(error);
         });
         // console.log(resfin);
-        
-
+        axios.get('/data')
+        .then(res => setData(res.data))
+        .catch(err => console.error(err));
     };
-
+    // useEffect(() => {
+    //     axios.get('/data')
+    //     .then(res => setData(res.data))
+    //     .catch(err => console.error(err));
+    // }, []);
     return (
         <div className="calculator">
             <input type="text" value={displayValue} readOnly  style={{backgroundColor: 'black', color: 'white'}} />
@@ -99,7 +102,34 @@ const Calculator = () => {
             <button onClick={() => handleClick('.')} style={{backgroundColor: 'blue' , color: 'white'}}>.</button>
             <button onClick={() => handleClick('0')} style={{backgroundColor: 'blue' , color: 'white'}}>0</button>
             <button onClick={handleEvaluate} style={{backgroundColor: 'red'}}>=</button>
+        <div>
+            <table className="data-table">
+            <thead>
+            <tr>
+                <th>No.</th>
+                <th>Operación</th>
+                <th>Número 1</th>
+                <th>Número 2</th>
+                <th>Resultado</th>
+                <th>Fecha y hora</th>
+            </tr>
+            </thead>
+            <tbody>
+                {data.map((row, index) => (
+                    <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{row.operation}</td>
+                    <td>{row.number1.join(', ')}</td>
+                    <td>{row.number2.join(', ')}</td>
+                    <td>{row.result}</td>
+                    <td>{row.date}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+        </div>
     </div>
+    
     );
 };
 
