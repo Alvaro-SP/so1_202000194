@@ -79,6 +79,7 @@ const Calculator = () => {
     // }, []);
     return (
         <div className="calculator">
+            
             <input type="text" value={displayValue} readOnly  style={{backgroundColor: 'black', color: 'white'}} />
             <br />
             <br />

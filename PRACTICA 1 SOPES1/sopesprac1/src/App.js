@@ -11,6 +11,16 @@ function App() {
       backgroundSize: 'cover',
       height: '100vh'
     }}>
+      <header>
+          <nav>
+              <h1>Mi Aplicación</h1>
+              <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Acerca de</a></li>
+              <li><a href="#">Contacto</a></li>
+              </ul>
+          </nav>
+      </header>
       <Calculator />
       {/* <Console /> */}
     </div>
