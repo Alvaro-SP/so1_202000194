@@ -11,11 +11,11 @@ const DataTable = () => {
     // };
     // fetchData();
     // }, []);
-    useEffect(() => {
-        axios.get('/data')
-        .then(res => setData(res.data))
-        .catch(err => console.error(err));
-    }, []);
+    // useEffect(() => {
+    //     axios.get('/data')
+    //     .then(res => setData(res.data))
+    //     .catch(err => console.error(err));
+    // }, []);
 
     return (
     <table className="data-table">

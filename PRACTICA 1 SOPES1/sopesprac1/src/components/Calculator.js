@@ -3,6 +3,10 @@ import axios from 'axios';
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
     const [data, setData] = useState([]);
+    const [numin1, setNumin1] = useState('');
+    const [operator, setOperator] = useState('');
+    const [numin2, setNumin2] = useState('');
+    const [resfin, setResfin] = useState('');
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
@@ -82,9 +86,7 @@ const Calculator = () => {
             {/* <button onClick={() => handleClick('')}></button> */}
             <button onClick={() => handleClick('/')}  style={{backgroundColor: 'green'}}>/</button>
             <button onClick={() => handleClick('*')}  style={{backgroundColor: 'green'}}>x</button>
-
             <br />
-
             <button onClick={() => handleClick('7')} style={{backgroundColor: 'blue' , color: 'white'}}>7</button>
             <button onClick={() => handleClick('8')} style={{backgroundColor: 'blue' , color: 'white'}}>8</button>
             <button onClick={() => handleClick('9')} style={{backgroundColor: 'blue' , color: 'white'}}>9</button>
