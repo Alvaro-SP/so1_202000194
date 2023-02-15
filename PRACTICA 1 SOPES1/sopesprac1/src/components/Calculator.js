@@ -19,7 +19,6 @@ const Calculator = () => {
         try {
             if (eval(displayValue).toString() === "Infinity") {
             alert("Error: division por cero");
-
             // return;
         }
         } catch (e) {
@@ -72,14 +71,8 @@ const Calculator = () => {
         .then(res => setData(res.data))
         .catch(err => console.error(err));
     };
-    // useEffect(() => {
-    //     axios.get('/data')
-    //     .then(res => setData(res.data))
-    //     .catch(err => console.error(err));
-    // }, []);
     return (
         <div className="calculator">
-            
             <input type="text" value={displayValue} readOnly  style={{backgroundColor: 'black', color: 'white'}} />
             <br />
             <br />

@@ -9,3 +9,5 @@ CREATE TABLE operacion (
     resultado VARCHAR(255),
     fechayhora VARCHAR(255)
 );
+-- PRUEBA
+INSERT INTO operacion VALUES ('5', '5', '*', '25', '15/2/2023'), ('15', '5', '+', '20', '15/2/2023');
