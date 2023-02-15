@@ -28,14 +28,15 @@ type Data struct {
 
 // funcion para obtener conexion de la base de datos
 func obtenerBaseDeDatos() (db *sql.DB, e error) {
+	// * open the db connection.
 	usuario := "root"
-	pass := "2412"
-	host := "tcp(127.0.0.1:3306)"
+	pass := "secret"
+	host := "tcp(db:3306)" // can the 127.0.0.1 ip too instead of db
 	nombreBaseDeDatos := "mydb"
 	// Debe tener la forma usuario:contraseña@host/nombreBaseDeDatos
 	dbtemp, err := sql.Open("mysql", fmt.Sprintf("%s:%s@%s/%s", usuario, pass, host, nombreBaseDeDatos))
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 	return dbtemp, nil
 }
@@ -57,7 +58,7 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 		}
 		data = append(data, d)
 	}
-
+	fmt.Println("Endpoint de retorno de tabla")
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(data)
 }
