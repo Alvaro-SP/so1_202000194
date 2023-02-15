@@ -1,5 +1,6 @@
 FROM mysql:8
-
+# were gonna copy our  database migrations file
+COPY ./database/*.sql
 # Set environment variables for the database
 ENV MYSQL_DATABASE=mydb \
     MYSQL_USER=myuser \
