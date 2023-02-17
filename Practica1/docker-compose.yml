@@ -1,21 +1,5 @@
 version: '3'
 services:
-  frontend:
-    container_name: "sopes_front"
-    build:
-      context: ./sopesprac1
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-  backend:
-    container_name: "sopes_api"
-    build:
-      context: ./BackendGo
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
   db:
     container_name: "sopes_db"
     platform: linux/x86_64
@@ -24,10 +8,43 @@ services:
     restart: always
     ports:
       - "3306:3306"
+    expose:
+      - "3306"
     environment:
-      MYSQL_ROOT_PASSWORD: "secret"
-      MYSQL_DATABASE: "mydb"
-      MYSQL_USER: "root"
-      MYSQL_PASSWORD: "secret"
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: 2412
+      MYSQL_ROOT_PASSWORD: 2412
     volumes:
-      - db-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app_work
+  backend:
+    container_name: "sopes_api"
+    build:
+      context: ./BackendGo
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Ejecscript:/scripts
+    depends_on:
+      - db
+    networks:
+      - app_work
+  frontend:
+    container_name: "sopes_front"
+    build:
+      context: ./sopesprac1
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app_work
+networks:
+  app_work:
+    driver: bridge
+volumes:
+  mysql-data:

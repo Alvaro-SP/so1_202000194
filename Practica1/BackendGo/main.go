@@ -4,15 +4,14 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"net/http"
-
-	_ "github.com/go-sql-driver/mysql" // La librería que nos permite conectar a MySQL
-	"github.com/gorilla/mux"
-
 	"log"
+	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	_ "github.com/go-sql-driver/mysql" // La librería que nos permite conectar a MySQL
+	"github.com/gorilla/mux"
 )
 
 var result float64
@@ -29,8 +28,8 @@ type Data struct {
 // funcion para obtener conexion de la base de datos
 func obtenerBaseDeDatos() (db *sql.DB, e error) {
 	// * open the db connection.
-	usuario := "root"
-	pass := "secret"
+	usuario := "myuser"
+	pass := "2412"
 	host := "tcp(db:3306)" // can the 127.0.0.1 ip too instead of db
 	nombreBaseDeDatos := "mydb"
 	// Debe tener la forma usuario:contraseña@host/nombreBaseDeDatos
@@ -70,8 +69,8 @@ func insertValues(num1 string, num2 string, operator string, result string, date
 		return err
 	}
 	defer stmt.Close()
-
-	_, err = stmt.Exec(num1, num2, operator, result, date.Format("Monday, 02/01/2006"))
+	fechaHoraActual := time.Now().Format("02/01/2006 15:04:05")
+	_, err = stmt.Exec(num1, num2, operator, result, fechaHoraActual)
 	if err != nil {
 		return err
 	}
@@ -80,8 +79,8 @@ func insertValues(num1 string, num2 string, operator string, result string, date
 
 // ! Funcion para realizar la suma y guardar en la base de datos
 func home(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	// Decodifica los datos enviados por React
 	// var req operationRequest
