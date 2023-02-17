@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
 const DataTable = () => {
-    const [data, setData] = useState([]);
 
     // useEffect(() => {
     // const fetchData = async () => {

@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -42,9 +41,9 @@ func obtenerBaseDeDatos() (db *sql.DB, e error) {
 
 // ! Funcion para mandar los logs almacenados en la base de datos
 func logsfetch(w http.ResponseWriter, r *http.Request) {
-	rows, err := db.Query("SELECT num1, num2, operator, resultado, fechayhora FROM mydb")
+	rows, err := db.Query("SELECT num1, num2, operator, resultado, fechayhora FROM operacion")
 	if err != nil {
-		log.Fatalf("Error al ejecutar la consulta: %v", err)
+		fmt.Println("Error al ejecutar la consulta: %v", err)
 	}
 	defer rows.Close()
 
@@ -53,7 +52,7 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 		var d Data
 		err := rows.Scan(&d.Num1, &d.Num2, &d.Operator, &d.Resultado, &d.FechaYHora)
 		if err != nil {
-			log.Fatalf("Error al escanear los resultados: %v", err)
+			fmt.Println("Error al escanear los resultados: %v", err)
 		}
 		data = append(data, d)
 	}
@@ -64,14 +63,16 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 
 // ! Funcion para meter datos a la base de datos
 func insertValues(num1 string, num2 string, operator string, result string, date time.Time) error {
-	stmt, err := db.Prepare("INSERT INTO tabla_name (num1, num2, operator, resultado, fechayhora) VALUES (?, ?, ?, ?, ?)")
+	stmt, err := db.Prepare("INSERT INTO operacion (num1, num2, operator, resultado, fechayhora) VALUES (?, ?, ?, ?, ?)")
 	if err != nil {
+		fmt.Println("ERROR: ", err)
 		return err
 	}
 	defer stmt.Close()
 	fechaHoraActual := time.Now().Format("02/01/2006 15:04:05")
 	_, err = stmt.Exec(num1, num2, operator, result, fechaHoraActual)
 	if err != nil {
+		fmt.Println("ERROR: ", err)
 		return err
 	}
 	return nil
@@ -171,7 +172,7 @@ func main() {
 	r.HandleFunc("/logsget", logsfetch).Methods("GET")
 	// intentar conectar a la base de datos
 
-	fmt.Println("Servidor iniciado en http://localhost:8080")
+	fmt.Println("Servidor iniciado en *************** CORRECTAMENTE localhost:8080")
 	err = http.ListenAndServe(":8080", r)
 	if err != nil {
 		fmt.Println(err)

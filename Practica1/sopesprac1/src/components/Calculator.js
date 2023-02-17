@@ -3,10 +3,6 @@ import axios from 'axios';
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
     const [data, setData] = useState([]);
-    const [numin1, setNumin1] = useState('');
-    const [operator, setOperator] = useState('');
-    const [numin2, setNumin2] = useState('');
-    const [resfin, setResfin] = useState('');
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
@@ -55,9 +51,9 @@ const Calculator = () => {
 
         match[2] = operator2;
 
-        setNumin1(match[1]);
-        setOperator(match[2]);
-        setNumin2(match[3]);
+        // setNumin1(match[1]);
+        // setOperator(match[2]);
+        // setNumin2(match[3]);
         axios.get(`http://localhost:8080/${match[1]}/${match[2]}/${match[3]}`)
         .then(response => {
             console.log(response.data.result.toString());
@@ -67,7 +63,7 @@ const Calculator = () => {
             console.error(error);
         });
         // console.log(resfin);
-        axios.get('/data')
+        axios.get('/logsget')
         .then(res => setData(res.data))
         .catch(err => console.error(err));
     };

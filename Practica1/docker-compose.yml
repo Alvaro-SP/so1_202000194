@@ -1,24 +1,5 @@
 version: '3'
 services:
-  db:
-    container_name: "sopes_db"
-    platform: linux/x86_64
-    build: ./database
-    image: mysql:5.7
-    restart: always
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
-    environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: 2412
-      MYSQL_ROOT_PASSWORD: 2412
-    volumes:
-      - mysql-data:/var/lib/mysql
-    networks:
-      - app_work
   backend:
     container_name: "sopes_api"
     build:
@@ -43,6 +24,27 @@ services:
       - backend
     networks:
       - app_work
+  db:
+    container_name: "sopes_db"
+    platform: linux/x86_64
+    build: ./database
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: 2412
+      MYSQL_ROOT_PASSWORD: 2412
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app_work
+
+
 networks:
   app_work:
     driver: bridge

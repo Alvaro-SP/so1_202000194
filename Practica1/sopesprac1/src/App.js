@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import './styles.css';
 import Calculator from './components/Calculator';
-import Console from './components/Console';
 
 function App() {
   return (
@@ -11,7 +9,7 @@ function App() {
       backgroundSize: 'cover',
       height: '100vh'
     }}>
-      <header>
+      {/* <header>
           <nav>
               <h1>Mi Aplicación</h1>
               <ul>
@@ -20,7 +18,7 @@ function App() {
               <li><a href="#">Contacto</a></li>
               </ul>
           </nav>
-      </header>
+      </header> */}
       <Calculator />
       {/* <Console /> */}
     </div>

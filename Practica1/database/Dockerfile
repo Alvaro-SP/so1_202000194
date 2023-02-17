@@ -4,3 +4,5 @@ ENV MYSQL_DATABASE=mydb \
     MYSQL_PASSWORD=myuser \
     MYSQL_ROOT_PASSWORD=2412
 COPY init_db.sql /docker-entrypoint-initdb.d/
+
+RUN /etc/init.d/mysql start && mysql -u root < /docker-entrypoint-initdb.d/db.sql
