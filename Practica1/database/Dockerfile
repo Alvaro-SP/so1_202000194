@@ -1,8 +1,6 @@
 FROM mysql:8
-COPY . .
 ENV MYSQL_DATABASE=mydb \
-    MYSQL_PASSWORD=myuser \
+    MYSQL_USER=myuser \
+    MYSQL_PASSWORD=2412 \
     MYSQL_ROOT_PASSWORD=2412
-COPY init_db.sql /docker-entrypoint-initdb.d/
-
-RUN /etc/init.d/mysql start && mysql -u root < /docker-entrypoint-initdb.d/db.sql
+COPY ./init_db.sql /docker-entrypoint-initdb.d/

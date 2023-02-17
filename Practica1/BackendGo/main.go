@@ -34,13 +34,14 @@ func obtenerBaseDeDatos() (db *sql.DB, e error) {
 	// Debe tener la forma usuario:contraseña@host/nombreBaseDeDatos
 	dbtemp, err := sql.Open("mysql", fmt.Sprintf("%s:%s@%s/%s", usuario, pass, host, nombreBaseDeDatos))
 	if err != nil {
-		panic(err)
+		fmt.Println("ERROR DE CONEXION CON LA BASE DE DATOS \n")
 	}
 	return dbtemp, nil
 }
 
 // ! Funcion para mandar los logs almacenados en la base de datos
 func logsfetch(w http.ResponseWriter, r *http.Request) {
+	db.Query("USE mydb")
 	rows, err := db.Query("SELECT num1, num2, operator, resultado, fechayhora FROM operacion")
 	if err != nil {
 		fmt.Println("Error al ejecutar la consulta: %v", err)
@@ -62,7 +63,7 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 }
 
 // ! Funcion para meter datos a la base de datos
-func insertValues(num1 string, num2 string, operator string, result string, date time.Time) error {
+func insertValues(num1 string, num2 string, operator string, result string) error {
 	stmt, err := db.Prepare("INSERT INTO operacion (num1, num2, operator, resultado, fechayhora) VALUES (?, ?, ?, ?, ?)")
 	if err != nil {
 		fmt.Println("ERROR: ", err)
@@ -80,6 +81,7 @@ func insertValues(num1 string, num2 string, operator string, result string, date
 
 // ! Funcion para realizar la suma y guardar en la base de datos
 func home(w http.ResponseWriter, r *http.Request) {
+	// INSERTAMOS LOS VALORES EN LA DB:
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
@@ -134,6 +136,17 @@ func home(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	// Convierte los valores a string
+	num1Str := strconv.FormatFloat(num1, 'f', -1, 64)
+	num2Str := strconv.FormatFloat(num2, 'f', -1, 64)
+	resultStr := strconv.FormatFloat(result, 'f', -1, 64)
+	// Inserta los valores en la base de datos
+	err = insertValues(num1Str, num2Str, operation, resultStr)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		fmt.Println("ERROR INSERTANDO LOS VALORES A LA DATABASE")
+		return
+	}
 
 	// Lógica para la nueva ruta
 	fmt.Println(result)
@@ -152,7 +165,7 @@ func main() {
 	var err error
 	db, err = obtenerBaseDeDatos()
 	if err != nil {
-		fmt.Printf("Error obteniendo base de datos: %v", err)
+		fmt.Println("Error obteniendo base de datos: %v", err)
 		return
 	}
 	// Terminar conexión al terminar función
@@ -161,11 +174,11 @@ func main() {
 	// Ahora vemos si tenemos conexión
 	err = db.Ping()
 	if err != nil {
-		fmt.Printf("Error conectando: %v", err)
+		fmt.Println("Error conectando: %v", err)
 		return
 	}
 	// Listo, aquí ya podemos usar a db!
-	fmt.Printf("Conectado correctamente a la base de datos")
+	fmt.Println("Conectado correctamente a la base de datos")
 
 	r := mux.NewRouter()
 	r.HandleFunc("/{num1}/{operation}/{num2}", home).Methods("GET")

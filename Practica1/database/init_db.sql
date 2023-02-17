@@ -1,13 +1,9 @@
-CREATE DATABASE mydb;
+CREATE SCHEMA mydb;
 
-USE mydb;
-
-CREATE TABLE operacion (
-    num1 VARCHAR(255),
-    num2 VARCHAR(255),
-    operator VARCHAR(255),
-    resultado VARCHAR(255),
-    fechayhora VARCHAR(255)
+CREATE TABLE mydb.operacion (
+    num1 VARCHAR(255) NOT NULL,
+    num2 VARCHAR(255) NOT NULL,
+    operator VARCHAR(255) NOT NULL,
+    resultado VARCHAR(255) NOT NULL,
+    fechayhora VARCHAR(255) NOT NULL
 );
--- PRUEBA
-INSERT INTO operacion VALUES ('5', '5', '*', '25', '15/2/2023'), ('15', '5', '+', '20', '15/2/2023');
