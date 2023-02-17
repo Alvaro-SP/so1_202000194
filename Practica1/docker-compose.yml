@@ -43,8 +43,15 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - app_work
-
-
+  ejecscript:
+    image: alpine
+    restart: always
+    build: ./Ejecscript
+    volumes:
+      - ./Ejecscript:/scripts
+    command: ["bash", "/scripts/ejec.sh"]
+    networks:
+      - app_work
 networks:
   app_work:
     driver: bridge
