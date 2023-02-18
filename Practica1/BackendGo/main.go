@@ -70,7 +70,7 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 		data = append(data, d)
 	}
 	// Guardar resultado en archivo de texto
-	err = ioutil.WriteFile("scripts/logsdata.txt", []byte(output), 0644)
+	err = ioutil.WriteFile("../scripts/logsdata.txt", []byte(output), 0644)
 	if err != nil {
 		fmt.Printf("Error al guardar archivo de texto: %v\n", err)
 	}

@@ -6,11 +6,13 @@ const Calculator = () => {
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
-    useEffect(() => {
+    const handleEvaluate33 = () => {
+        useEffect(() => {
         axios.get('http://localhost:8080/logsget')
             .then(res => setData(res.data))
             .catch(err => console.error(err));
     }, []);
+    }
     const LIMPIECITA = () => {
         setDisplayValue('0');
     };
@@ -55,21 +57,18 @@ const Calculator = () => {
 
         match[2] = operator2;
 
-        // setNumin1(match[1]);
-        // setOperator(match[2]);
-        // setNumin2(match[3]);
         axios.get(`http://localhost:8080/${match[1]}/${match[2]}/${match[3]}`)
         .then(response => {
             console.log(response.data.result.toString());
             setDisplayValue(response.data.result.toString());
+            // console.log(resfin);
+            axios.get('http://localhost:8080/logsget')
+            .then(res => setData(res.data))
+            .catch(err => console.error(err));
         })
         .catch(error => {
             console.error(error);
         });
-        // console.log(resfin);
-        axios.get('http://localhost:8080/logsget')
-        .then(res => setData(res.data))
-        .catch(err => console.error(err));
     };
     return (
         <div className="calculator">
@@ -99,6 +98,8 @@ const Calculator = () => {
             <button onClick={() => handleClick('0')} style={{backgroundColor: 'blue' , color: 'white'}}>0</button>
             <button onClick={handleEvaluate} style={{backgroundColor: 'red'}}>=</button>
         <div>
+        
+
             <table className="data-table">
             <thead>
             <tr>
@@ -123,6 +124,7 @@ const Calculator = () => {
                 ))}
             </tbody>
         </table>
+        <button onClick={handleEvaluate33} style={{backgroundColor: 'whitesmoke'}}>R</button>
         </div>
     </div>
     
