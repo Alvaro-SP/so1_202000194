@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
@@ -6,7 +6,11 @@ const Calculator = () => {
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
-
+    useEffect(() => {
+        axios.get('http://localhost:8080/logsget')
+            .then(res => setData(res.data))
+            .catch(err => console.error(err));
+    }, []);
     const LIMPIECITA = () => {
         setDisplayValue('0');
     };
@@ -63,7 +67,7 @@ const Calculator = () => {
             console.error(error);
         });
         // console.log(resfin);
-        axios.get('/logsget')
+        axios.get('http://localhost:8080/logsget')
         .then(res => setData(res.data))
         .catch(err => console.error(err));
     };
@@ -110,11 +114,11 @@ const Calculator = () => {
                 {data.map((row, index) => (
                     <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{row.operation}</td>
-                    <td>{row.number1.join(', ')}</td>
-                    <td>{row.number2.join(', ')}</td>
-                    <td>{row.result}</td>
-                    <td>{row.date}</td>
+                    <td>{row.operator}</td>
+                    <td>{row.num1}</td>
+                    <td>{row.num2}</td>
+                    <td>{row.resultado}</td>
+                    <td>{row.fechayhora}</td>
                     </tr>
                 ))}
             </tbody>

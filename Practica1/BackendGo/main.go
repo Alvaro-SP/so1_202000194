@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
@@ -41,6 +42,10 @@ func obtenerBaseDeDatos() (db *sql.DB, e error) {
 
 // ! Funcion para mandar los logs almacenados en la base de datos
 func logsfetch(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
 	db.Query("USE mydb")
 	rows, err := db.Query("SELECT num1, num2, operator, resultado, fechayhora FROM operacion")
 	if err != nil {
@@ -49,13 +54,25 @@ func logsfetch(w http.ResponseWriter, r *http.Request) {
 	defer rows.Close()
 
 	var data []Data
+	var output string
 	for rows.Next() {
 		var d Data
 		err := rows.Scan(&d.Num1, &d.Num2, &d.Operator, &d.Resultado, &d.FechaYHora)
 		if err != nil {
 			fmt.Println("Error al escanear los resultados: %v", err)
 		}
+		// Comprobar si hubo división por cero
+		if d.Operator == "/" && d.Num2 == "0" {
+			output += fmt.Sprintf("G,%s,%s,%s,%s,%s\n", d.Num1, d.Num2, d.Operator, d.Resultado, d.FechaYHora)
+		} else {
+			output += fmt.Sprintf("B,%s,%s,%s,%s,%s\n", d.Num1, d.Num2, d.Operator, d.Resultado, d.FechaYHora)
+		}
 		data = append(data, d)
+	}
+	// Guardar resultado en archivo de texto
+	err = ioutil.WriteFile("scripts/logsdata.txt", []byte(output), 0644)
+	if err != nil {
+		fmt.Printf("Error al guardar archivo de texto: %v\n", err)
 	}
 	fmt.Println("Endpoint de retorno de tabla")
 	w.Header().Set("Content-Type", "application/json")
@@ -141,6 +158,19 @@ func home(w http.ResponseWriter, r *http.Request) {
 	num2Str := strconv.FormatFloat(num2, 'f', -1, 64)
 	resultStr := strconv.FormatFloat(result, 'f', -1, 64)
 	// Inserta los valores en la base de datos
+	switch operation {
+	case "suma":
+		operation = "+"
+	case "resta":
+		operation = "-"
+	case "multi":
+		operation = "*"
+	case "divi":
+		operation = "/"
+	default:
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
 	err = insertValues(num1Str, num2Str, operation, resultStr)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
