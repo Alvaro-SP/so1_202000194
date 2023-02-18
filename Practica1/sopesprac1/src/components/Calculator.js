@@ -98,8 +98,6 @@ const Calculator = () => {
             <button onClick={() => handleClick('0')} style={{backgroundColor: 'blue' , color: 'white'}}>0</button>
             <button onClick={handleEvaluate} style={{backgroundColor: 'red'}}>=</button>
         <div>
-        
-
             <table className="data-table">
             <thead>
             <tr>
