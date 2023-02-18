@@ -125,7 +125,6 @@ const Calculator = () => {
         <button onClick={handleEvaluate33} style={{backgroundColor: 'whitesmoke'}}>R</button>
         </div>
     </div>
-    
     );
 };
 
