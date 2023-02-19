@@ -6,13 +6,13 @@ const Calculator = () => {
     const handleClick = (value) => {
         setDisplayValue(displayValue === '0' ? value : displayValue + value);
     };
-    const handleEvaluate33 = () => {
+    // const HandleEvaluate33 = () => {
         useEffect(() => {
         axios.get('http://localhost:8080/logsget')
             .then(res => setData(res.data))
             .catch(err => console.error(err));
     }, []);
-    }
+    // }
     const LIMPIECITA = () => {
         setDisplayValue('0');
     };
@@ -122,7 +122,7 @@ const Calculator = () => {
                 ))}
             </tbody>
         </table>
-        <button onClick={handleEvaluate33} style={{backgroundColor: 'whitesmoke'}}>R</button>
+        {/* <button style={{backgroundColor: 'whitesmoke'}}>R</button> */}
         </div>
     </div>
     );

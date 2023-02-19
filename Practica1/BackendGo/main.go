@@ -131,11 +131,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 	operation := operationprev
 	// Realiza la operación
-	if num2 == 0 {
-		// insert to the database the data
 
-		return
-	}
 	switch operation {
 	case "suma":
 		fmt.Println("Se hizo una suma")
@@ -148,7 +144,11 @@ func home(w http.ResponseWriter, r *http.Request) {
 		result = num1 * num2
 	case "divi":
 		fmt.Println("Se hizo una division")
-		result = num1 / num2
+		if num2 == 0 {
+			result = 0
+		} else {
+			result = num1 / num2
+		}
 	default:
 		w.WriteHeader(http.StatusBadRequest)
 		return
