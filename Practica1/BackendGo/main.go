@@ -25,7 +25,7 @@ type Data struct {
 	FechaYHora string `json:"fechayhora"`
 }
 
-// funcion para obtener conexion de la base de datos
+// ! funcion para obtener conexion de la base de datos
 func obtenerBaseDeDatos() (db *sql.DB, e error) {
 	// * open the db connection.
 	usuario := "myuser"
