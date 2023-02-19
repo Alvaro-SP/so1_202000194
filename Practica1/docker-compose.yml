@@ -1,7 +1,7 @@
 version: '3'
 services:
   backend:
-    container_name: "alvarosp24/backend_practica1_202000194"
+    container_name: "backend_practica1_202000194"
     image: alvarosp24/backend_practica1_202000194
     build:
       context: ./BackendGo
@@ -15,7 +15,7 @@ services:
     networks:
       - app_work
   frontend:
-    container_name: "alvarosp24/frontend_practica1_202000194"
+    container_name: "frontend_practica1_202000194"
     image: alvarosp24/frontend_practica1_202000194
     build:
       context: ./sopesprac1
@@ -27,7 +27,7 @@ services:
     networks:
       - app_work
   db:
-    container_name: "alvarosp24/db_practica1_202000194"
+    container_name: "db_practica1_202000194"
     platform: linux/x86_64
     build: ./database
     image: mysql:5.7
@@ -46,7 +46,7 @@ services:
     networks:
       - app_work
   ejecscript:
-    container_name: "alvarosp24/script_practica1_202000194"
+    container_name: "script_practica1_202000194"
     image: alvarosp24/script_practica1_202000194
     restart: always
     build: ./Ejecscript
