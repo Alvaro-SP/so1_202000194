@@ -83,9 +83,8 @@
 | Topico | Link |
 | ------ | ------ |
 | Introducción | [Ir](#intro) |
-| Información del sistema | [Ir](#inf) |
 | Objetivos y alcances del sistema| [Ir](#ob) |
-| Información del Sistema requerido | [Ir](#sis) |
+| Componentes utilizados | [Ir](#sis) |
 | Sistema Operativo | [Ir](#sis) |
 | Tecnologías utilizadas | [Ir](#tech) |
 | Interfaz del programa | [Ir](#inter) |
@@ -93,7 +92,7 @@
 
 
 
-# Documentación de la aplicación de Calculadora Básica con React, Golang, MySQL y Docker
+# Calculadora Básica Orquestado en Docker-Compose
 
 ## <a name="intro" ></a>INTRODUCCIÓN
 
