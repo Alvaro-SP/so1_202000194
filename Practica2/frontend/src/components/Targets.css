@@ -10,7 +10,7 @@
   margin-bottom: 20px;
 }
 
-.card {
+/* .card {
   margin-bottom: 20px;
   height: 150px;
   display: flex;
@@ -20,7 +20,7 @@
   text-align: center;
   background-color: #f8f9fa;
   border: none;
-}
+} */
 
 .card-title {
   font-size: 24px;
@@ -31,4 +31,87 @@
 .card-text {
   font-size: 64px;
   font-weight: bold;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  border: 5px solid #f00; /* Cambia #f00 por el color de borde que quieras */
+  margin: 0 10px;
+  width: calc(25% - 20px); /* 25% del ancho total de la pantalla, menos los márgenes */
+  max-width: 300px; /* El ancho máximo de las tarjetas */
+  padding: 20px;
+  text-align: center;
+  background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjk1YmFmMWNmZGNiOWQ4ZmUxOGQ5YTM1NDFjYzc3YjQxZWE2NGJkNCZjdD1n/VdYnkXfpUdGPhhOnq5/giphy.gif');
+  background-size: cover;
+}
+
+table {
+  font-family: Arial, sans-serif;
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  align-self: center;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.parent-row {
+  cursor: pointer;
+  background-color: #f5f5f5;
+  color: #666666;
+  transition: background-color 0.3s ease;
+}
+
+.parent-row:hover {
+  background-color: #e2e2e2;
+}
+
+.parent-row.expanded {
+  background-color: #2980b9;
+  color: white;
+}
+
+.child-row {
+  background-color: #f2f2f2;
+}
+
+.child-row td {
+  padding-left: 50px;
+}
+
+.expand-icon {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #666666;
+  border-right: 2px solid #666666;
+  transform: rotate(45deg);
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.parent-row.expanded .expand-icon {
+  transform: rotate(-135deg);
 }

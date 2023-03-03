@@ -1,13 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Targets.css';
+import Tablas from './Tablas';
+// import Tree from 'react-d3-tree';
 
 const Base = () => {
     const [displayValue, setDisplayValue] = useState('0');
     const [data, setData] = useState([]);
-    const handleClick = (value) => {
-        setDisplayValue(displayValue === '0' ? value : displayValue + value);
-    };
+    const [treeData, setTreeData] = useState([]);
+    // Datos de ejemplo
+    const datos = {
+        "Proceso 1": [
+            {
+                "id": 1,
+                "nombre": "Hijo 1.1"
+            },
+            {
+                "id": 2,
+                "nombre": "Hijo 1.2"
+            }
+        ],
+        "Proceso 2": [
+            {
+                "id": 3,
+                "nombre": "Hijo 2.1"
+            },
+            {
+                "id": 4,
+                "nombre": "Hijo 2.2"
+            }
+        ]
+    }
     // const HandleEvaluate33 = () => {
     useEffect(() => {
         axios.get('http://localhost:8080/logsget')
@@ -75,71 +98,49 @@ const Base = () => {
     return (
         <div>
 
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm-6">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div id="grafica1"></div>
                     </div>
-                    <div className="col-sm-6">
+                    <div class="col-sm-6">
                         <div id="grafica2"></div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-12">
-                        <h1 className="text-center">Resumen General de Procesos</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="text-center" align="center">Resumen General de Procesos</h1>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-12">
-                        <h1 className="text-center">Resumen General de Procesos</h1>
+                <div className="card-container">
+                    <div className="card">
+                        <h2>1</h2>
+                        <p>Procesos en ejecución</p>
+                    </div>
+                    <div className="card">
+                        <h2>1</h2>
+                        <p>Procesos suspendidos</p>
+                    </div>
+                    <div className="card">
+                        <h2>2</h2>
+                        <p>Procesos detenidos</p>
+                    </div>
+                    <div className="card">
+                        <h2>2</h2>
+                        <p>Procesos zombie</p>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-3">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Proceso 1</h5>
-                                <p className="card-text">100</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-3">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Proceso 2</h5>
-                                <p className="card-text">200</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-3">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Proceso 3</h5>
-                                <p className="card-text">300</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-3">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Proceso 4</h5>
-                                <p className="card-text">400</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-sm-6 offset-sm-3">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Proceso más importante</h5>
-                                <p className="card-text">5000</p>
-                            </div>
-                        </div>
+                <br />
+                <div className="card-container">
+                    <div className="card">
+                        <h2>6</h2>
+                        <p>Total de procesos</p>
                     </div>
                 </div>
             </div>
-            <div className="calculator">
+
+
+            {/* <div className="calculator" align="center">
                 <div>
                     <table className="data-table">
                         <thead>
@@ -165,10 +166,10 @@ const Base = () => {
                             ))}
                         </tbody>
                     </table>
-                    {/* <button style={{backgroundColor: 'whitesmoke'}}>R</button> */}
                 </div>
-            </div>
+            </div> */}
 
+            <Tablas datos={datos} />
 
         </div>
 
