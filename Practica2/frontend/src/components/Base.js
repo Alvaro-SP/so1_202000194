@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Targets.css';
 import Tablas from './Tablas';
+import Navbar from './Navbar';
+import Sketch from "react-p5";
+import Ram from "./Ram";
+import Cpu from "./Cpu";
 // import Tree from 'react-d3-tree';
 
 const Base = () => {
@@ -29,7 +33,9 @@ const Base = () => {
                 "id": 4,
                 "nombre": "Hijo 2.2"
             }
-        ]
+        ],
+        "Proceso 3": [],
+        "Proceso 4": []
     }
     // const HandleEvaluate33 = () => {
     useEffect(() => {
@@ -97,15 +103,16 @@ const Base = () => {
     };
     return (
         <div>
-
+            <Navbar />
+            <br />
+            <br />
+            <br />
+            <h1 className="text-center" align="center"> MONITOREO DE RECURSOS</h1>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div id="grafica1"></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div id="grafica2"></div>
-                    </div>
+                <div class="col-sm-6" align="center">
+                    <Cpu Crr_Arr={[5, 5, 8, 9, 3, 7, 4, 10]} />
+                    <br />
+                    <Ram Crr_Arr={[5, 5, 8, 9, 3, 7, 8, 10,10,10,10,10,10,5, 5, 8, 9, 3, 7, 8, 10,10,10,10,10,10]} />
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
