@@ -3,10 +3,8 @@ import axios from 'axios';
 import './Targets.css';
 import Tablas from './Tablas';
 import Navbar from './Navbar';
-import Sketch from "react-p5";
 import Ram from "./Ram";
 import Cpu from "./Cpu";
-// import Tree from 'react-d3-tree';
 
 const Base = () => {
     const [displayValue, setDisplayValue] = useState('0');
@@ -14,29 +12,30 @@ const Base = () => {
     const [treeData, setTreeData] = useState([]);
     // Datos de ejemplo
     const datos = {
-        "Proceso 1": [
-            {
-                "id": 1,
-                "nombre": "Hijo 1.1"
-            },
-            {
-                "id": 2,
-                "nombre": "Hijo 1.2"
-            }
-        ],
-        "Proceso 2": [
-            {
-                "id": 3,
-                "nombre": "Hijo 2.1"
-            },
-            {
-                "id": 4,
-                "nombre": "Hijo 2.2"
-            }
-        ],
-        "Proceso 3": [],
-        "Proceso 4": []
-    }
+        procesopadre1: {
+            pid: "123478",
+            nombre: "padre1",
+            usuario: "user1",
+            estado: "activo",
+            ram: 50,
+            procesoshijos: [
+                { pid: 1, nombre: "proceso1", usuario: "user1", estado: "activo", ram: 40 },
+                { pid: 2, nombre: "proceso2", usuario: "user2", estado: "inactivo", ram: 20 },
+                { pid: 3, nombre: "proceso3", usuario: "user3", estado: "activo", ram: 60 },
+            ],
+        },
+        procesopadre2: {
+            pid: "123478",
+            nombre: "padre2",
+            usuario: "user4",
+            estado: "inactivo",
+            ram: 30,
+            procesoshijos: [
+                { pid: 4, nombre: "proceso4", usuario: "user4", estado: "inactivo", ram: 30 },
+                { pid: 5, nombre: "proceso5", usuario: "user5", estado: "activo", ram: 50 },
+            ],
+        },
+    };
     // const HandleEvaluate33 = () => {
     useEffect(() => {
         axios.get('http://localhost:8080/logsget')
@@ -112,7 +111,7 @@ const Base = () => {
                 <div class="col-sm-6" align="center">
                     <Cpu Crr_Arr={[5, 5, 8, 9, 3, 7, 4, 10]} />
                     <br />
-                    <Ram Crr_Arr={[5, 5, 8, 9, 3, 7, 8, 10,10,10,10,10,10,5, 5, 8, 9, 3, 7, 8, 10,10,10,10,10,10]} />
+                    <Ram Crr_Arr={[5, 5, 8, 9, 3, 7, 8, 10, 10, 10, 10, 10, 10, 5, 5, 8, 9, 3, 7, 8, 10, 10, 10, 10, 10, 10]} />
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
@@ -175,8 +174,17 @@ const Base = () => {
                     </table>
                 </div>
             </div> */}
-
+            <br />
+            <br />
             <Tablas datos={datos} />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
 
         </div>
 

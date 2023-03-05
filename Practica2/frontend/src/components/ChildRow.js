@@ -4,9 +4,13 @@ import React from "react";
 
 
 // Componente para renderizar la fila del hijo
-const ChildRow = ({ nombre }) => (
+const ChildRow = ({ pid, nombre, usuario, estado, ram }) => (
     <tr>
-        <td> - {nombre}</td>
+        <td>{pid}</td>
+        <td>{nombre}</td>
+        <td>{usuario}</td>
+        <td>{estado}</td>
+        <td>{ram}%</td>
     </tr>
 );
 export default ChildRow;

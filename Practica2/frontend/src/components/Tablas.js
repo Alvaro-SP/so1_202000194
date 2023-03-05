@@ -5,7 +5,7 @@ import ChildRow from "./ChildRow";
 
 
 // Componente de la tabla completa
-const Tablas = ({datos}) => {
+const Tablas = ({ datos }) => {
     const [expanded, setExpanded] = useState([]);
 
     // Función para manejar la expansión de filas
@@ -17,14 +17,18 @@ const Tablas = ({datos}) => {
         }
     };
     // Renderización de filas y columnas
-    const rows = Object.entries(datos).map(([nombre, hijos]) => (
+    const rows = Object.entries(datos).map(([nombre, { procesoshijos, ...padre }]) => (
         <React.Fragment key={nombre}>
             <ParentRow
-                nombre={nombre}
+                pid={padre.pid}
+                nombre={padre.nombre}
+                usuario={padre.usuario}
+                estado={padre.estado}
+                ram={padre.ram}
                 children={
                     <tbody>
-                        {hijos.map(({ nombre, id }) => (
-                            <ChildRow key={id} nombre={nombre} />
+                        {procesoshijos.map(({ pid, nombre, usuario, estado, ram }) => (
+                            <ChildRow pid={pid} nombre={nombre} usuario={usuario} estado={estado} ram={ram} />
                         ))}
                     </tbody>
                 }
@@ -37,7 +41,18 @@ const Tablas = ({datos}) => {
         <table>
             <thead>
                 <tr>
-                    <th>Proceso</th>
+                    <th> </th>
+                    <th> </th>
+                    <th>Procesos</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <th>PID</th>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Estado</th>
+                    <th>%RAM</th>
                 </tr>
             </thead>
             {rows}
