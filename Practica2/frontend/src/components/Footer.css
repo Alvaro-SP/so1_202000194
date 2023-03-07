@@ -1,0 +1,13 @@
+.footer-container {
+  background-color: #0a192f; /* Cambia el color del fondo */
+  color: #fff; /* Cambia el color del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* Cambia la altura del footer */
+}
+
+.footer-text {
+  font-size: 1.2rem; /* Cambia el tamaño del texto */
+  text-align: center;
+}

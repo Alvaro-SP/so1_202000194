@@ -5,7 +5,7 @@ import Tablas from './Tablas';
 import Navbar from './Navbar';
 import Ram from "./Ram";
 import Cpu from "./Cpu";
-
+import Footer from './Footer';
 const Base = () => {
     const [displayValue, setDisplayValue] = useState('0');
     const [data, setData] = useState([]);
@@ -107,12 +107,13 @@ const Base = () => {
             <br />
             <br />
             <h1 className="text-center" align="center"> MONITOREO DE RECURSOS</h1>
-            <div class="container-fluid">
-                <div class="col-sm-6" align="center">
+            <div class="col-sm-6" align="center">
                     <Cpu Crr_Arr={[5, 5, 8, 9, 3, 7, 4, 10]} />
                     <br />
                     <Ram Crr_Arr={[5, 5, 8, 9, 3, 7, 8, 10, 10, 10, 10, 10, 10, 5, 5, 8, 9, 3, 7, 8, 10, 10, 10, 10, 10, 10]} />
                 </div>
+            <div class="container-fluid">
+                
                 <div class="row">
                     <div class="col-sm-12">
                         <h1 class="text-center" align="center">Resumen General de Procesos</h1>
@@ -185,7 +186,7 @@ const Base = () => {
             <br />
             <br />
             <br />
-
+            <Footer />
         </div>
 
     );
