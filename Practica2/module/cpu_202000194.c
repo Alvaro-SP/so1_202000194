@@ -14,61 +14,59 @@
 // implementacion de sched para obtener el uso de CPU
 #include <linux/sched.h>
 #include <linux/sched/signal.h>
+#include <linux/jiffies.h>
+#include <linux/types.h>
 #include <asm/uaccess.h>
+#include <linux/mm.h>
+#include <linux/time.h>
+
 #define PROC_NAME "cpu_202000194"
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
 
-static unsigned long long last_total_jiffies = 0;
-static unsigned long long last_work_jiffies = 0;
 
 static int escribir_archivo(struct seq_file *archivo, void *v)
 {
-    struct task_struct *task; // task_struct es una estructura que contiene la informacion de un proceso
-    struct task_struct *child; // task_struct es una estructura que contiene la informacion de un proceso pero hijo
-    struct sysinfo si; // Estructura que contiene la informacion del sistema
+    struct task_struct *task;
+    // struct task_struct *task_hijo;
+    // struct list_head *children;
 
-    //! USO DEL CPU:
-    // Obtiene información del sistema
-    si_meminfo(&info);
+    printk(KERN_INFO "Procesos en ejecución:\n");
 
-    // Obtiene el tiempo actual de CPU
-    unsigned long long total_s = get_jiffies_64();
-    unsigned long long work_jiffies = get_cpu_usecs(0);
-
-    // Calcula el porcentaje de uso actual de CPU
-    float cpu_usage = ((float)(work_jiffies - last_work_jiffies) / (total_jiffies - last_total_jiffies)) * 100.0;
-
-    // Actualiza los valores del último tiempo de CPU utilizado
-    last_total_jiffies = total_jiffies;
-    last_work_jiffies = work_jiffies;
-
-    seq_printf(archivo, "Porcentaje de uso actual de CPU: %.2f%%\n", cpu_usage);
-
-
-    si_meminfo(&si); // Obtenemos la informacion del sistema
-    seq_printf(archivo, "{\n");
-    seq_printf(archivo, "\"cpu_usage\": %.2f,\n", cpu_usage);   //* "cpu_usage": 25.35,
-
-    seq_printf(archivo, "\"data\": {");  //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task) {
-        seq_printf(archivo, "\"%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu, \"procesoshijos\": [",
-            task->comm, task->pid, task->comm, get_task_comm(task->real_cred->user->user_struct), task->state, task_resident_set_size(task) * (si.mem_unit / 1024));
-        list_for_each_entry(child, &task->children, sibling) {
-            seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu}",
-                child->pid, child->comm, get_task_comm(child->real_cred->user->user_struct), child->state, task_resident_set_size(child) * (si.mem_unit / 1024));
-            if (child->sibling.next != &task->children) {
-                seq_printf(archivo, ",");
-            }
+        // switch (task->stats) {
+        //     case TASK_RUNNING:
+        //         strcpy(estado, "Running");
+        //         break;
+        //     case TASK_INTERRUPTIBLE:
+        //         strcpy(estado, "Interruptible");
+        //         break;
+        //     case TASK_UNINTERRUPTIBLE:
+        //         strcpy(estado, "Uninterruptible");
+        //         break;
+        //     case __TASK_STOPPED:
+        //         strcpy(estado, "Stopped");
+        //         break;
+        //     case __TASK_TRACED:
+        //         strcpy(estado, "Traced");
+        //         break;
+        //     default:
+        //         strcpy(estado, "Unknown");
+        //         break;
+        // }
+
+        printk(KERN_INFO "\"pid\": %d",
+                task->pid);
+        seq_printf(archivo, "pid: %d\n", task->pid);
+
+        children = &(task->children);
+        list_for_each_entry(task_hijo, children, sibling) {
+            printk(KERN_CONT " %d", task_hijo->pid);
         }
-        seq_printf(archivo, "]}");
-        if (task->sibling.next != &init_task.tasks) {
-            seq_printf(archivo, ",");
-        }
+        printk(KERN_CONT "\n");
     }
-    seq_printf(archivo, "}}");
     return 0;
 }
 
