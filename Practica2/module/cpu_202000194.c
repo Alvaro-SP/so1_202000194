@@ -20,49 +20,15 @@
 #include <asm/uaccess.h>
 #include <linux/mm.h>
 #include <linux/time.h>
-#include <stdio.h>   // Include the stdio.h header file
+#include <linux/fs.h>
+#include <linux/cred.h>
+#include <linux/uidgid.h>
+
 #define PROC_NAME "cpu_202000194"
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
-
-float getpercent() {
-    FILE* fp;
-    char buf[1024];
-    unsigned long user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice;
-    unsigned long prev_idle, prev_total, total, diff_idle, diff_total;
-    float usage;
-
-    fp = fopen("/proc/stat", "r");
-    if (fp == NULL) {
-        perror("Failed to open /proc/stat");
-        return 1;
-    }
-
-    fgets(buf, sizeof(buf), fp);
-    sscanf(buf, "cpu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu",
-           &user, &nice, &system, &idle, &iowait, &irq, &softirq, &steal, &guest, &guest_nice);
-
-    prev_idle = idle;
-    prev_total = user + nice + system + idle + iowait + irq + softirq + steal;
-    sleep(1);
-
-    fseek(fp, 0, SEEK_SET);
-    fgets(buf, sizeof(buf), fp);
-    sscanf(buf, "cpu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu",
-           &user, &nice, &system, &idle, &iowait, &irq, &softirq, &steal, &guest, &guest_nice);
-
-    total = user + nice + system + idle + iowait + irq + softirq + steal;
-    diff_idle = idle - prev_idle;
-    diff_total = total - prev_total;
-    usage = 100.0 * (diff_total - diff_idle) / diff_total;
-
-    printf("CPU usage: %.2f%%\n", usage);
-
-    fclose(fp);
-    return usage;
-}
 
 static int escribir_archivo(struct seq_file *archivo, void *v)
 {
@@ -71,7 +37,95 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     struct list_head *children;
     struct sysinfo si;
     long memproc;
-    float cpu_usage = getpercent();
+    long memproc2;
+    struct file *file;
+    char *filename = "/proc/stat";
+    char buffer[256];
+    int len;
+    double cpu_usage=20;
+    unsigned long total_mem = 0;
+    unsigned long free_mem = 0;
+    struct sysinfo info;
+    long mem_usage;
+    struct user_struct *user;
+    char *username = "unknown";
+    // file = filp_open(filename, O_RDONLY, 0);
+    // if (IS_ERR(file)) {
+    //     printk(KERN_ERR "Error opening file %s\n", filename);
+    //     return PTR_ERR(file);
+    // }
+
+    // /* Read the contents of the file */
+    // len = kernel_read(file, buffer, sizeof(buffer), 0);
+    // if (len < 0) {
+    //     printk(KERN_ERR "Error reading file %s\n", filename);
+    //     filp_close(file, NULL);
+    //     return len;
+    // }
+
+    // /* Close the file */
+    // filp_close(file, NULL);
+
+    // /* Parse the CPU statistics */
+    // unsigned long long user, nice, system, idle, iowait, irq, softirq;
+    // int num_cpus;
+    // int i;
+    // char *line, *tok;
+
+    // line = strtok(buffer, "\n");
+    // while (line) {
+    //     if (strncmp(line, "cpu", 3) == 0) {
+    //         tok = strtok(line, " ");
+    //         i = 0;
+    //         while (tok) {
+    //             switch (i) {
+    //                 case 1:
+    //                     kstrtoull(tok, 0, &user);
+    //                     break;
+    //                 case 2:
+    //                     kstrtoull(tok, 0, &nice);
+    //                     break;
+    //                 case 3:
+    //                     kstrtoull(tok, 0, &system);
+    //                     break;
+    //                 case 4:
+    //                     kstrtoull(tok, 0, &idle);
+    //                     break;
+    //                 case 5:
+    //                     kstrtoull(tok, 0, &iowait);
+    //                     break;
+    //                 case 6:
+    //                     kstrtoull(tok, 0, &irq);
+    //                     break;
+    //                 case 7:
+    //                     kstrtoull(tok, 0, &softirq);
+    //                     break;
+    //             }
+    //             i++;
+    //             tok = strtok(NULL, " ");
+    //         }
+    //     } else if (strncmp(line, "intr", 4) == 0) {
+    //         /* Count the number of CPUs */
+    //         num_cpus = 0;
+    //         for (i = 0; i < strlen(line); i++) {
+    //             if (line[i] == ' ') {
+    //                 num_cpus++;
+    //             }
+    //         }
+    //         num_cpus -= 1;
+    //     }
+    //     line = strtok(NULL, "\n");
+    // }
+
+    // /* Calculate the CPU usage */
+    // unsigned long long total, busy;
+    
+    // total = user + nice + system + idle + iowait + irq + softirq;
+    // busy = user + nice + system + irq + softirq;
+    // cpu_usage = ((double) busy / (double) total) * 100.0;
+
+    /* Print the CPU usage */
+    printk(KERN_INFO "CPU usage: %.2f%%\n", cpu_usage);
     // unsigned long long total_cpu_time = jiffies_to_nsecs(jiffies);
     // unsigned long long process_cpu_time = 0;
     // int totalram, freeram;
@@ -87,28 +141,55 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         // }
         // printk(KERN_CONT "\n");
     // }
-    seq_printf(archivo, "{\n");
-    seq_printf(archivo, "\"cpu_usage\": %f,\n", cpu_usage);   //* "cpu_usage": 25.35,
 
+
+
+
+    
+
+    si_meminfo(&info);
+
+    total_mem = (info.totalram * info.mem_unit) >> 10;  // ! memoria total en KB
+    printk(KERN_INFO "Total memory: %lu KB\n", total_mem);
+
+    seq_printf(archivo, "{\n");
+    seq_printf(archivo, "\"cpu_usage\":  %d ,\n", cpu_usage);   //* "cpu_usage": 25.35,
+    
     seq_printf(archivo, "\"data\": {");  //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task) {
+
+        //! 0 : ejecutando
+        //! 4 : zombie
+        //! 8 : detenido
+        //! 1 o 1026 : suspendido
+
         if(task->mm) {
             memproc = get_mm_rss(task->mm); // ! memoria de cada proceso
+            mem_usage = (memproc / total_mem) * 100.0;
         }
-        seq_printf(archivo, "\"%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu, \"procesoshijos\": [",
-            task->comm, task->pid, task->comm, task->cred->uid.val, task->stats, memproc);
+        /* Get the passwd structure for the UID */
+        // char *nombre_usuario = get_cred_username(task->real_cred);
+
+        seq_printf(archivo, "\"%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu, \n\"procesoshijos\": [",
+            task->comm, task->pid, task->comm, task->real_cred->uid, task->__state, memproc);
         task_lock(task);
         children = &(task->children);
         list_for_each_entry(task_hijo, children, sibling) {
-            seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu}",
-                task_hijo->pid, task_hijo->comm, task_hijo->cred->uid, task_hijo->stats, memproc);
+            if(task_hijo->mm) {
+                memproc2 = get_mm_rss(task_hijo->mm); // ! memoria de cada proceso hijo
+                mem_usage = (memproc2 / total_mem) * 100.0;
+            }
+            /* Get the passwd structure for the UID */
+            // pw = getpwuid(task_hijo->cred->uid.val);
+            seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%d\", \"ram\": %lu}",
+                task_hijo->pid, task_hijo->comm, task_hijo->real_cred->uid, task_hijo->__state, memproc);
 
             if (task_hijo->sibling.next != &task->children) {
                 seq_printf(archivo, ",");
             }
         }
         task_unlock(task);
-        seq_printf(archivo, "]}");
+        seq_printf(archivo, "]\n}");
         if (task->sibling.next != &init_task.tasks) {
             seq_printf(archivo, ",");
         }

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "sched.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "fs.h": "c"
     }
 }

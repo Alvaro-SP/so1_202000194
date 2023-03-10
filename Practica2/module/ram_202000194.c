@@ -11,7 +11,7 @@
 #include <linux/seq_file.h>
 // implementacion de sysinfo
 #include <linux/sysinfo.h>
-
+#include <sys/swap.h>
 #define PROC_NAME "ram_202000194"
 
 MODULE_LICENSE("GPL");
