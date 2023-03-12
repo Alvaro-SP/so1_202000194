@@ -38,17 +38,20 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     struct sysinfo si;
     long memproc;
     long memproc2;
+    int indext = 0; // indice para el nombre de proceso
     struct file *file;
     char *filename = "/proc/stat";
     char buffer[256];
     int len;
-    double cpu_usage=20;
+    int cpu_usage=20;
     unsigned long total_mem = 0;
     unsigned long free_mem = 0;
     struct sysinfo info;
     long mem_usage;
     struct user_struct *user;
     char *username = "unknown";
+    bool first = true; // solo para el primer proceso la coma
+
     // file = filp_open(filename, O_RDONLY, 0);
     // if (IS_ERR(file)) {
     //     printk(KERN_ERR "Error opening file %s\n", filename);
@@ -153,11 +156,13 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     printk(KERN_INFO "Total memory: %lu KB\n", total_mem);
 
     seq_printf(archivo, "{\n");
-    seq_printf(archivo, "\"cpu_usage\":  %d ,\n", cpu_usage);   //* "cpu_usage": 25.35,
-    
+    seq_printf(archivo, "\"cpu_usage\":");   //* "cpu_usage": 25.35,
+    seq_printf(archivo, "%d , \n", cpu_usage);
     seq_printf(archivo, "\"data\": {");  //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
     for_each_process(task) {
-
+        if (!first) {
+            seq_printf(archivo, ",");
+        }
         //! 0 : ejecutando
         //! 4 : zombie
         //! 8 : detenido
@@ -170,8 +175,9 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
-        seq_printf(archivo, "\"%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%ld\", \"ram\": %lu, \n\"procesoshijos\": [",
-            task->comm, task->pid, task->comm, task->real_cred->uid, task->__state, memproc);
+        seq_printf(archivo, "\"%d_%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%d\", \"ram\": %lu, \n\"procesoshijos\": [",
+            indext, task->comm, task->pid, task->comm, "x", task->__state, memproc);
+        indext++;
         task_lock(task);
         children = &(task->children);
         list_for_each_entry(task_hijo, children, sibling) {
@@ -182,7 +188,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
             /* Get the passwd structure for the UID */
             // pw = getpwuid(task_hijo->cred->uid.val);
             seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%s\", \"estado\": \"%d\", \"ram\": %lu}",
-                task_hijo->pid, task_hijo->comm, task_hijo->real_cred->uid, task_hijo->__state, memproc);
+                task_hijo->pid, task_hijo->comm, "uid_str", task_hijo->__state, memproc);
 
             if (task_hijo->sibling.next != &task->children) {
                 seq_printf(archivo, ",");
@@ -190,9 +196,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         }
         task_unlock(task);
         seq_printf(archivo, "]\n}");
-        if (task->sibling.next != &init_task.tasks) {
-            seq_printf(archivo, ",");
-        }
+        first=false;
     }
     seq_printf(archivo, "}}");
 
