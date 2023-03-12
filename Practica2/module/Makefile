@@ -1,5 +1,5 @@
 obj-m := cpu_202000194.o
-# obj-m += ram_202000194.o
+obj-m += ram_202000194.o
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 

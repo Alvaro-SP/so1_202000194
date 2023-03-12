@@ -52,11 +52,11 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     char *username = "unknown";
     bool first = true; // solo para el primer proceso la coma
 
-    // file = filp_open(filename, O_RDONLY, 0);
-    // if (IS_ERR(file)) {
-    //     printk(KERN_ERR "Error opening file %s\n", filename);
-    //     return PTR_ERR(file);
-    // }
+    file = filp_open(filename, O_RDONLY, 0);
+    if (IS_ERR(file)) {
+        printk(KERN_ERR "Error opening file %s\n", filename);
+        return PTR_ERR(file);
+    }
 
     // /* Read the contents of the file */
     // len = kernel_read(file, buffer, sizeof(buffer), 0);
