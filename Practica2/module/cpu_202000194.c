@@ -53,6 +53,13 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     long mem_usage;
     bool first = true; // solo para el primer proceso la coma
     long memoria_total = 0;
+    // variables para guardar cantidad de procesos
+    long int ejecucion;
+    long int suspendido;
+    long int detenido;
+    long int zombie;
+    long int totales;
+
     // !------------------------ SE ABRE ARCHIVO GUARDADO --------------------------
     file = filp_open(filename, O_RDONLY, 0);
     if (IS_ERR(file)) {
@@ -207,6 +214,16 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
             // printk(KERN_INFO "Porcentaje de memoria de %s: %lu %%\n", task->comm,mem_usage);
 
         }
+        if(task->__state == 0 || task->__state == 1026|| task->__state == 2){
+            ejecucion++;
+        }else if(task->__state == 4){
+            zombie++;
+        }else if(task->__state == 8 || task->__state == 8193){
+            detenido++;
+        }else if(task->__state == 1 || task->__state == 1026){\
+            suspendido++;
+        }
+        totales++;
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
@@ -243,7 +260,26 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         seq_printf(archivo, "]\n}");
         first=false;
     }
-    seq_printf(archivo, "}}");
+
+
+    seq_printf(archivo, "},");
+    seq_printf(archivo, "\"ejecucion\":");
+    seq_printf(archivo, "%li , \n", ejecucion);
+
+    seq_printf(archivo, "\"zombie\":");
+    seq_printf(archivo, "%li , \n", zombie);
+
+    seq_printf(archivo, "\"detenido\":");
+    seq_printf(archivo, "%li , \n", detenido);
+
+    seq_printf(archivo, "\"suspendido\":");
+    seq_printf(archivo, "%li , \n", suspendido);
+
+    seq_printf(archivo, "\"totales\":");
+    seq_printf(archivo, "%li , \n", totales);
+    seq_printf(archivo, "}");
+
+    
 
 
 
