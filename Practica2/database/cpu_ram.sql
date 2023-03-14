@@ -24,7 +24,7 @@ USE `practica2sopes` ;
 DROP TABLE IF EXISTS `practica2sopes`.`cpu_ram` ;
 
 CREATE TABLE IF NOT EXISTS `practica2sopes`.`cpu_ram` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `ram_json` JSON NOT NULL,
   `cpu_json` JSON NOT NULL,
   `cpu_process` JSON NOT NULL,

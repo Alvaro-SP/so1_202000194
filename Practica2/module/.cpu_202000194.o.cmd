@@ -1034,6 +1034,163 @@ deps_/home/droid/Documents/so1_202000194/Practica2/module/cpu_202000194.o := \
     $(wildcard include/config/MEMORY_BALLOON) \
     $(wildcard include/config/BALLOON_COMPACTION) \
     $(wildcard include/config/ZSWAP) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/hugetlb.h \
+    $(wildcard include/config/ARCH_HAS_HUGEPD) \
+    $(wildcard include/config/CGROUP_HUGETLB) \
+    $(wildcard include/config/ARCH_ENABLE_HUGEPAGE_MIGRATION) \
+    $(wildcard include/config/ARCH_WANT_HUGE_PMD_SHARE) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/hugetlb_inline.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/cgroup.h \
+    $(wildcard include/config/CGROUP_CPUACCT) \
+    $(wildcard include/config/SOCK_CGROUP_DATA) \
+    $(wildcard include/config/CGROUP_DATA) \
+    $(wildcard include/config/CGROUP_BPF) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/uapi/linux/cgroupstats.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/uapi/linux/taskstats.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/ns_common.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/nsproxy.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/user_namespace.h \
+    $(wildcard include/config/INOTIFY_USER) \
+    $(wildcard include/config/FANOTIFY) \
+    $(wildcard include/config/PERSISTENT_KEYRINGS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/kernel_stat.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/interrupt.h \
+    $(wildcard include/config/IRQ_FORCED_THREADING) \
+    $(wildcard include/config/GENERIC_IRQ_PROBE) \
+    $(wildcard include/config/IRQ_TIMINGS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/irqreturn.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/hardirq.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/context_tracking_state.h \
+    $(wildcard include/config/CONTEXT_TRACKING_USER) \
+    $(wildcard include/config/CONTEXT_TRACKING) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/ftrace_irq.h \
+    $(wildcard include/config/HWLAT_TRACER) \
+    $(wildcard include/config/OSNOISE_TRACER) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/vtime.h \
+    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
+    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/hardirq.h \
+    $(wildcard include/config/KVM_INTEL) \
+    $(wildcard include/config/HAVE_KVM) \
+    $(wildcard include/config/X86_THERMAL_VECTOR) \
+    $(wildcard include/config/X86_MCE_THRESHOLD) \
+    $(wildcard include/config/X86_MCE_AMD) \
+    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
+    $(wildcard include/config/HYPERV) \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/irq.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/irq_vectors.h \
+    $(wildcard include/config/PCI_MSI) \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/sections.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/asm-generic/sections.h \
+    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/cgroup-defs.h \
+    $(wildcard include/config/CGROUP_NET_CLASSID) \
+    $(wildcard include/config/CGROUP_NET_PRIO) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/u64_stats_sync.h \
+  arch/x86/include/generated/asm/local64.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/asm-generic/local64.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/local.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/bpf-cgroup-defs.h \
+    $(wildcard include/config/BPF_LSM) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/psi_types.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/kthread.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/cgroup_subsys.h \
+    $(wildcard include/config/CGROUP_DEVICE) \
+    $(wildcard include/config/CGROUP_FREEZER) \
+    $(wildcard include/config/CGROUP_PERF) \
+    $(wildcard include/config/CGROUP_PIDS) \
+    $(wildcard include/config/CGROUP_RDMA) \
+    $(wildcard include/config/CGROUP_MISC) \
+    $(wildcard include/config/CGROUP_DEBUG) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/userfaultfd_k.h \
+    $(wildcard include/config/PTE_MARKER_UFFD_WP) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/uapi/linux/userfaultfd.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/swap.h \
+    $(wildcard include/config/PTE_MARKER) \
+    $(wildcard include/config/FRONTSWAP) \
+    $(wildcard include/config/THP_SWAP) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/memcontrol.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/page_counter.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/vmpressure.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/eventfd.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/writeback.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/flex_proportions.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/backing-dev-defs.h \
+    $(wildcard include/config/DEBUG_FS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/blk_types.h \
+    $(wildcard include/config/FAIL_MAKE_REQUEST) \
+    $(wildcard include/config/BLK_CGROUP_IOCOST) \
+    $(wildcard include/config/BLK_INLINE_ENCRYPTION) \
+    $(wildcard include/config/BLK_DEV_INTEGRITY) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/bvec.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/highmem.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/cacheflush.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/cacheflush.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/asm-generic/cacheflush.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/kmsan.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/dma-direction.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/highmem-internal.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/device.h \
+    $(wildcard include/config/GENERIC_MSI_IRQ_DOMAIN) \
+    $(wildcard include/config/GENERIC_MSI_IRQ) \
+    $(wildcard include/config/ENERGY_MODEL) \
+    $(wildcard include/config/PINCTRL) \
+    $(wildcard include/config/DMA_OPS) \
+    $(wildcard include/config/DMA_DECLARE_COHERENT) \
+    $(wildcard include/config/DMA_CMA) \
+    $(wildcard include/config/SWIOTLB) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_DEVICE) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU_ALL) \
+    $(wildcard include/config/DMA_OPS_BYPASS) \
+    $(wildcard include/config/OF) \
+    $(wildcard include/config/DEVTMPFS) \
+    $(wildcard include/config/SYSFS_DEPRECATED) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/dev_printk.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/energy_model.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/sched/cpufreq.h \
+    $(wildcard include/config/CPU_FREQ) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/sched/topology.h \
+    $(wildcard include/config/SCHED_DEBUG) \
+    $(wildcard include/config/SCHED_CLUSTER) \
+    $(wildcard include/config/SCHED_MC) \
+    $(wildcard include/config/CPU_FREQ_GOV_SCHEDUTIL) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/sched/idle.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/sched/sd_flags.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/klist.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/pm.h \
+    $(wildcard include/config/VT_CONSOLE_SLEEP) \
+    $(wildcard include/config/CXL_SUSPEND) \
+    $(wildcard include/config/PM) \
+    $(wildcard include/config/PM_CLK) \
+    $(wildcard include/config/PM_GENERIC_DOMAINS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/device/bus.h \
+    $(wildcard include/config/ACPI) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/device/class.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/device/driver.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/device.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/pm_wakeup.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/bio.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/mempool.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/uio.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/uapi/linux/uio.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/node.h \
+    $(wildcard include/config/HMEM_REPORTING) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/pagemap.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/uapi/linux/mempolicy.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/swapops.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/swapfile.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/mempolicy.h \
+    $(wildcard include/config/TMPFS) \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/tlbflush.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/invpcid.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/pti.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/hugetlb.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/asm-generic/hugetlb.h \
+    $(wildcard include/config/ARCH_HAS_GIGANTIC_PAGE) \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/linux/delay.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/arch/x86/include/asm/delay.h \
+  /usr/src/linux-headers-6.1.0-kali5-common/include/asm-generic/delay.h \
 
 /home/droid/Documents/so1_202000194/Practica2/module/cpu_202000194.o: $(deps_/home/droid/Documents/so1_202000194/Practica2/module/cpu_202000194.o)
 
