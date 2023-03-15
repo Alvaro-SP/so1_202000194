@@ -51,7 +51,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     printk(KERN_ERR "Buffered: %llu KB\n", 
     (si.bufferram* (unsigned long long)si.mem_unit));
     printk(KERN_ERR "Memoria en uso: %llu KB\n", memoria_usada /(1000000));
-    seq_printf(archivo, "\"Porcentaje\":\"%lld \n",
+    seq_printf(archivo, "\"Porcentaje\":%lld \n",
     (((memoria_total)-(si.freeram * (unsigned long long)si.mem_unit) - (si.bufferram* (unsigned long long)si.mem_unit)- (si.sharedram *(unsigned long long)si.mem_unit))*100)/(memoria_total));
 
     seq_printf(archivo, "}\n");

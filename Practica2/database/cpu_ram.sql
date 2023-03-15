@@ -30,6 +30,11 @@ CREATE TABLE IF NOT EXISTS `practica2sopes`.`cpu_ram` (
   `cpu_process` JSON NOT NULL,
   `percent_ram` INT NOT NULL,
   `percent_cpu` INT NOT NULL,
+  `ejecucion` INT NOT NULL,
+  `zombie` INT NOT NULL,
+  `detenido` INT NOT NULL,
+  `suspendido` INT NOT NULL,
+  `totales` INT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -37,3 +42,4 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+INSERT INTO cpu_ram (id,ram_json,cpu_json,cpu_process,percent_ram,percent_cpu,ejecucion,zombie,detenido,suspendido,totales) VALUES (1,"[]", "[]", "[]", 0,0,0,0,0,0,0);

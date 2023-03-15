@@ -129,15 +129,17 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     //*   softirq: servicing softirqs
 
     long total_time1, total_time2;
-    long delta_idle_time, delta_total_time;
+    // long delta_idle_time, delta_total_time;
     total_time1 = userx + nice + system + idle + iowait + irq + softirq;
     total_time2 = userx2 + nice2 + system2 + idle2 + iowait2 + irq2 + softirq2;
 
 
-    delta_total_time = total_time2 - total_time1;
-    delta_idle_time = idle2 - idle;
-    cpu_usage = ((delta_total_time - delta_idle_time) * 100) / delta_total_time;
+    // delta_total_time = total_time2 - total_time1;
+    // delta_idle_time = idle2 - idle;
+    // cpu_usage = ((delta_total_time - delta_idle_time) * 100) / delta_total_time;
 
+    cpu_usage = (idle * 100) / total_time1;
+    cpu_usage = 100 - cpu_usage;
     /* Print the CPU usage */
     printk(KERN_INFO "CPU userx: %lu \n", userx);
     printk(KERN_INFO "CPU nice: %lu \n", nice);
@@ -262,7 +264,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     }
 
 
-    seq_printf(archivo, "},");
+    seq_printf(archivo, "}, \n");
     seq_printf(archivo, "\"ejecucion\":");
     seq_printf(archivo, "%li , \n", ejecucion);
 
@@ -276,7 +278,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "%li , \n", suspendido);
 
     seq_printf(archivo, "\"totales\":");
-    seq_printf(archivo, "%li , \n", totales);
+    seq_printf(archivo, "%li  \n", totales);
     seq_printf(archivo, "}");
 
     
@@ -321,3 +323,6 @@ static void _remove(void)
 
 module_init(_insert);
 module_exit(_remove);
+
+
+// https://stackoverflow.com/questions/33594124/why-is-the-process-state-in-task-struct-stored-as-type-long
