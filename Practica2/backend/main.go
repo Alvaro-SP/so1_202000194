@@ -8,7 +8,7 @@ import (
 	// "net/http"
 	// "strconv"
 	// "strings"
-	// "time"
+	"time"
 	"os/user"
 	"os/exec"
 	_ "github.com/go-sql-driver/mysql" // La librería que nos permite conectar a MySQL
@@ -44,7 +44,7 @@ func obtenerBaseDeDatos() (db *sql.DB, e error) {
 	// * open the db connection.
 	usuario := "root"
 	pass := "2412"
-	host := "tcp(localhost:3306)" // can the 127.0.0.1 ip too instead of db
+	host := "tcp(35.238.175.158:3306)" // can the 127.0.0.1 ip too instead of db
 	nombreBaseDeDatos := "practica2sopes"
 	// Debe tener la forma usuario:contraseña@host/nombreBaseDeDatos
 	dbtemp, err := sql.Open("mysql", fmt.Sprintf("%s:%s@%s/%s", usuario, pass, host, nombreBaseDeDatos))
@@ -80,7 +80,7 @@ func main() {
 	}
 	// Terminar conexión al terminar función
 	defer db.Close()
-
+	
 	// Ahora vemos si tenemos conexión
 	err = db.Ping()
 	if err != nil {
@@ -91,6 +91,8 @@ func main() {
 	fmt.Println("Conectado correctamente a la base de datos")
 
 	// todo *****************************************************************************
+	// LOOP INFINITUS
+	for {
 	cmd := exec.Command("sh", "-c", "cat /proc/cpu_202000194")
 	out, err := cmd.CombinedOutput()
 	if err != nil {
@@ -105,7 +107,7 @@ func main() {
 		fmt.Println(err)
 	}
 	jsonStr2 := string(out2[:])
-	fmt.Println(jsonStr2)
+	// fmt.Println(jsonStr2)
 	// jsonStr2 := `{
 	// 	"Porcentaje":61
 	// 	}`
@@ -235,16 +237,8 @@ func main() {
 
 
 
-	// LOOP INFINITUS
-	// for {
-	// 	cmd := exec.Command("sh", "-c", "cat /proc/cpu_202000194")
-	// 	out, err := cmd.CombinedOutput()
-	// 	if err != nil {
-	// 		fmt.Println(err)
-	// 	}
-	// 	output := string(out[:])
-	// 	fmt.Println(output)
-	// 	time.Sleep(2 * time.Second)
-	// }
+	fmt.Println("Dato enviado")
+		time.Sleep(1 * time.Second)
+	}
 
 }

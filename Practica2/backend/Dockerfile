@@ -12,6 +12,5 @@ RUN go get -u github.com/gorilla/mux
 RUN go get -u github.com/go-sql-driver/mysql
 RUN go build -o main
 EXPOSE 8080
-VOLUME /proc/cpu_202000194:/proc/cpu_202000194
-VOLUME /proc/ram_202000194:/proc/ram_202000194
+VOLUME /proc:/proc
 CMD ["./main"]

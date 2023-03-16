@@ -43,3 +43,12 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO cpu_ram (id,ram_json,cpu_json,cpu_process,percent_ram,percent_cpu,ejecucion,zombie,detenido,suspendido,totales) VALUES (1,"[]", "[]", "[]", 0,0,0,0,0,0,0);
+
+-- mysql --host=35.238.175.158 --user=root --password
+-- CREATE USER 'myusercloud'@'IP' IDENTIFIED BY '2412';
+-- GRANT ALL PRIVILEGES ON mysqlsopes1.* TO 'myusercloud'@'IP';
+
+-- ALTER USER 'myusercloud'@'35.238.175.158' IDENTIFIED BY '24122001.Ace';
+-- mysql --host=35.238.175.158 --user=myusercloud --password
+
+-- SHOW GRANTS FOR 'myusercloud'@'IP';
