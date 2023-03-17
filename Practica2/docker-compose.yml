@@ -25,3 +25,8 @@ services:
 networks:
   app_work:
     driver: bridge
+
+# docker login
+# docker tag mi-imagen mi-usuario/mi-repo
+# docker tag api_practica2_202000194 alvarosp24/api_practica2_202000194
+# docker push mi-usuario/mi-repo
