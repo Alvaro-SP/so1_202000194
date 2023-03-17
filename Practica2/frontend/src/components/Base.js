@@ -50,9 +50,25 @@ const Base = () => {
             .then(res =>
                 {
                     setData(JSON.parse(res.data.cpu_process))
-                    setListCPU(JSON.parse(res.data.cpu_json))
+                    // Dividir cada elemento entre 100
+                    const cpu_json = JSON.parse(res.data.cpu_json);
+                    for (let i = 0; i < cpu_json.length; i++) {
+                        cpu_json[i] = cpu_json[i] / 1000;
+                    }
+                    setListCPU(cpu_json)
                     console.log(JSON.parse(res.data.cpu_process))
-                    setListRAM(JSON.parse(res.data.ram_json))
+                    // Obtener la lista ram_json
+                    const ram_json = JSON.parse(res.data.ram_json);
+
+                    // Dividir cada elemento entre 100
+                    for (let i = 0; i < ram_json.length; i++) {
+                    ram_json[i] = ram_json[i]/100 ;
+                    }
+
+                    // Establecer la lista actualizada en setListRAM
+                    console.log(ram_json)
+                    setListRAM(ram_json);
+
                     // console.log(res.data)
                     setCPUINT(res.data.percent_cpu/1000)
                     setRAMINT(res.data.percent_ram/100)
@@ -87,8 +103,8 @@ const Base = () => {
             
             <div align="center">
                 <Reports
-                Crr_Arr1={listCPU}
-                Crr_Arr2={listRAM}
+                Crr_Arr1={listRAM}
+                Crr_Arr2={ listCPU}
                 option={option}
                 handleClick0={handleClick0}
                 />

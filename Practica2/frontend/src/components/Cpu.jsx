@@ -4,7 +4,7 @@ import Sketch from "react-p5";
 const Cpu = ({ Crr_Arr }) => {
     var array = Crr_Arr
 
-    const max = Math.floor(Math.max(...array)) + 1;
+    const max = 100;
     const avg = Math.floor(array.reduce((a, b) => a + b, 0) / array.length);
     //console.log(array,"length",array.length,"max:",max)
 
