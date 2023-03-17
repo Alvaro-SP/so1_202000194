@@ -27,6 +27,7 @@ networks:
     driver: bridge
 
 # docker login
-# docker tag mi-imagen mi-usuario/mi-repo
-# docker tag api_practica2_202000194 alvarosp24/api_practica2_202000194
-# docker push mi-usuario/mi-repo
+# docker tag alvarosp24/frontend_practica2_202000194 alvarosp24/frontend_practica2_202000194
+# docker tag alvarosp24/api_practica2_202000194 alvarosp24/api_practica2_202000194
+# docker push alvarosp24/api_practica2_202000194
+# docker push alvarosp24/frontend_practica2_202000194

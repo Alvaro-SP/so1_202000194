@@ -16,3 +16,7 @@ VOLUME /proc:/proc
 CMD ["./main"]
 # --------------------- EXECUTED COMMANDS ---------------------
 # docker build -t practica2_backend .
+# docker login
+# ----docker tag mi-imagen mi-usuario/mi-repo
+# docker tag practica2_backend alvarosp24/practica2_backend
+# docker push alvarosp24/practica2_backend
