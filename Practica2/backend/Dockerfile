@@ -14,5 +14,5 @@ RUN go build -o main
 # EXPOSE 8080
 VOLUME /proc:/proc
 CMD ["./main"]
-
+# --------------------- EXECUTED COMMANDS ---------------------
 # docker build -t practica2-backend .
