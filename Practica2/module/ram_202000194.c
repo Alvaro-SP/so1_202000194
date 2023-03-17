@@ -45,14 +45,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     unsigned long long memoria_usada = memoria_total - (unsigned long long)si.freeram * (unsigned long long)si.mem_unit;
 
     seq_printf(archivo, "{\n");
-    printk(KERN_ERR "Memoria total: %llu mB\n", memoria_total /(1000000));
-    printk(KERN_ERR "Memoria libre: %llu KB\n", 
-    si.freeram * (unsigned long long)si.mem_unit /(1000000));
-    printk(KERN_ERR "Buffered: %llu KB\n", 
-    (si.bufferram* (unsigned long long)si.mem_unit));
-    printk(KERN_ERR "Memoria en uso: %llu KB\n", memoria_usada /(1000000));
+    // printk(KERN_ERR "Memoria total: %llu mB\n", memoria_total /(1000000));
+    // printk(KERN_ERR "Memoria libre: %llu KB\n", 
+    // si.freeram * (unsigned long long)si.mem_unit /(1000000));
+    // printk(KERN_ERR "Buffered: %llu KB\n", 
+    // (si.bufferram* (unsigned long long)si.mem_unit));
+    // printk(KERN_ERR "Memoria en uso: %llu KB\n", memoria_usada /(1000000));
     seq_printf(archivo, "\"Porcentaje\":%lld \n",
-    (((memoria_total)-(si.freeram * (unsigned long long)si.mem_unit) - (si.bufferram* (unsigned long long)si.mem_unit)- (si.sharedram *(unsigned long long)si.mem_unit))*100)/(memoria_total));
+    (((memoria_total)-(si.freeram * (unsigned long long)si.mem_unit) - (si.bufferram* (unsigned long long)si.mem_unit)- (si.sharedram *(unsigned long long)si.mem_unit))*10000)/(memoria_total));
 
     seq_printf(archivo, "}\n");
     return 0;

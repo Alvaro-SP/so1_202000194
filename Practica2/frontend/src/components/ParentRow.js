@@ -23,7 +23,7 @@ const ParentRow = ({ pid, nombre, usuario, estado, ram, children, onExpand }) =>
                 <td>{nombre}</td>
                 <td>{usuario}</td>
                 <td>{estado}</td>
-                <td>{ram}</td>
+                <td>{ram/1000} %</td>
             </tr>
             {isExpanded && children}
         </>

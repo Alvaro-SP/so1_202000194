@@ -10,7 +10,7 @@ const ChildRow = ({ pid, nombre, usuario, estado, ram }) => (
         <td>{nombre}</td>
         <td>{usuario}</td>
         <td>{estado}</td>
-        <td>{ram}%</td>
+        <td>{ram/1000}%</td>
     </tr>
 );
 export default ChildRow;

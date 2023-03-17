@@ -45,6 +45,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     struct file *file;
     struct file *file2;
     char *filename = "/proc/stat";
+    char *strstate=""; // variable para guardar el estado del proceso
     char *filename2 = "/CPUANTERIOR";
     char buffer[256];
     int len;
@@ -82,9 +83,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // printk(KERN_INFO "\n %s \n",buffer);
 
     sscanf(buffer, "cpu %lu %lu %lu %lu %lu %lu %lu", &userx, &nice, &system, &idle, &iowait, &irq, &softirq);
-    
 
-    
     // !------------------------ SE ABRE ARCHIVO ACTUAL --------------------------
     // file = filp_open(filename, O_RDONLY, 0);
     // if (IS_ERR(file)) {
@@ -138,42 +137,18 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // delta_idle_time = idle2 - idle;
     // cpu_usage = ((delta_total_time - delta_idle_time) * 100) / delta_total_time;
 
-    cpu_usage = (idle * 100) / total_time1;
-    cpu_usage = 100 - cpu_usage;
+    cpu_usage = (idle * 100000) / total_time1;
+    cpu_usage = 100000 - cpu_usage;
     /* Print the CPU usage */
-    printk(KERN_INFO "CPU userx: %lu \n", userx);
-    printk(KERN_INFO "CPU nice: %lu \n", nice);
-    printk(KERN_INFO "CPU system: %lu \n", system);
-    printk(KERN_INFO "CPU idle: %lu \n", idle);
-    printk(KERN_INFO "CPU iowait: %lu \n", iowait);
-    printk(KERN_INFO "CPU irq: %lu \n", irq);
-    printk(KERN_INFO "CPU softirq: %lu \n", softirq);
+    // printk(KERN_INFO "CPU userx: %lu \n", userx);
+    // printk(KERN_INFO "CPU nice: %lu \n", nice);
+    // printk(KERN_INFO "CPU system: %lu \n", system);
+    // printk(KERN_INFO "CPU idle: %lu \n", idle);
+    // printk(KERN_INFO "CPU iowait: %lu \n", iowait);
+    // printk(KERN_INFO "CPU irq: %lu \n", irq);
+    // printk(KERN_INFO "CPU softirq: %lu \n", softirq);
 
-    printk(KERN_INFO "CPU cpu_usage: %lu \n", cpu_usage);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // printk(KERN_INFO "CPU cpu_usage: %lu \n", cpu_usage);
 
     // unsigned long long total_cpu_time = jiffies_to_nsecs(jiffies);
     // unsigned long long process_cpu_time = 0;
@@ -181,22 +156,14 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     // unsigned int cpu_percentage=0;
     // unsigned long long current_cpu_time = 0;
 
-    printk(KERN_INFO "\nProcesos en ejecución:\n");
-    // for_each_process(task) {
-        // process_cpu_time += task->utime + task->stime;
-        // children = &(task->children);
-        // list_for_each_entry(task_hijo, children, sibling) {
-        //     printk(KERN_CONT " - -  %d", task_hijo->pid);
-        // }
-        // printk(KERN_CONT "\n");
-    // }
+    // printk(KERN_INFO "\nProcesos en ejecución:\n");
 
     si_meminfo(&info);
 
     // total_mem = (info.totalram * info.mem_unit) >> 10;  // ! memoria total en MB
     // printk(KERN_INFO "Total memory: %lu mB\n", total_mem/1000);
-    memoria_total = (info.totalram * info.mem_unit);
-    printk(KERN_INFO "Total memory: %lu MB\n", (memoria_total/1000000));
+    memoria_total = (info.totalram * info.mem_unit) >> 10;
+    // printk(KERN_INFO "Total memory: %lu MB\n", (memoria_total/1000000));
     seq_printf(archivo, "{\n");
     seq_printf(archivo, "\"cpu_usage\":");   //* "cpu_usage": 25.35,
     seq_printf(archivo, "%lu , \n", cpu_usage);
@@ -210,48 +177,56 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         //! 8 : detenido
         //! 1 o 1026 : suspendido
         if(task->mm) {
-            memproc = (get_mm_rss(task->mm)<<PAGE_SHIFT)/(1024*1024);
+            memproc = (get_mm_rss(task->mm)<<(PAGE_SHIFT - 10));
             // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
-            mem_usage = (memproc*10000 / (long)(memoria_total/1000000));      //! PORCENTAJE CON 2 DECIMALES PARSEAR EN FRONT
+            mem_usage = ((memproc*100 )/ (memoria_total >> 10));      //! PORCENTAJE CON 2 DECIMALES PARSEAR EN FRONT
             // printk(KERN_INFO "Porcentaje de memoria de %s: %lu %%\n", task->comm,mem_usage);
 
         }
         if(task->__state == 0 || task->__state == 1026|| task->__state == 2){
             ejecucion++;
+            strstate = "ejecucion";
         }else if(task->__state == 4){
             zombie++;
+            strstate = "zombie";
         }else if(task->__state == 8 || task->__state == 8193){
             detenido++;
+            strstate = "detenido";
         }else if(task->__state == 1 || task->__state == 1026){\
             suspendido++;
+            strstate = "suspendido";
         }
         totales++;
         /* Get the passwd structure for the UID */
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
-        seq_printf(archivo, "\"%d_%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%d\", \"ram\": %lu, \n\"procesoshijos\": [",
+        seq_printf(archivo, "\"%d_%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
             indext,
             task->comm,
             task->pid,
             task->comm,
             task->cred->uid,
-            task->__state
+            strstate
             , mem_usage);
         indext++;
         task_lock(task);
         children = &(task->children);
         list_for_each_entry(task_hijo, children, sibling) {
             if(task_hijo->mm) {
-                memproc2 = (get_mm_rss(task_hijo->mm)<<PAGE_SHIFT)/(1024*1024); // ! memoria de cada proceso hijo
-                mem_usage = (memproc2*10000 / (long)(memoria_total/1000000));
+                // memproc2 = (get_mm_rss(task_hijo->mm)<<PAGE_SHIFT)/(1024*1024); // ! memoria de cada proceso hijo
+                // mem_usage = (memproc2*10000 / (long)(memoria_total/1000000));
+
+                memproc = (get_mm_rss(task_hijo->mm)<<(PAGE_SHIFT - 10));
+            // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
+                mem_usage = ((memproc*100 )/ (memoria_total >> 10));  
             }
             /* Get the passwd structure for the UID */
             // pw = getpwuid(task_hijo->cred->uid.val);
-            seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%d\", \"ram\": %lu}",
+            seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu}",
                 task_hijo->pid,
                 task_hijo->comm,
                 task_hijo->real_cred->uid,
-                task_hijo->__state,
+                strstate,
                 mem_usage);
 
             if (task_hijo->sibling.next != &task->children) {
