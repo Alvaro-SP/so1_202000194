@@ -15,4 +15,4 @@ RUN go build -o main
 VOLUME /proc:/proc
 CMD ["./main"]
 # --------------------- EXECUTED COMMANDS ---------------------
-# docker build -t practica2-backend .
+# docker build -t practica2_backend .
