@@ -11,6 +11,8 @@ RUN go get -u github.com/gorilla/mux
 # Import the MySQL driver
 RUN go get -u github.com/go-sql-driver/mysql
 RUN go build -o main
-EXPOSE 8080
+# EXPOSE 8080
 VOLUME /proc:/proc
 CMD ["./main"]
+
+# docker build -t practica2-backend .
