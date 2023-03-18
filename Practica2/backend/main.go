@@ -131,13 +131,12 @@ func main() {
                 // Obtener usuario a partir de PID
                 usernamestr := fmt.Sprintf("%v", proceso["usuario"])
                 //  processUser, err := user.LookupId(usernamestr)
-                cmd := exec.Command("getent", "passwd", usernamestr)
-                output, err := cmd.Output()
-                if err != nil {
-                        panic(err)
-                }
-                fields := strings.Split(string(output), ":")
-                usernameNEW := fields[0]
+				cmd := exec.Command("bash", "-c", "echo $(id -un "+usernamestr+")")
+				output, err := cmd.Output()
+				if err != nil {
+					panic(err)
+				}
+				usernameNEW := strings.TrimSpace(string(output))
                 proceso["usuario"] = usernameNEW
                 // proceso["usuario"] = processUser.Username
 
@@ -146,13 +145,12 @@ func main() {
                         for _, procesoHijo := range procesosHijos {
                                 if procesoHijoMap, ok := procesoHijo.(map[string]interface{}); ok {
                                         usernamestr = fmt.Sprintf("%v", procesoHijoMap["usuario"])
-                                        cmd := exec.Command("getent", "passwd", usernamestr)
-                                        output, err := cmd.Output()
-                                        if err != nil {
-                                                panic(err)
-                                        }
-                                        fields := strings.Split(string(output), ":")
-                                        usernameNEW := fields[0]
+                                        cmd := exec.Command("bash", "-c", "echo $(id -un "+usernamestr+")")
+										output, err := cmd.Output()
+										if err != nil {
+											panic(err)
+										}
+										usernameNEW := strings.TrimSpace(string(output))
                                         procesoHijoMap["usuario"] = usernameNEW
                                 }
                         }
