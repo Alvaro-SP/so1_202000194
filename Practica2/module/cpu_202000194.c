@@ -54,11 +54,11 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     bool first = true; // solo para el primer proceso la coma
     long memoria_total = 0;
     // variables para guardar cantidad de procesos
-    long int ejecucion;
-    long int suspendido;
-    long int detenido;
-    long int zombie;
-    long int totales;
+    long int ejecucion= 0;
+    long int suspendido= 0;
+    long int detenido= 0;
+    long int zombie= 0;
+    long int totales= 0;
 
     // !------------------------ SE ABRE ARCHIVO GUARDADO --------------------------
     file = filp_open(filename, O_RDONLY, 0);
