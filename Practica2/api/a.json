@@ -1,509 +1,3559 @@
 {
-    "cpu_usage":32 , 
-    "data": {"0_systemd": {"pid": 1, "nombre": "systemd", "usuario": "0", "estado": "1", "ram": 11, 
-    "procesoshijos": [{"pid": 346, "nombre": "systemd-journal", "usuario": "0", "estado": "0", "ram": 20},{"pid": 382, "nombre": "systemd-udevd", "usuario": "0", "estado": "1", "ram": 7},{"pid": 440, "nombre": "haveged", "usuario": "0", "estado": "1", "ram": 6},{"pid": 441, "nombre": "systemd-timesyn", "usuario": "996", "estado": "1", "ram": 3},{"pid": 572, "nombre": "accounts-daemon", "usuario": "0", "estado": "1", "ram": 9},{"pid": 580, "nombre": "cron", "usuario": "0", "estado": "8193", "ram": 2},{"pid": 581, "nombre": "dbus-daemon", "usuario": "106", "estado": "1", "ram": 6},{"pid": 588, "nombre": "polkitd", "usuario": "993", "estado": "1", "ram": 12},{"pid": 590, "nombre": "smartd", "usuario": "0", "estado": "8193", "ram": 6},{"pid": 592, "nombre": "systemd-logind", "usuario": "0", "estado": "1", "ram": 4},{"pid": 675, "nombre": "NetworkManager", "usuario": "0", "estado": "1", "ram": 14},{"pid": 685, "nombre": "ModemManager", "usuario": "0", "estado": "1", "ram": 8},{"pid": 777, "nombre": "containerd", "usuario": "0", "estado": "8193", "ram": 27},{"pid": 875, "nombre": "gdm3", "usuario": "0", "estado": "1", "ram": 7},{"pid": 895, "nombre": "mariadbd", "usuario": "100", "estado": "1", "ram": 150},{"pid": 947, "nombre": "wpa_supplicant", "usuario": "0", "estado": "1", "ram": 4},{"pid": 979, "nombre": "rtkit-daemon", "usuario": "131", "estado": "1", "ram": 1},{"pid": 1124, "nombre": "udisksd", "usuario": "0", "estado": "1", "ram": 13},{"pid": 1192, "nombre": "upowerd", "usuario": "0", "estado": "1", "ram": 8},{"pid": 1256, "nombre": "power-profiles-", "usuario": "0", "estado": "1", "ram": 9},{"pid": 1279, "nombre": "colord", "usuario": "132", "estado": "1", "ram": 13},{"pid": 1572, "nombre": "dockerd", "usuario": "0", "estado": "8193", "ram": 35},{"pid": 2037, "nombre": "systemd", "usuario": "1000", "estado": "1", "ram": 9}]
-    },"1_kthreadd": {"pid": 2, "nombre": "kthreadd", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": [{"pid": 3, "nombre": "rcu_gp", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 4, "nombre": "rcu_par_gp", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 5, "nombre": "slub_flushwq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 6, "nombre": "netns", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 8, "nombre": "kworker/0:0H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 10, "nombre": "mm_percpu_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 11, "nombre": "rcu_tasks_kthre", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 12, "nombre": "rcu_tasks_rude_", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 13, "nombre": "rcu_tasks_trace", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 14, "nombre": "ksoftirqd/0", "usuario": "0", "estado": "0", "ram": 9},{"pid": 15, "nombre": "rcu_preempt", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 16, "nombre": "migration/0", "usuario": "0", "estado": "1", "ram": 9},{"pid": 18, "nombre": "cpuhp/0", "usuario": "0", "estado": "1", "ram": 9},{"pid": 19, "nombre": "cpuhp/1", "usuario": "0", "estado": "1", "ram": 9},{"pid": 20, "nombre": "migration/1", "usuario": "0", "estado": "1", "ram": 9},{"pid": 21, "nombre": "ksoftirqd/1", "usuario": "0", "estado": "1", "ram": 9},{"pid": 23, "nombre": "kworker/1:0H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 24, "nombre": "cpuhp/2", "usuario": "0", "estado": "1", "ram": 9},{"pid": 25, "nombre": "migration/2", "usuario": "0", "estado": "1", "ram": 9},{"pid": 26, "nombre": "ksoftirqd/2", "usuario": "0", "estado": "1", "ram": 9},{"pid": 28, "nombre": "kworker/2:0H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 29, "nombre": "cpuhp/3", "usuario": "0", "estado": "1", "ram": 9},{"pid": 30, "nombre": "migration/3", "usuario": "0", "estado": "1", "ram": 9},{"pid": 31, "nombre": "ksoftirqd/3", "usuario": "0", "estado": "1", "ram": 9},{"pid": 33, "nombre": "kworker/3:0H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 38, "nombre": "kdevtmpfs", "usuario": "0", "estado": "1", "ram": 9},{"pid": 39, "nombre": "inet_frag_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 40, "nombre": "kauditd", "usuario": "0", "estado": "8193", "ram": 9},{"pid": 41, "nombre": "khungtaskd", "usuario": "0", "estado": "1", "ram": 9},{"pid": 42, "nombre": "oom_reaper", "usuario": "0", "estado": "8193", "ram": 9},{"pid": 43, "nombre": "writeback", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 44, "nombre": "kcompactd0", "usuario": "0", "estado": "8193", "ram": 9},{"pid": 45, "nombre": "ksmd", "usuario": "0", "estado": "8193", "ram": 9},{"pid": 47, "nombre": "khugepaged", "usuario": "0", "estado": "8193", "ram": 9},{"pid": 48, "nombre": "kintegrityd", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 49, "nombre": "kblockd", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 50, "nombre": "blkcg_punt_bio", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 52, "nombre": "tpm_dev_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 53, "nombre": "edac-poller", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 54, "nombre": "devfreq_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 57, "nombre": "kworker/0:1H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 58, "nombre": "kswapd0", "usuario": "0", "estado": "1", "ram": 9},{"pid": 64, "nombre": "kthrotld", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 66, "nombre": "irq/122-aerdrv", "usuario": "0", "estado": "1", "ram": 9},{"pid": 67, "nombre": "irq/123-aerdrv", "usuario": "0", "estado": "1", "ram": 9},{"pid": 68, "nombre": "acpi_thermal_pm", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 69, "nombre": "xenbus_probe", "usuario": "0", "estado": "1", "ram": 9},{"pid": 71, "nombre": "mld", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 72, "nombre": "kworker/1:1H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 73, "nombre": "ipv6_addrconf", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 78, "nombre": "kstrp", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 83, "nombre": "zswap-shrink", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 141, "nombre": "kworker/3:1H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 142, "nombre": "kworker/2:1H", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 160, "nombre": "cryptd", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 174, "nombre": "irq/51-DELL0792", "usuario": "0", "estado": "1", "ram": 9},{"pid": 182, "nombre": "ata_sff", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 226, "nombre": "scsi_eh_0", "usuario": "0", "estado": "1", "ram": 9},{"pid": 227, "nombre": "scsi_tmf_0", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 228, "nombre": "scsi_eh_1", "usuario": "0", "estado": "1", "ram": 9},{"pid": 229, "nombre": "scsi_tmf_1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 243, "nombre": "irq/127-i2c_hid", "usuario": "0", "estado": "1", "ram": 9},{"pid": 246, "nombre": "card0-crtc0", "usuario": "0", "estado": "1", "ram": 9},{"pid": 247, "nombre": "card0-crtc1", "usuario": "0", "estado": "1", "ram": 9},{"pid": 248, "nombre": "card0-crtc2", "usuario": "0", "estado": "1", "ram": 9},{"pid": 293, "nombre": "jbd2/sda6-8", "usuario": "0", "estado": "1", "ram": 9},{"pid": 294, "nombre": "ext4-rsv-conver", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 456, "nombre": "rpciod", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 458, "nombre": "xprtiod", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 502, "nombre": "watchdogd", "usuario": "0", "estado": "1", "ram": 9},{"pid": 539, "nombre": "cfg80211", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 576, "nombre": "kmemstick", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 703, "nombre": "ath10k_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 704, "nombre": "ath10k_aux_wq", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 705, "nombre": "ath10k_tx_compl", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 5292, "nombre": "irq/134-mei_me", "usuario": "0", "estado": "1", "ram": 9},{"pid": 19549, "nombre": "kworker/u9:1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 20155, "nombre": "kworker/u9:0", "usuario": "0", "estado": "2", "ram": 9},{"pid": 23049, "nombre": "kworker/0:0", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 24095, "nombre": "kworker/u8:2", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 24424, "nombre": "kworker/u8:0", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 24789, "nombre": "kworker/u8:1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 27601, "nombre": "kworker/u9:3", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 27960, "nombre": "kworker/2:0", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 28143, "nombre": "kworker/0:1", "usuario": "0", "estado": "0", "ram": 9},{"pid": 28209, "nombre": "kworker/1:0", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 28646, "nombre": "kworker/2:1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 28647, "nombre": "kworker/3:1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 28952, "nombre": "kworker/3:2", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 28953, "nombre": "kworker/1:1", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 29068, "nombre": "kworker/2:2", "usuario": "0", "estado": "1026", "ram": 9},{"pid": 29224, "nombre": "kworker/u8:3", "usuario": "0", "estado": "1026", "ram": 9}]
-    },"2_rcu_gp": {"pid": 3, "nombre": "rcu_gp", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"3_rcu_par_gp": {"pid": 4, "nombre": "rcu_par_gp", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"4_slub_flushwq": {"pid": 5, "nombre": "slub_flushwq", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"5_netns": {"pid": 6, "nombre": "netns", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"6_kworker/0:0H": {"pid": 8, "nombre": "kworker/0:0H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"7_mm_percpu_wq": {"pid": 10, "nombre": "mm_percpu_wq", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"8_rcu_tasks_kthre": {"pid": 11, "nombre": "rcu_tasks_kthre", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"9_rcu_tasks_rude_": {"pid": 12, "nombre": "rcu_tasks_rude_", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"10_rcu_tasks_trace": {"pid": 13, "nombre": "rcu_tasks_trace", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"11_ksoftirqd/0": {"pid": 14, "nombre": "ksoftirqd/0", "usuario": "0", "estado": "0", "ram": 9, 
-    "procesoshijos": []
-    },"12_rcu_preempt": {"pid": 15, "nombre": "rcu_preempt", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"13_migration/0": {"pid": 16, "nombre": "migration/0", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"14_cpuhp/0": {"pid": 18, "nombre": "cpuhp/0", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"15_cpuhp/1": {"pid": 19, "nombre": "cpuhp/1", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"16_migration/1": {"pid": 20, "nombre": "migration/1", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"17_ksoftirqd/1": {"pid": 21, "nombre": "ksoftirqd/1", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"18_kworker/1:0H": {"pid": 23, "nombre": "kworker/1:0H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"19_cpuhp/2": {"pid": 24, "nombre": "cpuhp/2", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"20_migration/2": {"pid": 25, "nombre": "migration/2", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"21_ksoftirqd/2": {"pid": 26, "nombre": "ksoftirqd/2", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"22_kworker/2:0H": {"pid": 28, "nombre": "kworker/2:0H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"23_cpuhp/3": {"pid": 29, "nombre": "cpuhp/3", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"24_migration/3": {"pid": 30, "nombre": "migration/3", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"25_ksoftirqd/3": {"pid": 31, "nombre": "ksoftirqd/3", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"26_kworker/3:0H": {"pid": 33, "nombre": "kworker/3:0H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"27_kdevtmpfs": {"pid": 38, "nombre": "kdevtmpfs", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"28_inet_frag_wq": {"pid": 39, "nombre": "inet_frag_wq", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"29_kauditd": {"pid": 40, "nombre": "kauditd", "usuario": "0", "estado": "8193", "ram": 9, 
-    "procesoshijos": []
-    },"30_khungtaskd": {"pid": 41, "nombre": "khungtaskd", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"31_oom_reaper": {"pid": 42, "nombre": "oom_reaper", "usuario": "0", "estado": "8193", "ram": 9, 
-    "procesoshijos": []
-    },"32_writeback": {"pid": 43, "nombre": "writeback", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"33_kcompactd0": {"pid": 44, "nombre": "kcompactd0", "usuario": "0", "estado": "8193", "ram": 9, 
-    "procesoshijos": []
-    },"34_ksmd": {"pid": 45, "nombre": "ksmd", "usuario": "0", "estado": "8193", "ram": 9, 
-    "procesoshijos": []
-    },"35_khugepaged": {"pid": 47, "nombre": "khugepaged", "usuario": "0", "estado": "8193", "ram": 9, 
-    "procesoshijos": []
-    },"36_kintegrityd": {"pid": 48, "nombre": "kintegrityd", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"37_kblockd": {"pid": 49, "nombre": "kblockd", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"38_blkcg_punt_bio": {"pid": 50, "nombre": "blkcg_punt_bio", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"39_tpm_dev_wq": {"pid": 52, "nombre": "tpm_dev_wq", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"40_edac-poller": {"pid": 53, "nombre": "edac-poller", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"41_devfreq_wq": {"pid": 54, "nombre": "devfreq_wq", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"42_kworker/0:1H": {"pid": 57, "nombre": "kworker/0:1H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"43_kswapd0": {"pid": 58, "nombre": "kswapd0", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"44_kthrotld": {"pid": 64, "nombre": "kthrotld", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"45_irq/122-aerdrv": {"pid": 66, "nombre": "irq/122-aerdrv", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"46_irq/123-aerdrv": {"pid": 67, "nombre": "irq/123-aerdrv", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"47_acpi_thermal_pm": {"pid": 68, "nombre": "acpi_thermal_pm", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"48_xenbus_probe": {"pid": 69, "nombre": "xenbus_probe", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"49_mld": {"pid": 71, "nombre": "mld", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"50_kworker/1:1H": {"pid": 72, "nombre": "kworker/1:1H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"51_ipv6_addrconf": {"pid": 73, "nombre": "ipv6_addrconf", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"52_kstrp": {"pid": 78, "nombre": "kstrp", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"53_zswap-shrink": {"pid": 83, "nombre": "zswap-shrink", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"54_kworker/3:1H": {"pid": 141, "nombre": "kworker/3:1H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"55_kworker/2:1H": {"pid": 142, "nombre": "kworker/2:1H", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"56_cryptd": {"pid": 160, "nombre": "cryptd", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"57_irq/51-DELL0792": {"pid": 174, "nombre": "irq/51-DELL0792", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"58_ata_sff": {"pid": 182, "nombre": "ata_sff", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"59_scsi_eh_0": {"pid": 226, "nombre": "scsi_eh_0", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"60_scsi_tmf_0": {"pid": 227, "nombre": "scsi_tmf_0", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"61_scsi_eh_1": {"pid": 228, "nombre": "scsi_eh_1", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"62_scsi_tmf_1": {"pid": 229, "nombre": "scsi_tmf_1", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"63_irq/127-i2c_hid": {"pid": 243, "nombre": "irq/127-i2c_hid", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"64_card0-crtc0": {"pid": 246, "nombre": "card0-crtc0", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"65_card0-crtc1": {"pid": 247, "nombre": "card0-crtc1", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"66_card0-crtc2": {"pid": 248, "nombre": "card0-crtc2", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"67_jbd2/sda6-8": {"pid": 293, "nombre": "jbd2/sda6-8", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"68_ext4-rsv-conver": {"pid": 294, "nombre": "ext4-rsv-conver", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"69_systemd-journal": {"pid": 346, "nombre": "systemd-journal", "usuario": "0", "estado": "0", "ram": 20, 
-    "procesoshijos": []
-    },"70_systemd-udevd": {"pid": 382, "nombre": "systemd-udevd", "usuario": "0", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"71_haveged": {"pid": 440, "nombre": "haveged", "usuario": "0", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"72_systemd-timesyn": {"pid": 441, "nombre": "systemd-timesyn", "usuario": "996", "estado": "1", "ram": 3, 
-    "procesoshijos": []
-    },"73_rpciod": {"pid": 456, "nombre": "rpciod", "usuario": "0", "estado": "1026", "ram": 3, 
-    "procesoshijos": []
-    },"74_xprtiod": {"pid": 458, "nombre": "xprtiod", "usuario": "0", "estado": "1026", "ram": 3, 
-    "procesoshijos": []
-    },"75_watchdogd": {"pid": 502, "nombre": "watchdogd", "usuario": "0", "estado": "1", "ram": 3, 
-    "procesoshijos": []
-    },"76_cfg80211": {"pid": 539, "nombre": "cfg80211", "usuario": "0", "estado": "1026", "ram": 3, 
-    "procesoshijos": []
-    },"77_accounts-daemon": {"pid": 572, "nombre": "accounts-daemon", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"78_kmemstick": {"pid": 576, "nombre": "kmemstick", "usuario": "0", "estado": "1026", "ram": 9, 
-    "procesoshijos": []
-    },"79_cron": {"pid": 580, "nombre": "cron", "usuario": "0", "estado": "8193", "ram": 2, 
-    "procesoshijos": []
-    },"80_dbus-daemon": {"pid": 581, "nombre": "dbus-daemon", "usuario": "106", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"81_polkitd": {"pid": 588, "nombre": "polkitd", "usuario": "993", "estado": "1", "ram": 12, 
-    "procesoshijos": []
-    },"82_smartd": {"pid": 590, "nombre": "smartd", "usuario": "0", "estado": "8193", "ram": 6, 
-    "procesoshijos": []
-    },"83_systemd-logind": {"pid": 592, "nombre": "systemd-logind", "usuario": "0", "estado": "1", "ram": 4, 
-    "procesoshijos": []
-    },"84_NetworkManager": {"pid": 675, "nombre": "NetworkManager", "usuario": "0", "estado": "1", "ram": 14, 
-    "procesoshijos": []
-    },"85_ModemManager": {"pid": 685, "nombre": "ModemManager", "usuario": "0", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"86_ath10k_wq": {"pid": 703, "nombre": "ath10k_wq", "usuario": "0", "estado": "1026", "ram": 8, 
-    "procesoshijos": []
-    },"87_ath10k_aux_wq": {"pid": 704, "nombre": "ath10k_aux_wq", "usuario": "0", "estado": "1026", "ram": 8, 
-    "procesoshijos": []
-    },"88_ath10k_tx_compl": {"pid": 705, "nombre": "ath10k_tx_compl", "usuario": "0", "estado": "1026", "ram": 8, 
-    "procesoshijos": []
-    },"89_containerd": {"pid": 777, "nombre": "containerd", "usuario": "0", "estado": "8193", "ram": 27, 
-    "procesoshijos": []
-    },"90_gdm3": {"pid": 875, "nombre": "gdm3", "usuario": "0", "estado": "1", "ram": 7, 
-    "procesoshijos": [{"pid": 2024, "nombre": "gdm-session-wor", "usuario": "0", "estado": "1", "ram": 12}]
-    },"91_mariadbd": {"pid": 895, "nombre": "mariadbd", "usuario": "100", "estado": "1", "ram": 150, 
-    "procesoshijos": []
-    },"92_wpa_supplicant": {"pid": 947, "nombre": "wpa_supplicant", "usuario": "0", "estado": "1", "ram": 4, 
-    "procesoshijos": []
-    },"93_rtkit-daemon": {"pid": 979, "nombre": "rtkit-daemon", "usuario": "131", "estado": "1", "ram": 1, 
-    "procesoshijos": []
-    },"94_udisksd": {"pid": 1124, "nombre": "udisksd", "usuario": "0", "estado": "1", "ram": 13, 
-    "procesoshijos": []
-    },"95_upowerd": {"pid": 1192, "nombre": "upowerd", "usuario": "0", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"96_power-profiles-": {"pid": 1256, "nombre": "power-profiles-", "usuario": "0", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"97_colord": {"pid": 1279, "nombre": "colord", "usuario": "132", "estado": "1", "ram": 13, 
-    "procesoshijos": []
-    },"98_dockerd": {"pid": 1572, "nombre": "dockerd", "usuario": "0", "estado": "8193", "ram": 35, 
-    "procesoshijos": []
-    },"99_gdm-session-wor": {"pid": 2024, "nombre": "gdm-session-wor", "usuario": "0", "estado": "1", "ram": 12, 
-    "procesoshijos": [{"pid": 2142, "nombre": "gdm-x-session", "usuario": "1000", "estado": "1", "ram": 8}]
-    },"100_systemd": {"pid": 2037, "nombre": "systemd", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": [{"pid": 2038, "nombre": "(sd-pam)", "usuario": "1000", "estado": "8193", "ram": 3},{"pid": 2068, "nombre": "pipewire", "usuario": "1000", "estado": "1", "ram": 18},{"pid": 2072, "nombre": "wireplumber", "usuario": "1000", "estado": "1", "ram": 19},{"pid": 2075, "nombre": "pipewire-pulse", "usuario": "1000", "estado": "1", "ram": 108},{"pid": 2076, "nombre": "dbus-daemon", "usuario": "1000", "estado": "1", "ram": 6},{"pid": 2077, "nombre": "gnome-keyring-d", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 2085, "nombre": "gvfsd", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2091, "nombre": "gvfsd-fuse", "usuario": "1000", "estado": "8193", "ram": 8},{"pid": 2134, "nombre": "tracker-miner-f", "usuario": "1000", "estado": "1", "ram": 27},{"pid": 2154, "nombre": "gvfs-udisks2-vo", "usuario": "1000", "estado": "1", "ram": 12},{"pid": 2159, "nombre": "gvfs-goa-volume", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2170, "nombre": "goa-identity-se", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2163, "nombre": "goa-daemon", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2176, "nombre": "gvfs-afc-volume", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2181, "nombre": "gvfs-mtp-volume", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2185, "nombre": "gvfs-gphoto2-vo", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2190, "nombre": "xdg-permission-", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2290, "nombre": "at-spi-bus-laun", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 2306, "nombre": "gcr-ssh-agent", "usuario": "1000", "estado": "1", "ram": 4},{"pid": 2307, "nombre": "gnome-session-c", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2316, "nombre": "gnome-session-b", "usuario": "1000", "estado": "1", "ram": 14},{"pid": 2339, "nombre": "dconf-service", "usuario": "1000", "estado": "1", "ram": 6},{"pid": 2349, "nombre": "gnome-shell", "usuario": "1000", "estado": "0", "ram": 324},{"pid": 2389, "nombre": "evolution-sourc", "usuario": "1000", "estado": "1", "ram": 25},{"pid": 2421, "nombre": "evolution-calen", "usuario": "1000", "estado": "1", "ram": 19},{"pid": 2383, "nombre": "gnome-shell-cal", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2441, "nombre": "evolution-addre", "usuario": "1000", "estado": "1", "ram": 17},{"pid": 2452, "nombre": "Thunar", "usuario": "1000", "estado": "1", "ram": 50},{"pid": 2463, "nombre": "at-spi2-registr", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 2472, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 23},{"pid": 2490, "nombre": "sh", "usuario": "1000", "estado": "1", "ram": 0},{"pid": 2492, "nombre": "gsd-a11y-settin", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2494, "nombre": "gsd-color", "usuario": "1000", "estado": "1", "ram": 17},{"pid": 2495, "nombre": "gsd-datetime", "usuario": "1000", "estado": "1", "ram": 13},{"pid": 2499, "nombre": "gsd-housekeepin", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2503, "nombre": "gsd-keyboard", "usuario": "1000", "estado": "1", "ram": 16},{"pid": 2510, "nombre": "gsd-media-keys", "usuario": "1000", "estado": "1", "ram": 20},{"pid": 2511, "nombre": "gsd-power", "usuario": "1000", "estado": "1", "ram": 22},{"pid": 2512, "nombre": "gsd-print-notif", "usuario": "1000", "estado": "1", "ram": 12},{"pid": 2514, "nombre": "gsd-rfkill", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 2515, "nombre": "gsd-screensaver", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2517, "nombre": "gsd-sharing", "usuario": "1000", "estado": "1", "ram": 12},{"pid": 2519, "nombre": "gsd-smartcard", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2520, "nombre": "gsd-sound", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 2521, "nombre": "gsd-usb-protect", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2522, "nombre": "gsd-wacom", "usuario": "1000", "estado": "1", "ram": 16},{"pid": 2523, "nombre": "gsd-xsettings", "usuario": "1000", "estado": "1", "ram": 18},{"pid": 2595, "nombre": "gsd-printer", "usuario": "1000", "estado": "1", "ram": 11},{"pid": 2576, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 20},{"pid": 2664, "nombre": "ibus-x11", "usuario": "1000", "estado": "1", "ram": 12},{"pid": 2667, "nombre": "ibus-portal", "usuario": "1000", "estado": "1", "ram": 6},{"pid": 2850, "nombre": "obexd", "usuario": "1000", "estado": "1", "ram": 4},{"pid": 2952, "nombre": "gvfsd-metadata", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 2987, "nombre": "xdg-desktop-por", "usuario": "1000", "estado": "1", "ram": 14},{"pid": 3001, "nombre": "xdg-document-po", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 3016, "nombre": "xdg-desktop-por", "usuario": "1000", "estado": "1", "ram": 18},{"pid": 3278, "nombre": "chrome_crashpad", "usuario": "1000", "estado": "1", "ram": 2},{"pid": 6304, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 20},{"pid": 6545, "nombre": "gnome-terminal-", "usuario": "1000", "estado": "1", "ram": 62},{"pid": 10807, "nombre": "nautilus", "usuario": "1000", "estado": "1", "ram": 120},{"pid": 12261, "nombre": "gnome-text-edit", "usuario": "1000", "estado": "1", "ram": 148},{"pid": 27048, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 13},{"pid": 27076, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 14}]
-    },"101_(sd-pam)": {"pid": 2038, "nombre": "(sd-pam)", "usuario": "1000", "estado": "8193", "ram": 3, 
-    "procesoshijos": []
-    },"102_pipewire": {"pid": 2068, "nombre": "pipewire", "usuario": "1000", "estado": "1", "ram": 18, 
-    "procesoshijos": []
-    },"103_wireplumber": {"pid": 2072, "nombre": "wireplumber", "usuario": "1000", "estado": "1", "ram": 19, 
-    "procesoshijos": []
-    },"104_pipewire-pulse": {"pid": 2075, "nombre": "pipewire-pulse", "usuario": "1000", "estado": "1", "ram": 108, 
-    "procesoshijos": []
-    },"105_dbus-daemon": {"pid": 2076, "nombre": "dbus-daemon", "usuario": "1000", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"106_gnome-keyring-d": {"pid": 2077, "nombre": "gnome-keyring-d", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"107_gvfsd": {"pid": 2085, "nombre": "gvfsd", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": [{"pid": 2930, "nombre": "gvfsd-trash", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 6897, "nombre": "gvfsd-network", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 6911, "nombre": "gvfsd-dnssd", "usuario": "1000", "estado": "1", "ram": 9},{"pid": 10847, "nombre": "gvfsd-recent", "usuario": "1000", "estado": "1", "ram": 11}]
-    },"108_gvfsd-fuse": {"pid": 2091, "nombre": "gvfsd-fuse", "usuario": "1000", "estado": "8193", "ram": 8, 
-    "procesoshijos": []
-    },"109_tracker-miner-f": {"pid": 2134, "nombre": "tracker-miner-f", "usuario": "1000", "estado": "1", "ram": 27, 
-    "procesoshijos": []
-    },"110_gdm-x-session": {"pid": 2142, "nombre": "gdm-x-session", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": [{"pid": 2145, "nombre": "Xorg", "usuario": "1000", "estado": "1", "ram": 99},{"pid": 2204, "nombre": "gnome-session-b", "usuario": "1000", "estado": "1", "ram": 12}]
-    },"111_Xorg": {"pid": 2145, "nombre": "Xorg", "usuario": "1000", "estado": "1", "ram": 99, 
-    "procesoshijos": []
-    },"112_gvfs-udisks2-vo": {"pid": 2154, "nombre": "gvfs-udisks2-vo", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": []
-    },"113_gvfs-goa-volume": {"pid": 2159, "nombre": "gvfs-goa-volume", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"114_goa-daemon": {"pid": 2163, "nombre": "goa-daemon", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"115_goa-identity-se": {"pid": 2170, "nombre": "goa-identity-se", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"116_gvfs-afc-volume": {"pid": 2176, "nombre": "gvfs-afc-volume", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"117_gvfs-mtp-volume": {"pid": 2181, "nombre": "gvfs-mtp-volume", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"118_gvfs-gphoto2-vo": {"pid": 2185, "nombre": "gvfs-gphoto2-vo", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"119_xdg-permission-": {"pid": 2190, "nombre": "xdg-permission-", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"120_gnome-session-b": {"pid": 2204, "nombre": "gnome-session-b", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": [{"pid": 2266, "nombre": "ssh-agent", "usuario": "1000", "estado": "1", "ram": 0}]
-    },"121_ssh-agent": {"pid": 2266, "nombre": "ssh-agent", "usuario": "1000", "estado": "1", "ram": 0, 
-    "procesoshijos": []
-    },"122_at-spi-bus-laun": {"pid": 2290, "nombre": "at-spi-bus-laun", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": [{"pid": 2296, "nombre": "dbus-daemon", "usuario": "1000", "estado": "1", "ram": 3}]
-    },"123_dbus-daemon": {"pid": 2296, "nombre": "dbus-daemon", "usuario": "1000", "estado": "1", "ram": 3, 
-    "procesoshijos": []
-    },"124_gcr-ssh-agent": {"pid": 2306, "nombre": "gcr-ssh-agent", "usuario": "1000", "estado": "1", "ram": 4, 
-    "procesoshijos": []
-    },"125_gnome-session-c": {"pid": 2307, "nombre": "gnome-session-c", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"126_gnome-session-b": {"pid": 2316, "nombre": "gnome-session-b", "usuario": "1000", "estado": "1", "ram": 14, 
-    "procesoshijos": [{"pid": 2500, "nombre": "evolution-alarm", "usuario": "1000", "estado": "1", "ram": 28},{"pid": 2516, "nombre": "gsd-disk-utilit", "usuario": "1000", "estado": "1", "ram": 6},{"pid": 2530, "nombre": "kdeconnectd", "usuario": "1000", "estado": "1", "ram": 27},{"pid": 2541, "nombre": "blueman-applet", "usuario": "1000", "estado": "1", "ram": 37}]
-    },"127_dconf-service": {"pid": 2339, "nombre": "dconf-service", "usuario": "1000", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"128_gnome-shell": {"pid": 2349, "nombre": "gnome-shell", "usuario": "1000", "estado": "0", "ram": 324, 
-    "procesoshijos": [{"pid": 3083, "nombre": "firefox-esr", "usuario": "1000", "estado": "1", "ram": 754},{"pid": 3226, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 115},{"pid": 24877, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 76},{"pid": 27025, "nombre": "xfce4-taskmanag", "usuario": "1000", "estado": "1", "ram": 61},{"pid": 27267, "nombre": "gnome-calculato", "usuario": "1000", "estado": "1", "ram": 185}]
-    },"129_gnome-shell-cal": {"pid": 2383, "nombre": "gnome-shell-cal", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"130_evolution-sourc": {"pid": 2389, "nombre": "evolution-sourc", "usuario": "1000", "estado": "1", "ram": 25, 
-    "procesoshijos": []
-    },"131_evolution-calen": {"pid": 2421, "nombre": "evolution-calen", "usuario": "1000", "estado": "1", "ram": 19, 
-    "procesoshijos": []
-    },"132_evolution-addre": {"pid": 2441, "nombre": "evolution-addre", "usuario": "1000", "estado": "1", "ram": 17, 
-    "procesoshijos": []
-    },"133_Thunar": {"pid": 2452, "nombre": "Thunar", "usuario": "1000", "estado": "1", "ram": 50, 
-    "procesoshijos": []
-    },"134_at-spi2-registr": {"pid": 2463, "nombre": "at-spi2-registr", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"135_gjs": {"pid": 2472, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 23, 
-    "procesoshijos": []
-    },"136_sh": {"pid": 2490, "nombre": "sh", "usuario": "1000", "estado": "1", "ram": 0, 
-    "procesoshijos": [{"pid": 2508, "nombre": "ibus-daemon", "usuario": "1000", "estado": "1", "ram": 12}]
-    },"137_gsd-a11y-settin": {"pid": 2492, "nombre": "gsd-a11y-settin", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"138_gsd-color": {"pid": 2494, "nombre": "gsd-color", "usuario": "1000", "estado": "1", "ram": 17, 
-    "procesoshijos": []
-    },"139_gsd-datetime": {"pid": 2495, "nombre": "gsd-datetime", "usuario": "1000", "estado": "1", "ram": 13, 
-    "procesoshijos": []
-    },"140_gsd-housekeepin": {"pid": 2499, "nombre": "gsd-housekeepin", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"141_evolution-alarm": {"pid": 2500, "nombre": "evolution-alarm", "usuario": "1000", "estado": "1", "ram": 28, 
-    "procesoshijos": []
-    },"142_gsd-keyboard": {"pid": 2503, "nombre": "gsd-keyboard", "usuario": "1000", "estado": "1", "ram": 16, 
-    "procesoshijos": []
-    },"143_ibus-daemon": {"pid": 2508, "nombre": "ibus-daemon", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": [{"pid": 2630, "nombre": "ibus-dconf", "usuario": "1000", "estado": "1", "ram": 6},{"pid": 2644, "nombre": "ibus-extension-", "usuario": "1000", "estado": "1", "ram": 23},{"pid": 2828, "nombre": "ibus-engine-sim", "usuario": "1000", "estado": "1", "ram": 7}]
-    },"144_gsd-media-keys": {"pid": 2510, "nombre": "gsd-media-keys", "usuario": "1000", "estado": "1", "ram": 20, 
-    "procesoshijos": []
-    },"145_gsd-power": {"pid": 2511, "nombre": "gsd-power", "usuario": "1000", "estado": "1", "ram": 22, 
-    "procesoshijos": []
-    },"146_gsd-print-notif": {"pid": 2512, "nombre": "gsd-print-notif", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": []
-    },"147_gsd-rfkill": {"pid": 2514, "nombre": "gsd-rfkill", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"148_gsd-screensaver": {"pid": 2515, "nombre": "gsd-screensaver", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"149_gsd-disk-utilit": {"pid": 2516, "nombre": "gsd-disk-utilit", "usuario": "1000", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"150_gsd-sharing": {"pid": 2517, "nombre": "gsd-sharing", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": []
-    },"151_gsd-smartcard": {"pid": 2519, "nombre": "gsd-smartcard", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"152_gsd-sound": {"pid": 2520, "nombre": "gsd-sound", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"153_gsd-usb-protect": {"pid": 2521, "nombre": "gsd-usb-protect", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"154_gsd-wacom": {"pid": 2522, "nombre": "gsd-wacom", "usuario": "1000", "estado": "1", "ram": 16, 
-    "procesoshijos": []
-    },"155_gsd-xsettings": {"pid": 2523, "nombre": "gsd-xsettings", "usuario": "1000", "estado": "1", "ram": 18, 
-    "procesoshijos": []
-    },"156_kdeconnectd": {"pid": 2530, "nombre": "kdeconnectd", "usuario": "1000", "estado": "1", "ram": 27, 
-    "procesoshijos": []
-    },"157_blueman-applet": {"pid": 2541, "nombre": "blueman-applet", "usuario": "1000", "estado": "1", "ram": 37, 
-    "procesoshijos": []
-    },"158_gjs": {"pid": 2576, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 20, 
-    "procesoshijos": []
-    },"159_gsd-printer": {"pid": 2595, "nombre": "gsd-printer", "usuario": "1000", "estado": "1", "ram": 11, 
-    "procesoshijos": []
-    },"160_ibus-dconf": {"pid": 2630, "nombre": "ibus-dconf", "usuario": "1000", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"161_ibus-extension-": {"pid": 2644, "nombre": "ibus-extension-", "usuario": "1000", "estado": "1", "ram": 23, 
-    "procesoshijos": []
-    },"162_ibus-x11": {"pid": 2664, "nombre": "ibus-x11", "usuario": "1000", "estado": "1", "ram": 12, 
-    "procesoshijos": []
-    },"163_ibus-portal": {"pid": 2667, "nombre": "ibus-portal", "usuario": "1000", "estado": "1", "ram": 6, 
-    "procesoshijos": []
-    },"164_ibus-engine-sim": {"pid": 2828, "nombre": "ibus-engine-sim", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"165_obexd": {"pid": 2850, "nombre": "obexd", "usuario": "1000", "estado": "1", "ram": 4, 
-    "procesoshijos": []
-    },"166_gvfsd-trash": {"pid": 2930, "nombre": "gvfsd-trash", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"167_gvfsd-metadata": {"pid": 2952, "nombre": "gvfsd-metadata", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"168_xdg-desktop-por": {"pid": 2987, "nombre": "xdg-desktop-por", "usuario": "1000", "estado": "1", "ram": 14, 
-    "procesoshijos": []
-    },"169_xdg-document-po": {"pid": 3001, "nombre": "xdg-document-po", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": []
-    },"170_fusermount3": {"pid": 3012, "nombre": "fusermount3", "usuario": "1000", "estado": "8193", "ram": 0, 
-    "procesoshijos": []
-    },"171_xdg-desktop-por": {"pid": 3016, "nombre": "xdg-desktop-por", "usuario": "1000", "estado": "1", "ram": 18, 
-    "procesoshijos": []
-    },"172_firefox-esr": {"pid": 3083, "nombre": "firefox-esr", "usuario": "1000", "estado": "1", "ram": 754, 
-    "procesoshijos": []
-    },"173_Socket Process": {"pid": 3174, "nombre": "Socket Process", "usuario": "1000", "estado": "1", "ram": 32, 
-    "procesoshijos": []
-    },"174_Privileged Cont": {"pid": 3216, "nombre": "Privileged Cont", "usuario": "1000", "estado": "1", "ram": 125, 
-    "procesoshijos": []
-    },"175_code": {"pid": 3226, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 115, 
-    "procesoshijos": [{"pid": 3247, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 8},{"pid": 3248, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 11}]
-    },"176_code": {"pid": 3247, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 8, 
-    "procesoshijos": [{"pid": 3294, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 82}]
-    },"177_code": {"pid": 3248, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 11, 
-    "procesoshijos": [{"pid": 3251, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 4}]
-    },"178_code": {"pid": 3251, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 4, 
-    "procesoshijos": [{"pid": 3410, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 340},{"pid": 3873, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 82}]
-    },"179_chrome_crashpad": {"pid": 3278, "nombre": "chrome_crashpad", "usuario": "1000", "estado": "1", "ram": 2, 
-    "procesoshijos": []
-    },"180_code": {"pid": 3294, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 82, 
-    "procesoshijos": []
-    },"181_WebExtensions": {"pid": 3329, "nombre": "WebExtensions", "usuario": "1000", "estado": "1", "ram": 500, 
-    "procesoshijos": []
-    },"182_code": {"pid": 3365, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 24, 
-    "procesoshijos": []
-    },"183_code": {"pid": 3410, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 340, 
-    "procesoshijos": []
-    },"184_Isolated Web Co": {"pid": 3552, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 494, 
-    "procesoshijos": []
-    },"185_code": {"pid": 3609, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 103, 
-    "procesoshijos": [{"pid": 3650, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 40}]
-    },"186_code": {"pid": 3617, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 366, 
-    "procesoshijos": [{"pid": 3738, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 41},{"pid": 3739, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 53},{"pid": 3939, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 40},{"pid": 6280, "nombre": "cpptools", "usuario": "1000", "estado": "8193", "ram": 119},{"pid": 6930, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 83}]
-    },"187_code": {"pid": 3650, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 40, 
-    "procesoshijos": []
-    },"188_code": {"pid": 3699, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 57, 
-    "procesoshijos": []
-    },"189_code": {"pid": 3738, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 41, 
-    "procesoshijos": []
-    },"190_code": {"pid": 3739, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 53, 
-    "procesoshijos": []
-    },"191_code": {"pid": 3873, "nombre": "code", "usuario": "1000", "estado": "8193", "ram": 82, 
-    "procesoshijos": []
-    },"192_RDD Process": {"pid": 3935, "nombre": "RDD Process", "usuario": "1000", "estado": "1", "ram": 53, 
-    "procesoshijos": []
-    },"193_code": {"pid": 3939, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 40, 
-    "procesoshijos": []
-    },"194_Utility Process": {"pid": 4006, "nombre": "Utility Process", "usuario": "1000", "estado": "1", "ram": 28, 
-    "procesoshijos": []
-    },"195_irq/134-mei_me": {"pid": 5292, "nombre": "irq/134-mei_me", "usuario": "0", "estado": "1", "ram": 28, 
-    "procesoshijos": []
-    },"196_cpptools": {"pid": 6280, "nombre": "cpptools", "usuario": "1000", "estado": "8193", "ram": 119, 
-    "procesoshijos": []
-    },"197_cpptools-srv": {"pid": 6304, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 20, 
-    "procesoshijos": []
-    },"198_gnome-terminal-": {"pid": 6545, "nombre": "gnome-terminal-", "usuario": "1000", "estado": "1", "ram": 62, 
-    "procesoshijos": [{"pid": 6573, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 10859, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 4},{"pid": 25928, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7},{"pid": 27318, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7}]
-    },"199_zsh": {"pid": 6573, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": [{"pid": 29358, "nombre": "go", "usuario": "1000", "estado": "8193", "ram": 28}]
-    },"200_gvfsd-network": {"pid": 6897, "nombre": "gvfsd-network", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"201_gvfsd-dnssd": {"pid": 6911, "nombre": "gvfsd-dnssd", "usuario": "1000", "estado": "1", "ram": 9, 
-    "procesoshijos": []
-    },"202_code": {"pid": 6930, "nombre": "code", "usuario": "1000", "estado": "1", "ram": 83, 
-    "procesoshijos": []
-    },"203_Isolated Web Co": {"pid": 10439, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 552, 
-    "procesoshijos": []
-    },"204_Isolated Web Co": {"pid": 10767, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 192, 
-    "procesoshijos": []
-    },"205_nautilus": {"pid": 10807, "nombre": "nautilus", "usuario": "1000", "estado": "1", "ram": 120, 
-    "procesoshijos": []
-    },"206_gvfsd-recent": {"pid": 10847, "nombre": "gvfsd-recent", "usuario": "1000", "estado": "1", "ram": 11, 
-    "procesoshijos": []
-    },"207_zsh": {"pid": 10859, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 4, 
-    "procesoshijos": [{"pid": 17029, "nombre": "mysql", "usuario": "1000", "estado": "1", "ram": 7}]
-    },"208_gnome-text-edit": {"pid": 12261, "nombre": "gnome-text-edit", "usuario": "1000", "estado": "1", "ram": 148, 
-    "procesoshijos": []
-    },"209_mysql": {"pid": 17029, "nombre": "mysql", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"210_Isolated Web Co": {"pid": 18167, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 273, 
-    "procesoshijos": []
-    },"211_kworker/u9:1": {"pid": 19549, "nombre": "kworker/u9:1", "usuario": "0", "estado": "1026", "ram": 273, 
-    "procesoshijos": []
-    },"212_kworker/u9:0": {"pid": 20155, "nombre": "kworker/u9:0", "usuario": "0", "estado": "2", "ram": 273, 
-    "procesoshijos": []
-    },"213_kworker/0:0": {"pid": 23049, "nombre": "kworker/0:0", "usuario": "0", "estado": "1026", "ram": 273, 
-    "procesoshijos": []
-    },"214_kworker/u8:2": {"pid": 24095, "nombre": "kworker/u8:2", "usuario": "0", "estado": "1026", "ram": 273, 
-    "procesoshijos": []
-    },"215_kworker/u8:0": {"pid": 24424, "nombre": "kworker/u8:0", "usuario": "0", "estado": "1026", "ram": 273, 
-    "procesoshijos": []
-    },"216_kworker/u8:1": {"pid": 24789, "nombre": "kworker/u8:1", "usuario": "0", "estado": "1026", "ram": 273, 
-    "procesoshijos": []
-    },"217_gjs": {"pid": 24877, "nombre": "gjs", "usuario": "1000", "estado": "1", "ram": 76, 
-    "procesoshijos": []
-    },"218_Isolated Web Co": {"pid": 25081, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 209, 
-    "procesoshijos": []
-    },"219_Isolated Web Co": {"pid": 25684, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 235, 
-    "procesoshijos": []
-    },"220_zsh": {"pid": 25928, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"221_Isolated Web Co": {"pid": 26253, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 234, 
-    "procesoshijos": []
-    },"222_xfce4-taskmanag": {"pid": 27025, "nombre": "xfce4-taskmanag", "usuario": "1000", "estado": "1", "ram": 61, 
-    "procesoshijos": []
-    },"223_cpptools-srv": {"pid": 27048, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 13, 
-    "procesoshijos": []
-    },"224_cpptools-srv": {"pid": 27076, "nombre": "cpptools-srv", "usuario": "1000", "estado": "8193", "ram": 14, 
-    "procesoshijos": []
-    },"225_gnome-calculato": {"pid": 27267, "nombre": "gnome-calculato", "usuario": "1000", "estado": "1", "ram": 185, 
-    "procesoshijos": []
-    },"226_zsh": {"pid": 27318, "nombre": "zsh", "usuario": "1000", "estado": "1", "ram": 7, 
-    "procesoshijos": []
-    },"227_Isolated Web Co": {"pid": 27354, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 399, 
-    "procesoshijos": []
-    },"228_Isolated Web Co": {"pid": 27455, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 299, 
-    "procesoshijos": []
-    },"229_kworker/u9:3": {"pid": 27601, "nombre": "kworker/u9:3", "usuario": "0", "estado": "1026", "ram": 299, 
-    "procesoshijos": []
-    },"230_kworker/2:0": {"pid": 27960, "nombre": "kworker/2:0", "usuario": "0", "estado": "1026", "ram": 299, 
-    "procesoshijos": []
-    },"231_Isolated Web Co": {"pid": 28083, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 234, 
-    "procesoshijos": []
-    },"232_Isolated Web Co": {"pid": 28122, "nombre": "Isolated Web Co", "usuario": "1000", "estado": "1", "ram": 209, 
-    "procesoshijos": []
-    },"233_kworker/0:1": {"pid": 28143, "nombre": "kworker/0:1", "usuario": "0", "estado": "1026", "ram": 209, 
-    "procesoshijos": []
-    },"234_kworker/1:0": {"pid": 28209, "nombre": "kworker/1:0", "usuario": "0", "estado": "1026", "ram": 209, 
-    "procesoshijos": []
-    },"235_kworker/2:1": {"pid": 28646, "nombre": "kworker/2:1", "usuario": "0", "estado": "1026", "ram": 209, 
-    "procesoshijos": []
-    },"236_kworker/3:1": {"pid": 28647, "nombre": "kworker/3:1", "usuario": "0", "estado": "1026", "ram": 209, 
-    "procesoshijos": []
-    },"237_Web Content": {"pid": 28656, "nombre": "Web Content", "usuario": "1000", "estado": "1", "ram": 86, 
-    "procesoshijos": []
-    },"238_Web Content": {"pid": 28918, "nombre": "Web Content", "usuario": "1000", "estado": "1", "ram": 87, 
-    "procesoshijos": []
-    },"239_kworker/3:2": {"pid": 28952, "nombre": "kworker/3:2", "usuario": "0", "estado": "1026", "ram": 87, 
-    "procesoshijos": []
-    },"240_kworker/1:1": {"pid": 28953, "nombre": "kworker/1:1", "usuario": "0", "estado": "1026", "ram": 87, 
-    "procesoshijos": []
-    },"241_kworker/2:2": {"pid": 29068, "nombre": "kworker/2:2", "usuario": "0", "estado": "1026", "ram": 87, 
-    "procesoshijos": []
-    },"242_kworker/u8:3": {"pid": 29224, "nombre": "kworker/u8:3", "usuario": "0", "estado": "1026", "ram": 87, 
-    "procesoshijos": []
-    },"243_Web Content": {"pid": 29238, "nombre": "Web Content", "usuario": "1000", "estado": "1", "ram": 86, 
-    "procesoshijos": []
-    },"244_go": {"pid": 29358, "nombre": "go", "usuario": "1000", "estado": "8193", "ram": 28, 
-    "procesoshijos": []
-    },"245_main": {"pid": 29433, "nombre": "main", "usuario": "1000", "estado": "8193", "ram": 4, 
-    "procesoshijos": []
-    },"246_sh": {"pid": 29439, "nombre": "sh", "usuario": "1000", "estado": "1", "ram": 0, 
-    "procesoshijos": [{"pid": 29440, "nombre": "cat", "usuario": "1000", "estado": "0", "ram": 0}]
-    },"247_cat": {"pid": 29440, "nombre": "cat", "usuario": "1000", "estado": "0", "ram": 0, 
-    "procesoshijos": []
-    }},"ejecucion":63 , 
-    "zombie":0 , 
-    "detenido":23 , 
-    "suspendido":162 , 
-    "totales":248  
-    }
+    "cpu_usage": 32,
+    "data": {
+        "0_systemd": {
+            "estado": "1",
+            "nombre": "systemd",
+            "pid": 1,
+            "procesoshijos": [
+                {
+                    "estado": "0",
+                    "nombre": "systemd-journal",
+                    "pid": 346,
+                    "ram": 20,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "systemd-udevd",
+                    "pid": 382,
+                    "ram": 7,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "haveged",
+                    "pid": 440,
+                    "ram": 6,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "systemd-timesyn",
+                    "pid": 441,
+                    "ram": 3,
+                    "usuario": "996"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "accounts-daemon",
+                    "pid": 572,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "cron",
+                    "pid": 580,
+                    "ram": 2,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "dbus-daemon",
+                    "pid": 581,
+                    "ram": 6,
+                    "usuario": "106"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "polkitd",
+                    "pid": 588,
+                    "ram": 12,
+                    "usuario": "993"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "smartd",
+                    "pid": 590,
+                    "ram": 6,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "systemd-logind",
+                    "pid": 592,
+                    "ram": 4,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "NetworkManager",
+                    "pid": 675,
+                    "ram": 14,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ModemManager",
+                    "pid": 685,
+                    "ram": 8,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "containerd",
+                    "pid": 777,
+                    "ram": 27,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gdm3",
+                    "pid": 875,
+                    "ram": 7,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "mariadbd",
+                    "pid": 895,
+                    "ram": 150,
+                    "usuario": "100"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "wpa_supplicant",
+                    "pid": 947,
+                    "ram": 4,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "rtkit-daemon",
+                    "pid": 979,
+                    "ram": 1,
+                    "usuario": "131"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "udisksd",
+                    "pid": 1124,
+                    "ram": 13,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "upowerd",
+                    "pid": 1192,
+                    "ram": 8,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "power-profiles-",
+                    "pid": 1256,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "colord",
+                    "pid": 1279,
+                    "ram": 13,
+                    "usuario": "132"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "dockerd",
+                    "pid": 1572,
+                    "ram": 35,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "systemd",
+                    "pid": 2037,
+                    "ram": 9,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 11,
+            "usuario": "0"
+        },
+        "100_systemd": {
+            "estado": "1",
+            "nombre": "systemd",
+            "pid": 2037,
+            "procesoshijos": [
+                {
+                    "estado": "8193",
+                    "nombre": "(sd-pam)",
+                    "pid": 2038,
+                    "ram": 3,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "pipewire",
+                    "pid": 2068,
+                    "ram": 18,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "wireplumber",
+                    "pid": 2072,
+                    "ram": 19,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "pipewire-pulse",
+                    "pid": 2075,
+                    "ram": 108,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "dbus-daemon",
+                    "pid": 2076,
+                    "ram": 6,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-keyring-d",
+                    "pid": 2077,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd",
+                    "pid": 2085,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "gvfsd-fuse",
+                    "pid": 2091,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "tracker-miner-f",
+                    "pid": 2134,
+                    "ram": 27,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfs-udisks2-vo",
+                    "pid": 2154,
+                    "ram": 12,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfs-goa-volume",
+                    "pid": 2159,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "goa-identity-se",
+                    "pid": 2170,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "goa-daemon",
+                    "pid": 2163,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfs-afc-volume",
+                    "pid": 2176,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfs-mtp-volume",
+                    "pid": 2181,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfs-gphoto2-vo",
+                    "pid": 2185,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xdg-permission-",
+                    "pid": 2190,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "at-spi-bus-laun",
+                    "pid": 2290,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gcr-ssh-agent",
+                    "pid": 2306,
+                    "ram": 4,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-session-c",
+                    "pid": 2307,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-session-b",
+                    "pid": 2316,
+                    "ram": 14,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "dconf-service",
+                    "pid": 2339,
+                    "ram": 6,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "0",
+                    "nombre": "gnome-shell",
+                    "pid": 2349,
+                    "ram": 324,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "evolution-sourc",
+                    "pid": 2389,
+                    "ram": 25,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "evolution-calen",
+                    "pid": 2421,
+                    "ram": 19,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-shell-cal",
+                    "pid": 2383,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "evolution-addre",
+                    "pid": 2441,
+                    "ram": 17,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "Thunar",
+                    "pid": 2452,
+                    "ram": 50,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "at-spi2-registr",
+                    "pid": 2463,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gjs",
+                    "pid": 2472,
+                    "ram": 23,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "sh",
+                    "pid": 2490,
+                    "ram": 0,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-a11y-settin",
+                    "pid": 2492,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-color",
+                    "pid": 2494,
+                    "ram": 17,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-datetime",
+                    "pid": 2495,
+                    "ram": 13,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-housekeepin",
+                    "pid": 2499,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-keyboard",
+                    "pid": 2503,
+                    "ram": 16,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-media-keys",
+                    "pid": 2510,
+                    "ram": 20,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-power",
+                    "pid": 2511,
+                    "ram": 22,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-print-notif",
+                    "pid": 2512,
+                    "ram": 12,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-rfkill",
+                    "pid": 2514,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-screensaver",
+                    "pid": 2515,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-sharing",
+                    "pid": 2517,
+                    "ram": 12,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-smartcard",
+                    "pid": 2519,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-sound",
+                    "pid": 2520,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-usb-protect",
+                    "pid": 2521,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-wacom",
+                    "pid": 2522,
+                    "ram": 16,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-xsettings",
+                    "pid": 2523,
+                    "ram": 18,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-printer",
+                    "pid": 2595,
+                    "ram": 11,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gjs",
+                    "pid": 2576,
+                    "ram": 20,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ibus-x11",
+                    "pid": 2664,
+                    "ram": 12,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ibus-portal",
+                    "pid": 2667,
+                    "ram": 6,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "obexd",
+                    "pid": 2850,
+                    "ram": 4,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd-metadata",
+                    "pid": 2952,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xdg-desktop-por",
+                    "pid": 2987,
+                    "ram": 14,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xdg-document-po",
+                    "pid": 3001,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xdg-desktop-por",
+                    "pid": 3016,
+                    "ram": 18,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "chrome_crashpad",
+                    "pid": 3278,
+                    "ram": 2,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "cpptools-srv",
+                    "pid": 6304,
+                    "ram": 20,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-terminal-",
+                    "pid": 6545,
+                    "ram": 62,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "nautilus",
+                    "pid": 10807,
+                    "ram": 120,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-text-edit",
+                    "pid": 12261,
+                    "ram": 148,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "cpptools-srv",
+                    "pid": 27048,
+                    "ram": 13,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "cpptools-srv",
+                    "pid": 27076,
+                    "ram": 14,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "101_(sd-pam)": {
+            "estado": "8193",
+            "nombre": "(sd-pam)",
+            "pid": 2038,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "1000"
+        },
+        "102_pipewire": {
+            "estado": "1",
+            "nombre": "pipewire",
+            "pid": 2068,
+            "procesoshijos": [],
+            "ram": 18,
+            "usuario": "1000"
+        },
+        "103_wireplumber": {
+            "estado": "1",
+            "nombre": "wireplumber",
+            "pid": 2072,
+            "procesoshijos": [],
+            "ram": 19,
+            "usuario": "1000"
+        },
+        "104_pipewire-pulse": {
+            "estado": "1",
+            "nombre": "pipewire-pulse",
+            "pid": 2075,
+            "procesoshijos": [],
+            "ram": 108,
+            "usuario": "1000"
+        },
+        "105_dbus-daemon": {
+            "estado": "1",
+            "nombre": "dbus-daemon",
+            "pid": 2076,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "1000"
+        },
+        "106_gnome-keyring-d": {
+            "estado": "1",
+            "nombre": "gnome-keyring-d",
+            "pid": 2077,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "107_gvfsd": {
+            "estado": "1",
+            "nombre": "gvfsd",
+            "pid": 2085,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd-trash",
+                    "pid": 2930,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd-network",
+                    "pid": 6897,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd-dnssd",
+                    "pid": 6911,
+                    "ram": 9,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gvfsd-recent",
+                    "pid": 10847,
+                    "ram": 11,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "108_gvfsd-fuse": {
+            "estado": "8193",
+            "nombre": "gvfsd-fuse",
+            "pid": 2091,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "109_tracker-miner-f": {
+            "estado": "1",
+            "nombre": "tracker-miner-f",
+            "pid": 2134,
+            "procesoshijos": [],
+            "ram": 27,
+            "usuario": "1000"
+        },
+        "10_rcu_tasks_trace": {
+            "estado": "1026",
+            "nombre": "rcu_tasks_trace",
+            "pid": 13,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "110_gdm-x-session": {
+            "estado": "1",
+            "nombre": "gdm-x-session",
+            "pid": 2142,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "Xorg",
+                    "pid": 2145,
+                    "ram": 99,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-session-b",
+                    "pid": 2204,
+                    "ram": 12,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "111_Xorg": {
+            "estado": "1",
+            "nombre": "Xorg",
+            "pid": 2145,
+            "procesoshijos": [],
+            "ram": 99,
+            "usuario": "1000"
+        },
+        "112_gvfs-udisks2-vo": {
+            "estado": "1",
+            "nombre": "gvfs-udisks2-vo",
+            "pid": 2154,
+            "procesoshijos": [],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "113_gvfs-goa-volume": {
+            "estado": "1",
+            "nombre": "gvfs-goa-volume",
+            "pid": 2159,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "114_goa-daemon": {
+            "estado": "1",
+            "nombre": "goa-daemon",
+            "pid": 2163,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "115_goa-identity-se": {
+            "estado": "1",
+            "nombre": "goa-identity-se",
+            "pid": 2170,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "116_gvfs-afc-volume": {
+            "estado": "1",
+            "nombre": "gvfs-afc-volume",
+            "pid": 2176,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "117_gvfs-mtp-volume": {
+            "estado": "1",
+            "nombre": "gvfs-mtp-volume",
+            "pid": 2181,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "118_gvfs-gphoto2-vo": {
+            "estado": "1",
+            "nombre": "gvfs-gphoto2-vo",
+            "pid": 2185,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "119_xdg-permission-": {
+            "estado": "1",
+            "nombre": "xdg-permission-",
+            "pid": 2190,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "11_ksoftirqd/0": {
+            "estado": "0",
+            "nombre": "ksoftirqd/0",
+            "pid": 14,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "120_gnome-session-b": {
+            "estado": "1",
+            "nombre": "gnome-session-b",
+            "pid": 2204,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "ssh-agent",
+                    "pid": 2266,
+                    "ram": 0,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "121_ssh-agent": {
+            "estado": "1",
+            "nombre": "ssh-agent",
+            "pid": 2266,
+            "procesoshijos": [],
+            "ram": 0,
+            "usuario": "1000"
+        },
+        "122_at-spi-bus-laun": {
+            "estado": "1",
+            "nombre": "at-spi-bus-laun",
+            "pid": 2290,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "dbus-daemon",
+                    "pid": 2296,
+                    "ram": 3,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "123_dbus-daemon": {
+            "estado": "1",
+            "nombre": "dbus-daemon",
+            "pid": 2296,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "1000"
+        },
+        "124_gcr-ssh-agent": {
+            "estado": "1",
+            "nombre": "gcr-ssh-agent",
+            "pid": 2306,
+            "procesoshijos": [],
+            "ram": 4,
+            "usuario": "1000"
+        },
+        "125_gnome-session-c": {
+            "estado": "1",
+            "nombre": "gnome-session-c",
+            "pid": 2307,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "126_gnome-session-b": {
+            "estado": "1",
+            "nombre": "gnome-session-b",
+            "pid": 2316,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "evolution-alarm",
+                    "pid": 2500,
+                    "ram": 28,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gsd-disk-utilit",
+                    "pid": 2516,
+                    "ram": 6,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "kdeconnectd",
+                    "pid": 2530,
+                    "ram": 27,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "blueman-applet",
+                    "pid": 2541,
+                    "ram": 37,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 14,
+            "usuario": "1000"
+        },
+        "127_dconf-service": {
+            "estado": "1",
+            "nombre": "dconf-service",
+            "pid": 2339,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "1000"
+        },
+        "128_gnome-shell": {
+            "estado": "0",
+            "nombre": "gnome-shell",
+            "pid": 2349,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "firefox-esr",
+                    "pid": 3083,
+                    "ram": 754,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3226,
+                    "ram": 115,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gjs",
+                    "pid": 24877,
+                    "ram": 76,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xfce4-taskmanag",
+                    "pid": 27025,
+                    "ram": 61,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "gnome-calculato",
+                    "pid": 27267,
+                    "ram": 185,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 324,
+            "usuario": "1000"
+        },
+        "129_gnome-shell-cal": {
+            "estado": "1",
+            "nombre": "gnome-shell-cal",
+            "pid": 2383,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "12_rcu_preempt": {
+            "estado": "1026",
+            "nombre": "rcu_preempt",
+            "pid": 15,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "130_evolution-sourc": {
+            "estado": "1",
+            "nombre": "evolution-sourc",
+            "pid": 2389,
+            "procesoshijos": [],
+            "ram": 25,
+            "usuario": "1000"
+        },
+        "131_evolution-calen": {
+            "estado": "1",
+            "nombre": "evolution-calen",
+            "pid": 2421,
+            "procesoshijos": [],
+            "ram": 19,
+            "usuario": "1000"
+        },
+        "132_evolution-addre": {
+            "estado": "1",
+            "nombre": "evolution-addre",
+            "pid": 2441,
+            "procesoshijos": [],
+            "ram": 17,
+            "usuario": "1000"
+        },
+        "133_Thunar": {
+            "estado": "1",
+            "nombre": "Thunar",
+            "pid": 2452,
+            "procesoshijos": [],
+            "ram": 50,
+            "usuario": "1000"
+        },
+        "134_at-spi2-registr": {
+            "estado": "1",
+            "nombre": "at-spi2-registr",
+            "pid": 2463,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "135_gjs": {
+            "estado": "1",
+            "nombre": "gjs",
+            "pid": 2472,
+            "procesoshijos": [],
+            "ram": 23,
+            "usuario": "1000"
+        },
+        "136_sh": {
+            "estado": "1",
+            "nombre": "sh",
+            "pid": 2490,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "ibus-daemon",
+                    "pid": 2508,
+                    "ram": 12,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 0,
+            "usuario": "1000"
+        },
+        "137_gsd-a11y-settin": {
+            "estado": "1",
+            "nombre": "gsd-a11y-settin",
+            "pid": 2492,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "138_gsd-color": {
+            "estado": "1",
+            "nombre": "gsd-color",
+            "pid": 2494,
+            "procesoshijos": [],
+            "ram": 17,
+            "usuario": "1000"
+        },
+        "139_gsd-datetime": {
+            "estado": "1",
+            "nombre": "gsd-datetime",
+            "pid": 2495,
+            "procesoshijos": [],
+            "ram": 13,
+            "usuario": "1000"
+        },
+        "13_migration/0": {
+            "estado": "1",
+            "nombre": "migration/0",
+            "pid": 16,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "140_gsd-housekeepin": {
+            "estado": "1",
+            "nombre": "gsd-housekeepin",
+            "pid": 2499,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "141_evolution-alarm": {
+            "estado": "1",
+            "nombre": "evolution-alarm",
+            "pid": 2500,
+            "procesoshijos": [],
+            "ram": 28,
+            "usuario": "1000"
+        },
+        "142_gsd-keyboard": {
+            "estado": "1",
+            "nombre": "gsd-keyboard",
+            "pid": 2503,
+            "procesoshijos": [],
+            "ram": 16,
+            "usuario": "1000"
+        },
+        "143_ibus-daemon": {
+            "estado": "1",
+            "nombre": "ibus-daemon",
+            "pid": 2508,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "ibus-dconf",
+                    "pid": 2630,
+                    "ram": 6,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ibus-extension-",
+                    "pid": 2644,
+                    "ram": 23,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ibus-engine-sim",
+                    "pid": 2828,
+                    "ram": 7,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "144_gsd-media-keys": {
+            "estado": "1",
+            "nombre": "gsd-media-keys",
+            "pid": 2510,
+            "procesoshijos": [],
+            "ram": 20,
+            "usuario": "1000"
+        },
+        "145_gsd-power": {
+            "estado": "1",
+            "nombre": "gsd-power",
+            "pid": 2511,
+            "procesoshijos": [],
+            "ram": 22,
+            "usuario": "1000"
+        },
+        "146_gsd-print-notif": {
+            "estado": "1",
+            "nombre": "gsd-print-notif",
+            "pid": 2512,
+            "procesoshijos": [],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "147_gsd-rfkill": {
+            "estado": "1",
+            "nombre": "gsd-rfkill",
+            "pid": 2514,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "148_gsd-screensaver": {
+            "estado": "1",
+            "nombre": "gsd-screensaver",
+            "pid": 2515,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "149_gsd-disk-utilit": {
+            "estado": "1",
+            "nombre": "gsd-disk-utilit",
+            "pid": 2516,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "1000"
+        },
+        "14_cpuhp/0": {
+            "estado": "1",
+            "nombre": "cpuhp/0",
+            "pid": 18,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "150_gsd-sharing": {
+            "estado": "1",
+            "nombre": "gsd-sharing",
+            "pid": 2517,
+            "procesoshijos": [],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "151_gsd-smartcard": {
+            "estado": "1",
+            "nombre": "gsd-smartcard",
+            "pid": 2519,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "152_gsd-sound": {
+            "estado": "1",
+            "nombre": "gsd-sound",
+            "pid": 2520,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "153_gsd-usb-protect": {
+            "estado": "1",
+            "nombre": "gsd-usb-protect",
+            "pid": 2521,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "154_gsd-wacom": {
+            "estado": "1",
+            "nombre": "gsd-wacom",
+            "pid": 2522,
+            "procesoshijos": [],
+            "ram": 16,
+            "usuario": "1000"
+        },
+        "155_gsd-xsettings": {
+            "estado": "1",
+            "nombre": "gsd-xsettings",
+            "pid": 2523,
+            "procesoshijos": [],
+            "ram": 18,
+            "usuario": "1000"
+        },
+        "156_kdeconnectd": {
+            "estado": "1",
+            "nombre": "kdeconnectd",
+            "pid": 2530,
+            "procesoshijos": [],
+            "ram": 27,
+            "usuario": "1000"
+        },
+        "157_blueman-applet": {
+            "estado": "1",
+            "nombre": "blueman-applet",
+            "pid": 2541,
+            "procesoshijos": [],
+            "ram": 37,
+            "usuario": "1000"
+        },
+        "158_gjs": {
+            "estado": "1",
+            "nombre": "gjs",
+            "pid": 2576,
+            "procesoshijos": [],
+            "ram": 20,
+            "usuario": "1000"
+        },
+        "159_gsd-printer": {
+            "estado": "1",
+            "nombre": "gsd-printer",
+            "pid": 2595,
+            "procesoshijos": [],
+            "ram": 11,
+            "usuario": "1000"
+        },
+        "15_cpuhp/1": {
+            "estado": "1",
+            "nombre": "cpuhp/1",
+            "pid": 19,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "160_ibus-dconf": {
+            "estado": "1",
+            "nombre": "ibus-dconf",
+            "pid": 2630,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "1000"
+        },
+        "161_ibus-extension-": {
+            "estado": "1",
+            "nombre": "ibus-extension-",
+            "pid": 2644,
+            "procesoshijos": [],
+            "ram": 23,
+            "usuario": "1000"
+        },
+        "162_ibus-x11": {
+            "estado": "1",
+            "nombre": "ibus-x11",
+            "pid": 2664,
+            "procesoshijos": [],
+            "ram": 12,
+            "usuario": "1000"
+        },
+        "163_ibus-portal": {
+            "estado": "1",
+            "nombre": "ibus-portal",
+            "pid": 2667,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "1000"
+        },
+        "164_ibus-engine-sim": {
+            "estado": "1",
+            "nombre": "ibus-engine-sim",
+            "pid": 2828,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "165_obexd": {
+            "estado": "1",
+            "nombre": "obexd",
+            "pid": 2850,
+            "procesoshijos": [],
+            "ram": 4,
+            "usuario": "1000"
+        },
+        "166_gvfsd-trash": {
+            "estado": "1",
+            "nombre": "gvfsd-trash",
+            "pid": 2930,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "167_gvfsd-metadata": {
+            "estado": "1",
+            "nombre": "gvfsd-metadata",
+            "pid": 2952,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "168_xdg-desktop-por": {
+            "estado": "1",
+            "nombre": "xdg-desktop-por",
+            "pid": 2987,
+            "procesoshijos": [],
+            "ram": 14,
+            "usuario": "1000"
+        },
+        "169_xdg-document-po": {
+            "estado": "1",
+            "nombre": "xdg-document-po",
+            "pid": 3001,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "16_migration/1": {
+            "estado": "1",
+            "nombre": "migration/1",
+            "pid": 20,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "170_fusermount3": {
+            "estado": "8193",
+            "nombre": "fusermount3",
+            "pid": 3012,
+            "procesoshijos": [],
+            "ram": 0,
+            "usuario": "1000"
+        },
+        "171_xdg-desktop-por": {
+            "estado": "1",
+            "nombre": "xdg-desktop-por",
+            "pid": 3016,
+            "procesoshijos": [],
+            "ram": 18,
+            "usuario": "1000"
+        },
+        "172_firefox-esr": {
+            "estado": "1",
+            "nombre": "firefox-esr",
+            "pid": 3083,
+            "procesoshijos": [],
+            "ram": 754,
+            "usuario": "1000"
+        },
+        "173_Socket Process": {
+            "estado": "1",
+            "nombre": "Socket Process",
+            "pid": 3174,
+            "procesoshijos": [],
+            "ram": 32,
+            "usuario": "1000"
+        },
+        "174_Privileged Cont": {
+            "estado": "1",
+            "nombre": "Privileged Cont",
+            "pid": 3216,
+            "procesoshijos": [],
+            "ram": 125,
+            "usuario": "1000"
+        },
+        "175_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3226,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3247,
+                    "ram": 8,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3248,
+                    "ram": 11,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 115,
+            "usuario": "1000"
+        },
+        "176_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3247,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3294,
+                    "ram": 82,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 8,
+            "usuario": "1000"
+        },
+        "177_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3248,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3251,
+                    "ram": 4,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 11,
+            "usuario": "1000"
+        },
+        "178_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3251,
+            "procesoshijos": [
+                {
+                    "estado": "8193",
+                    "nombre": "code",
+                    "pid": 3410,
+                    "ram": 340,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "code",
+                    "pid": 3873,
+                    "ram": 82,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 4,
+            "usuario": "1000"
+        },
+        "179_chrome_crashpad": {
+            "estado": "1",
+            "nombre": "chrome_crashpad",
+            "pid": 3278,
+            "procesoshijos": [],
+            "ram": 2,
+            "usuario": "1000"
+        },
+        "17_ksoftirqd/1": {
+            "estado": "1",
+            "nombre": "ksoftirqd/1",
+            "pid": 21,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "180_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3294,
+            "procesoshijos": [],
+            "ram": 82,
+            "usuario": "1000"
+        },
+        "181_WebExtensions": {
+            "estado": "1",
+            "nombre": "WebExtensions",
+            "pid": 3329,
+            "procesoshijos": [],
+            "ram": 500,
+            "usuario": "1000"
+        },
+        "182_code": {
+            "estado": "8193",
+            "nombre": "code",
+            "pid": 3365,
+            "procesoshijos": [],
+            "ram": 24,
+            "usuario": "1000"
+        },
+        "183_code": {
+            "estado": "8193",
+            "nombre": "code",
+            "pid": 3410,
+            "procesoshijos": [],
+            "ram": 340,
+            "usuario": "1000"
+        },
+        "184_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 3552,
+            "procesoshijos": [],
+            "ram": 494,
+            "usuario": "1000"
+        },
+        "185_code": {
+            "estado": "8193",
+            "nombre": "code",
+            "pid": 3609,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3650,
+                    "ram": 40,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 103,
+            "usuario": "1000"
+        },
+        "186_code": {
+            "estado": "8193",
+            "nombre": "code",
+            "pid": 3617,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3738,
+                    "ram": 41,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3739,
+                    "ram": 53,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 3939,
+                    "ram": 40,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "cpptools",
+                    "pid": 6280,
+                    "ram": 119,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "code",
+                    "pid": 6930,
+                    "ram": 83,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 366,
+            "usuario": "1000"
+        },
+        "187_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3650,
+            "procesoshijos": [],
+            "ram": 40,
+            "usuario": "1000"
+        },
+        "188_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3699,
+            "procesoshijos": [],
+            "ram": 57,
+            "usuario": "1000"
+        },
+        "189_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3738,
+            "procesoshijos": [],
+            "ram": 41,
+            "usuario": "1000"
+        },
+        "18_kworker/1:0H": {
+            "estado": "1026",
+            "nombre": "kworker/1:0H",
+            "pid": 23,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "190_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3739,
+            "procesoshijos": [],
+            "ram": 53,
+            "usuario": "1000"
+        },
+        "191_code": {
+            "estado": "8193",
+            "nombre": "code",
+            "pid": 3873,
+            "procesoshijos": [],
+            "ram": 82,
+            "usuario": "1000"
+        },
+        "192_RDD Process": {
+            "estado": "1",
+            "nombre": "RDD Process",
+            "pid": 3935,
+            "procesoshijos": [],
+            "ram": 53,
+            "usuario": "1000"
+        },
+        "193_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 3939,
+            "procesoshijos": [],
+            "ram": 40,
+            "usuario": "1000"
+        },
+        "194_Utility Process": {
+            "estado": "1",
+            "nombre": "Utility Process",
+            "pid": 4006,
+            "procesoshijos": [],
+            "ram": 28,
+            "usuario": "1000"
+        },
+        "195_irq/134-mei_me": {
+            "estado": "1",
+            "nombre": "irq/134-mei_me",
+            "pid": 5292,
+            "procesoshijos": [],
+            "ram": 28,
+            "usuario": "0"
+        },
+        "196_cpptools": {
+            "estado": "8193",
+            "nombre": "cpptools",
+            "pid": 6280,
+            "procesoshijos": [],
+            "ram": 119,
+            "usuario": "1000"
+        },
+        "197_cpptools-srv": {
+            "estado": "8193",
+            "nombre": "cpptools-srv",
+            "pid": 6304,
+            "procesoshijos": [],
+            "ram": 20,
+            "usuario": "1000"
+        },
+        "198_gnome-terminal-": {
+            "estado": "1",
+            "nombre": "gnome-terminal-",
+            "pid": 6545,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "zsh",
+                    "pid": 6573,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "zsh",
+                    "pid": 10859,
+                    "ram": 4,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "zsh",
+                    "pid": 25928,
+                    "ram": 7,
+                    "usuario": "1000"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "zsh",
+                    "pid": 27318,
+                    "ram": 7,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 62,
+            "usuario": "1000"
+        },
+        "199_zsh": {
+            "estado": "1",
+            "nombre": "zsh",
+            "pid": 6573,
+            "procesoshijos": [
+                {
+                    "estado": "8193",
+                    "nombre": "go",
+                    "pid": 29358,
+                    "ram": 28,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "19_cpuhp/2": {
+            "estado": "1",
+            "nombre": "cpuhp/2",
+            "pid": 24,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "1_kthreadd": {
+            "estado": "1",
+            "nombre": "kthreadd",
+            "pid": 2,
+            "procesoshijos": [
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_gp",
+                    "pid": 3,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_par_gp",
+                    "pid": 4,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "slub_flushwq",
+                    "pid": 5,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "netns",
+                    "pid": 6,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/0:0H",
+                    "pid": 8,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "mm_percpu_wq",
+                    "pid": 10,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_tasks_kthre",
+                    "pid": 11,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_tasks_rude_",
+                    "pid": 12,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_tasks_trace",
+                    "pid": 13,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "0",
+                    "nombre": "ksoftirqd/0",
+                    "pid": 14,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rcu_preempt",
+                    "pid": 15,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "migration/0",
+                    "pid": 16,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "cpuhp/0",
+                    "pid": 18,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "cpuhp/1",
+                    "pid": 19,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "migration/1",
+                    "pid": 20,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ksoftirqd/1",
+                    "pid": 21,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/1:0H",
+                    "pid": 23,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "cpuhp/2",
+                    "pid": 24,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "migration/2",
+                    "pid": 25,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ksoftirqd/2",
+                    "pid": 26,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/2:0H",
+                    "pid": 28,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "cpuhp/3",
+                    "pid": 29,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "migration/3",
+                    "pid": 30,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "ksoftirqd/3",
+                    "pid": 31,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/3:0H",
+                    "pid": 33,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "kdevtmpfs",
+                    "pid": 38,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "inet_frag_wq",
+                    "pid": 39,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "kauditd",
+                    "pid": 40,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "khungtaskd",
+                    "pid": 41,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "oom_reaper",
+                    "pid": 42,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "writeback",
+                    "pid": 43,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "kcompactd0",
+                    "pid": 44,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "ksmd",
+                    "pid": 45,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "8193",
+                    "nombre": "khugepaged",
+                    "pid": 47,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kintegrityd",
+                    "pid": 48,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kblockd",
+                    "pid": 49,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "blkcg_punt_bio",
+                    "pid": 50,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "tpm_dev_wq",
+                    "pid": 52,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "edac-poller",
+                    "pid": 53,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "devfreq_wq",
+                    "pid": 54,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/0:1H",
+                    "pid": 57,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "kswapd0",
+                    "pid": 58,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kthrotld",
+                    "pid": 64,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "irq/122-aerdrv",
+                    "pid": 66,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "irq/123-aerdrv",
+                    "pid": 67,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "acpi_thermal_pm",
+                    "pid": 68,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "xenbus_probe",
+                    "pid": 69,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "mld",
+                    "pid": 71,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/1:1H",
+                    "pid": 72,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ipv6_addrconf",
+                    "pid": 73,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kstrp",
+                    "pid": 78,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "zswap-shrink",
+                    "pid": 83,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/3:1H",
+                    "pid": 141,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/2:1H",
+                    "pid": 142,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "cryptd",
+                    "pid": 160,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "irq/51-DELL0792",
+                    "pid": 174,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ata_sff",
+                    "pid": 182,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "scsi_eh_0",
+                    "pid": 226,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "scsi_tmf_0",
+                    "pid": 227,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "scsi_eh_1",
+                    "pid": 228,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "scsi_tmf_1",
+                    "pid": 229,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "irq/127-i2c_hid",
+                    "pid": 243,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "card0-crtc0",
+                    "pid": 246,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "card0-crtc1",
+                    "pid": 247,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "card0-crtc2",
+                    "pid": 248,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "jbd2/sda6-8",
+                    "pid": 293,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ext4-rsv-conver",
+                    "pid": 294,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "rpciod",
+                    "pid": 456,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "xprtiod",
+                    "pid": 458,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "watchdogd",
+                    "pid": 502,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "cfg80211",
+                    "pid": 539,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kmemstick",
+                    "pid": 576,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ath10k_wq",
+                    "pid": 703,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ath10k_aux_wq",
+                    "pid": 704,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "ath10k_tx_compl",
+                    "pid": 705,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1",
+                    "nombre": "irq/134-mei_me",
+                    "pid": 5292,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u9:1",
+                    "pid": 19549,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "2",
+                    "nombre": "kworker/u9:0",
+                    "pid": 20155,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/0:0",
+                    "pid": 23049,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u8:2",
+                    "pid": 24095,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u8:0",
+                    "pid": 24424,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u8:1",
+                    "pid": 24789,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u9:3",
+                    "pid": 27601,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/2:0",
+                    "pid": 27960,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "0",
+                    "nombre": "kworker/0:1",
+                    "pid": 28143,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/1:0",
+                    "pid": 28209,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/2:1",
+                    "pid": 28646,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/3:1",
+                    "pid": 28647,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/3:2",
+                    "pid": 28952,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/1:1",
+                    "pid": 28953,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/2:2",
+                    "pid": 29068,
+                    "ram": 9,
+                    "usuario": "0"
+                },
+                {
+                    "estado": "1026",
+                    "nombre": "kworker/u8:3",
+                    "pid": 29224,
+                    "ram": 9,
+                    "usuario": "0"
+                }
+            ],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "200_gvfsd-network": {
+            "estado": "1",
+            "nombre": "gvfsd-network",
+            "pid": 6897,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "201_gvfsd-dnssd": {
+            "estado": "1",
+            "nombre": "gvfsd-dnssd",
+            "pid": 6911,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "1000"
+        },
+        "202_code": {
+            "estado": "1",
+            "nombre": "code",
+            "pid": 6930,
+            "procesoshijos": [],
+            "ram": 83,
+            "usuario": "1000"
+        },
+        "203_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 10439,
+            "procesoshijos": [],
+            "ram": 552,
+            "usuario": "1000"
+        },
+        "204_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 10767,
+            "procesoshijos": [],
+            "ram": 192,
+            "usuario": "1000"
+        },
+        "205_nautilus": {
+            "estado": "1",
+            "nombre": "nautilus",
+            "pid": 10807,
+            "procesoshijos": [],
+            "ram": 120,
+            "usuario": "1000"
+        },
+        "206_gvfsd-recent": {
+            "estado": "1",
+            "nombre": "gvfsd-recent",
+            "pid": 10847,
+            "procesoshijos": [],
+            "ram": 11,
+            "usuario": "1000"
+        },
+        "207_zsh": {
+            "estado": "1",
+            "nombre": "zsh",
+            "pid": 10859,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "mysql",
+                    "pid": 17029,
+                    "ram": 7,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 4,
+            "usuario": "1000"
+        },
+        "208_gnome-text-edit": {
+            "estado": "1",
+            "nombre": "gnome-text-edit",
+            "pid": 12261,
+            "procesoshijos": [],
+            "ram": 148,
+            "usuario": "1000"
+        },
+        "209_mysql": {
+            "estado": "1",
+            "nombre": "mysql",
+            "pid": 17029,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "20_migration/2": {
+            "estado": "1",
+            "nombre": "migration/2",
+            "pid": 25,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "210_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 18167,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "1000"
+        },
+        "211_kworker/u9:1": {
+            "estado": "1026",
+            "nombre": "kworker/u9:1",
+            "pid": 19549,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "212_kworker/u9:0": {
+            "estado": "2",
+            "nombre": "kworker/u9:0",
+            "pid": 20155,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "213_kworker/0:0": {
+            "estado": "1026",
+            "nombre": "kworker/0:0",
+            "pid": 23049,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "214_kworker/u8:2": {
+            "estado": "1026",
+            "nombre": "kworker/u8:2",
+            "pid": 24095,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "215_kworker/u8:0": {
+            "estado": "1026",
+            "nombre": "kworker/u8:0",
+            "pid": 24424,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "216_kworker/u8:1": {
+            "estado": "1026",
+            "nombre": "kworker/u8:1",
+            "pid": 24789,
+            "procesoshijos": [],
+            "ram": 273,
+            "usuario": "0"
+        },
+        "217_gjs": {
+            "estado": "1",
+            "nombre": "gjs",
+            "pid": 24877,
+            "procesoshijos": [],
+            "ram": 76,
+            "usuario": "1000"
+        },
+        "218_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 25081,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "1000"
+        },
+        "219_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 25684,
+            "procesoshijos": [],
+            "ram": 235,
+            "usuario": "1000"
+        },
+        "21_ksoftirqd/2": {
+            "estado": "1",
+            "nombre": "ksoftirqd/2",
+            "pid": 26,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "220_zsh": {
+            "estado": "1",
+            "nombre": "zsh",
+            "pid": 25928,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "221_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 26253,
+            "procesoshijos": [],
+            "ram": 234,
+            "usuario": "1000"
+        },
+        "222_xfce4-taskmanag": {
+            "estado": "1",
+            "nombre": "xfce4-taskmanag",
+            "pid": 27025,
+            "procesoshijos": [],
+            "ram": 61,
+            "usuario": "1000"
+        },
+        "223_cpptools-srv": {
+            "estado": "8193",
+            "nombre": "cpptools-srv",
+            "pid": 27048,
+            "procesoshijos": [],
+            "ram": 13,
+            "usuario": "1000"
+        },
+        "224_cpptools-srv": {
+            "estado": "8193",
+            "nombre": "cpptools-srv",
+            "pid": 27076,
+            "procesoshijos": [],
+            "ram": 14,
+            "usuario": "1000"
+        },
+        "225_gnome-calculato": {
+            "estado": "1",
+            "nombre": "gnome-calculato",
+            "pid": 27267,
+            "procesoshijos": [],
+            "ram": 185,
+            "usuario": "1000"
+        },
+        "226_zsh": {
+            "estado": "1",
+            "nombre": "zsh",
+            "pid": 27318,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "1000"
+        },
+        "227_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 27354,
+            "procesoshijos": [],
+            "ram": 399,
+            "usuario": "1000"
+        },
+        "228_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 27455,
+            "procesoshijos": [],
+            "ram": 299,
+            "usuario": "1000"
+        },
+        "229_kworker/u9:3": {
+            "estado": "1026",
+            "nombre": "kworker/u9:3",
+            "pid": 27601,
+            "procesoshijos": [],
+            "ram": 299,
+            "usuario": "0"
+        },
+        "22_kworker/2:0H": {
+            "estado": "1026",
+            "nombre": "kworker/2:0H",
+            "pid": 28,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "230_kworker/2:0": {
+            "estado": "1026",
+            "nombre": "kworker/2:0",
+            "pid": 27960,
+            "procesoshijos": [],
+            "ram": 299,
+            "usuario": "0"
+        },
+        "231_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 28083,
+            "procesoshijos": [],
+            "ram": 234,
+            "usuario": "1000"
+        },
+        "232_Isolated Web Co": {
+            "estado": "1",
+            "nombre": "Isolated Web Co",
+            "pid": 28122,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "1000"
+        },
+        "233_kworker/0:1": {
+            "estado": "1026",
+            "nombre": "kworker/0:1",
+            "pid": 28143,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "0"
+        },
+        "234_kworker/1:0": {
+            "estado": "1026",
+            "nombre": "kworker/1:0",
+            "pid": 28209,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "0"
+        },
+        "235_kworker/2:1": {
+            "estado": "1026",
+            "nombre": "kworker/2:1",
+            "pid": 28646,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "0"
+        },
+        "236_kworker/3:1": {
+            "estado": "1026",
+            "nombre": "kworker/3:1",
+            "pid": 28647,
+            "procesoshijos": [],
+            "ram": 209,
+            "usuario": "0"
+        },
+        "237_Web Content": {
+            "estado": "1",
+            "nombre": "Web Content",
+            "pid": 28656,
+            "procesoshijos": [],
+            "ram": 86,
+            "usuario": "1000"
+        },
+        "238_Web Content": {
+            "estado": "1",
+            "nombre": "Web Content",
+            "pid": 28918,
+            "procesoshijos": [],
+            "ram": 87,
+            "usuario": "1000"
+        },
+        "239_kworker/3:2": {
+            "estado": "1026",
+            "nombre": "kworker/3:2",
+            "pid": 28952,
+            "procesoshijos": [],
+            "ram": 87,
+            "usuario": "0"
+        },
+        "23_cpuhp/3": {
+            "estado": "1",
+            "nombre": "cpuhp/3",
+            "pid": 29,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "240_kworker/1:1": {
+            "estado": "1026",
+            "nombre": "kworker/1:1",
+            "pid": 28953,
+            "procesoshijos": [],
+            "ram": 87,
+            "usuario": "0"
+        },
+        "241_kworker/2:2": {
+            "estado": "1026",
+            "nombre": "kworker/2:2",
+            "pid": 29068,
+            "procesoshijos": [],
+            "ram": 87,
+            "usuario": "0"
+        },
+        "242_kworker/u8:3": {
+            "estado": "1026",
+            "nombre": "kworker/u8:3",
+            "pid": 29224,
+            "procesoshijos": [],
+            "ram": 87,
+            "usuario": "0"
+        },
+        "243_Web Content": {
+            "estado": "1",
+            "nombre": "Web Content",
+            "pid": 29238,
+            "procesoshijos": [],
+            "ram": 86,
+            "usuario": "1000"
+        },
+        "244_go": {
+            "estado": "8193",
+            "nombre": "go",
+            "pid": 29358,
+            "procesoshijos": [],
+            "ram": 28,
+            "usuario": "1000"
+        },
+        "245_main": {
+            "estado": "8193",
+            "nombre": "main",
+            "pid": 29433,
+            "procesoshijos": [],
+            "ram": 4,
+            "usuario": "1000"
+        },
+        "246_sh": {
+            "estado": "1",
+            "nombre": "sh",
+            "pid": 29439,
+            "procesoshijos": [
+                {
+                    "estado": "0",
+                    "nombre": "cat",
+                    "pid": 29440,
+                    "ram": 0,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 0,
+            "usuario": "1000"
+        },
+        "247_cat": {
+            "estado": "0",
+            "nombre": "cat",
+            "pid": 29440,
+            "procesoshijos": [],
+            "ram": 0,
+            "usuario": "1000"
+        },
+        "24_migration/3": {
+            "estado": "1",
+            "nombre": "migration/3",
+            "pid": 30,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "25_ksoftirqd/3": {
+            "estado": "1",
+            "nombre": "ksoftirqd/3",
+            "pid": 31,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "26_kworker/3:0H": {
+            "estado": "1026",
+            "nombre": "kworker/3:0H",
+            "pid": 33,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "27_kdevtmpfs": {
+            "estado": "1",
+            "nombre": "kdevtmpfs",
+            "pid": 38,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "28_inet_frag_wq": {
+            "estado": "1026",
+            "nombre": "inet_frag_wq",
+            "pid": 39,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "29_kauditd": {
+            "estado": "8193",
+            "nombre": "kauditd",
+            "pid": 40,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "2_rcu_gp": {
+            "estado": "1026",
+            "nombre": "rcu_gp",
+            "pid": 3,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "30_khungtaskd": {
+            "estado": "1",
+            "nombre": "khungtaskd",
+            "pid": 41,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "31_oom_reaper": {
+            "estado": "8193",
+            "nombre": "oom_reaper",
+            "pid": 42,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "32_writeback": {
+            "estado": "1026",
+            "nombre": "writeback",
+            "pid": 43,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "33_kcompactd0": {
+            "estado": "8193",
+            "nombre": "kcompactd0",
+            "pid": 44,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "34_ksmd": {
+            "estado": "8193",
+            "nombre": "ksmd",
+            "pid": 45,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "35_khugepaged": {
+            "estado": "8193",
+            "nombre": "khugepaged",
+            "pid": 47,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "36_kintegrityd": {
+            "estado": "1026",
+            "nombre": "kintegrityd",
+            "pid": 48,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "37_kblockd": {
+            "estado": "1026",
+            "nombre": "kblockd",
+            "pid": 49,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "38_blkcg_punt_bio": {
+            "estado": "1026",
+            "nombre": "blkcg_punt_bio",
+            "pid": 50,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "39_tpm_dev_wq": {
+            "estado": "1026",
+            "nombre": "tpm_dev_wq",
+            "pid": 52,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "3_rcu_par_gp": {
+            "estado": "1026",
+            "nombre": "rcu_par_gp",
+            "pid": 4,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "40_edac-poller": {
+            "estado": "1026",
+            "nombre": "edac-poller",
+            "pid": 53,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "41_devfreq_wq": {
+            "estado": "1026",
+            "nombre": "devfreq_wq",
+            "pid": 54,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "42_kworker/0:1H": {
+            "estado": "1026",
+            "nombre": "kworker/0:1H",
+            "pid": 57,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "43_kswapd0": {
+            "estado": "1",
+            "nombre": "kswapd0",
+            "pid": 58,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "44_kthrotld": {
+            "estado": "1026",
+            "nombre": "kthrotld",
+            "pid": 64,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "45_irq/122-aerdrv": {
+            "estado": "1",
+            "nombre": "irq/122-aerdrv",
+            "pid": 66,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "46_irq/123-aerdrv": {
+            "estado": "1",
+            "nombre": "irq/123-aerdrv",
+            "pid": 67,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "47_acpi_thermal_pm": {
+            "estado": "1026",
+            "nombre": "acpi_thermal_pm",
+            "pid": 68,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "48_xenbus_probe": {
+            "estado": "1",
+            "nombre": "xenbus_probe",
+            "pid": 69,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "49_mld": {
+            "estado": "1026",
+            "nombre": "mld",
+            "pid": 71,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "4_slub_flushwq": {
+            "estado": "1026",
+            "nombre": "slub_flushwq",
+            "pid": 5,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "50_kworker/1:1H": {
+            "estado": "1026",
+            "nombre": "kworker/1:1H",
+            "pid": 72,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "51_ipv6_addrconf": {
+            "estado": "1026",
+            "nombre": "ipv6_addrconf",
+            "pid": 73,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "52_kstrp": {
+            "estado": "1026",
+            "nombre": "kstrp",
+            "pid": 78,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "53_zswap-shrink": {
+            "estado": "1026",
+            "nombre": "zswap-shrink",
+            "pid": 83,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "54_kworker/3:1H": {
+            "estado": "1026",
+            "nombre": "kworker/3:1H",
+            "pid": 141,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "55_kworker/2:1H": {
+            "estado": "1026",
+            "nombre": "kworker/2:1H",
+            "pid": 142,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "56_cryptd": {
+            "estado": "1026",
+            "nombre": "cryptd",
+            "pid": 160,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "57_irq/51-DELL0792": {
+            "estado": "1",
+            "nombre": "irq/51-DELL0792",
+            "pid": 174,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "58_ata_sff": {
+            "estado": "1026",
+            "nombre": "ata_sff",
+            "pid": 182,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "59_scsi_eh_0": {
+            "estado": "1",
+            "nombre": "scsi_eh_0",
+            "pid": 226,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "5_netns": {
+            "estado": "1026",
+            "nombre": "netns",
+            "pid": 6,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "60_scsi_tmf_0": {
+            "estado": "1026",
+            "nombre": "scsi_tmf_0",
+            "pid": 227,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "61_scsi_eh_1": {
+            "estado": "1",
+            "nombre": "scsi_eh_1",
+            "pid": 228,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "62_scsi_tmf_1": {
+            "estado": "1026",
+            "nombre": "scsi_tmf_1",
+            "pid": 229,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "63_irq/127-i2c_hid": {
+            "estado": "1",
+            "nombre": "irq/127-i2c_hid",
+            "pid": 243,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "64_card0-crtc0": {
+            "estado": "1",
+            "nombre": "card0-crtc0",
+            "pid": 246,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "65_card0-crtc1": {
+            "estado": "1",
+            "nombre": "card0-crtc1",
+            "pid": 247,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "66_card0-crtc2": {
+            "estado": "1",
+            "nombre": "card0-crtc2",
+            "pid": 248,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "67_jbd2/sda6-8": {
+            "estado": "1",
+            "nombre": "jbd2/sda6-8",
+            "pid": 293,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "68_ext4-rsv-conver": {
+            "estado": "1026",
+            "nombre": "ext4-rsv-conver",
+            "pid": 294,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "69_systemd-journal": {
+            "estado": "0",
+            "nombre": "systemd-journal",
+            "pid": 346,
+            "procesoshijos": [],
+            "ram": 20,
+            "usuario": "0"
+        },
+        "6_kworker/0:0H": {
+            "estado": "1026",
+            "nombre": "kworker/0:0H",
+            "pid": 8,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "70_systemd-udevd": {
+            "estado": "1",
+            "nombre": "systemd-udevd",
+            "pid": 382,
+            "procesoshijos": [],
+            "ram": 7,
+            "usuario": "0"
+        },
+        "71_haveged": {
+            "estado": "1",
+            "nombre": "haveged",
+            "pid": 440,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "0"
+        },
+        "72_systemd-timesyn": {
+            "estado": "1",
+            "nombre": "systemd-timesyn",
+            "pid": 441,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "996"
+        },
+        "73_rpciod": {
+            "estado": "1026",
+            "nombre": "rpciod",
+            "pid": 456,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "0"
+        },
+        "74_xprtiod": {
+            "estado": "1026",
+            "nombre": "xprtiod",
+            "pid": 458,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "0"
+        },
+        "75_watchdogd": {
+            "estado": "1",
+            "nombre": "watchdogd",
+            "pid": 502,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "0"
+        },
+        "76_cfg80211": {
+            "estado": "1026",
+            "nombre": "cfg80211",
+            "pid": 539,
+            "procesoshijos": [],
+            "ram": 3,
+            "usuario": "0"
+        },
+        "77_accounts-daemon": {
+            "estado": "1",
+            "nombre": "accounts-daemon",
+            "pid": 572,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "78_kmemstick": {
+            "estado": "1026",
+            "nombre": "kmemstick",
+            "pid": 576,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "79_cron": {
+            "estado": "8193",
+            "nombre": "cron",
+            "pid": 580,
+            "procesoshijos": [],
+            "ram": 2,
+            "usuario": "0"
+        },
+        "7_mm_percpu_wq": {
+            "estado": "1026",
+            "nombre": "mm_percpu_wq",
+            "pid": 10,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "80_dbus-daemon": {
+            "estado": "1",
+            "nombre": "dbus-daemon",
+            "pid": 581,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "106"
+        },
+        "81_polkitd": {
+            "estado": "1",
+            "nombre": "polkitd",
+            "pid": 588,
+            "procesoshijos": [],
+            "ram": 12,
+            "usuario": "993"
+        },
+        "82_smartd": {
+            "estado": "8193",
+            "nombre": "smartd",
+            "pid": 590,
+            "procesoshijos": [],
+            "ram": 6,
+            "usuario": "0"
+        },
+        "83_systemd-logind": {
+            "estado": "1",
+            "nombre": "systemd-logind",
+            "pid": 592,
+            "procesoshijos": [],
+            "ram": 4,
+            "usuario": "0"
+        },
+        "84_NetworkManager": {
+            "estado": "1",
+            "nombre": "NetworkManager",
+            "pid": 675,
+            "procesoshijos": [],
+            "ram": 14,
+            "usuario": "0"
+        },
+        "85_ModemManager": {
+            "estado": "1",
+            "nombre": "ModemManager",
+            "pid": 685,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "0"
+        },
+        "86_ath10k_wq": {
+            "estado": "1026",
+            "nombre": "ath10k_wq",
+            "pid": 703,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "0"
+        },
+        "87_ath10k_aux_wq": {
+            "estado": "1026",
+            "nombre": "ath10k_aux_wq",
+            "pid": 704,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "0"
+        },
+        "88_ath10k_tx_compl": {
+            "estado": "1026",
+            "nombre": "ath10k_tx_compl",
+            "pid": 705,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "0"
+        },
+        "89_containerd": {
+            "estado": "8193",
+            "nombre": "containerd",
+            "pid": 777,
+            "procesoshijos": [],
+            "ram": 27,
+            "usuario": "0"
+        },
+        "8_rcu_tasks_kthre": {
+            "estado": "1026",
+            "nombre": "rcu_tasks_kthre",
+            "pid": 11,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "90_gdm3": {
+            "estado": "1",
+            "nombre": "gdm3",
+            "pid": 875,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "gdm-session-wor",
+                    "pid": 2024,
+                    "ram": 12,
+                    "usuario": "0"
+                }
+            ],
+            "ram": 7,
+            "usuario": "0"
+        },
+        "91_mariadbd": {
+            "estado": "1",
+            "nombre": "mariadbd",
+            "pid": 895,
+            "procesoshijos": [],
+            "ram": 150,
+            "usuario": "100"
+        },
+        "92_wpa_supplicant": {
+            "estado": "1",
+            "nombre": "wpa_supplicant",
+            "pid": 947,
+            "procesoshijos": [],
+            "ram": 4,
+            "usuario": "0"
+        },
+        "93_rtkit-daemon": {
+            "estado": "1",
+            "nombre": "rtkit-daemon",
+            "pid": 979,
+            "procesoshijos": [],
+            "ram": 1,
+            "usuario": "131"
+        },
+        "94_udisksd": {
+            "estado": "1",
+            "nombre": "udisksd",
+            "pid": 1124,
+            "procesoshijos": [],
+            "ram": 13,
+            "usuario": "0"
+        },
+        "95_upowerd": {
+            "estado": "1",
+            "nombre": "upowerd",
+            "pid": 1192,
+            "procesoshijos": [],
+            "ram": 8,
+            "usuario": "0"
+        },
+        "96_power-profiles-": {
+            "estado": "1",
+            "nombre": "power-profiles-",
+            "pid": 1256,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        },
+        "97_colord": {
+            "estado": "1",
+            "nombre": "colord",
+            "pid": 1279,
+            "procesoshijos": [],
+            "ram": 13,
+            "usuario": "132"
+        },
+        "98_dockerd": {
+            "estado": "8193",
+            "nombre": "dockerd",
+            "pid": 1572,
+            "procesoshijos": [],
+            "ram": 35,
+            "usuario": "0"
+        },
+        "99_gdm-session-wor": {
+            "estado": "1",
+            "nombre": "gdm-session-wor",
+            "pid": 2024,
+            "procesoshijos": [
+                {
+                    "estado": "1",
+                    "nombre": "gdm-x-session",
+                    "pid": 2142,
+                    "ram": 8,
+                    "usuario": "1000"
+                }
+            ],
+            "ram": 12,
+            "usuario": "0"
+        },
+        "9_rcu_tasks_rude_": {
+            "estado": "1026",
+            "nombre": "rcu_tasks_rude_",
+            "pid": 12,
+            "procesoshijos": [],
+            "ram": 9,
+            "usuario": "0"
+        }
+    },
+    "detenido": 23,
+    "ejecucion": 63,
+    "Porcentaje":"80 ,"suspendido": 162,
+    "totales": 248,
+    "zombie": 0
     {
-    "Porcentaje":"80 
+        "Porcentaje":"80 
     }
-    
-    

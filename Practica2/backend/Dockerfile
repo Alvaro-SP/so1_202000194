@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine
+FROM golang:1.20
 LABEL developer="Alvaro Socop" \
     email="socop2412@gmail.com"
 # Seteamos el work directory
@@ -12,7 +12,7 @@ RUN go get -u github.com/gorilla/mux
 RUN go get -u github.com/go-sql-driver/mysql
 RUN go build -o main
 # EXPOSE 8080
-VOLUME /proc:/proc
+# VOLUME /proc:/proc
 CMD ["./main"]
 # --------------------- EXECUTED COMMANDS ---------------------
 # docker build -t practica2_backend .

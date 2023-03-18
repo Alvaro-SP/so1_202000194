@@ -1,4 +1,3 @@
-
 #include <linux/module.h>
 // para usar KERN_INFO
 #include <linux/kernel.h>
@@ -183,16 +182,16 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
             // printk(KERN_INFO "Porcentaje de memoria de %s: %lu %%\n", task->comm,mem_usage);
 
         }
-        if(task->__state == 0 || task->__state == 1026|| task->__state == 2){
+        if(task->state == 0 || task->state == 1026|| task->state == 2){
             ejecucion++;
             strstate = "ejecucion";
-        }else if(task->__state == 4){
+        }else if(task->state == 4){
             zombie++;
             strstate = "zombie";
-        }else if(task->__state == 8 || task->__state == 8193){
+        }else if(task->state == 8 || task->state == 8193){
             detenido++;
             strstate = "detenido";
-        }else if(task->__state == 1 || task->__state == 1026){\
+        }else if(task->state == 1 || task->state == 1026){\
             suspendido++;
             strstate = "suspendido";
         }
@@ -298,6 +297,5 @@ static void _remove(void)
 
 module_init(_insert);
 module_exit(_remove);
-
 
 // https://stackoverflow.com/questions/33594124/why-is-the-process-state-in-task-struct-stored-as-type-long
