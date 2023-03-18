@@ -46,7 +46,7 @@ const Base = () => {
     // const HandleEvaluate33 = () => {
     useEffect(() => {
         const fetchData = () => {
-        axios.get('http://localhost:5000/')
+        axios.get('http://34.125.9.254:5000/')
             .then(res =>
                 {
                     setData(JSON.parse(res.data.cpu_process))
