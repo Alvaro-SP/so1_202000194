@@ -130,14 +130,46 @@ Utilizado para almacenar los registros de CPU y RAM.
 
 La siguiente declaración "CREATE TABLE mydb.cpu_ram" crea una nueva tabla llamada "cpu_ram" en el esquema "mydb". La tabla "operacion" tiene 5 columnas:
 
-![a](code3.png)
-
+![a](assets/mysql.png)
+![a](assets/m.png)
 - "ram_json" (JSON):  representa todos los datos de RAM que se ejecutan a travez del tiempo en la VM.
 - "cpu_json" (JSON):  representa todos los datos de CPU que se ejecutan a travez del tiempo en la VM.
 - "cpu_process" (JSON): representa todos los procesos que se estan ejecutando en la VM.
 - "percent_ram" (int):  representa el valor puntual del porcentaje de memoria RAM utilizado.
 - "percent_cpu" (int):  representa el resultado del procesamiento de CPU.
+- "ejecucion", "zombie", "detenido", "suspendido" y "totales" : se usaron para el conteo de procesos que se contaron.
 
+## PROCEDIMIENTO DESPLIEGUE EN GOOGLE CLOUD CONSOLE
+Para desplegar una API en Go en una instancia de Google Cloud, se realizo:
+
+Crea una instancia de Google Cloud: Para crear una instancia de Google Cloud, ve a la consola de Google Cloud y haz clic en "Crear instancia de máquina virtual". Sigue los pasos para crear una instancia y asegúrate de seleccionar una imagen de Go.
+
+Configura el servidor web: Después de crear la instancia, conecta con ella mediante SSH. A continuación, instala un servidor web como Nginx o Apache y configúralo para que sirva la aplicación Go. Asegúrate de que el puerto de la aplicación esté abierto en el firewall de la instancia.
+
+Despliega la aplicación: Sube el código fuente de la aplicación Go a la instancia y compila la aplicación. Después de compilar, ejecuta la aplicación y asegúrate de que está escuchando en el puerto correcto. Puedes usar herramientas como systemd o supervisor para asegurarte de que la aplicación se ejecute de manera continua.
+
+Configura el dominio: Configura un nombre de dominio para tu aplicación y apunta el DNS a la dirección IP de la instancia.
+
+## PROCEDIMIENTO DE DESPLIEGUE EN OTRA INSTANCIA
+Para desplegar Docker Compose en otra instancia, se realizo:
+
+Crea una instancia de Google Cloud: Al igual que en el caso anterior, crea una instancia de Google Cloud y asegúrate de seleccionar una imagen de Docker.
+
+Instala Docker y Docker Compose: Conecta con la instancia mediante SSH y asegúrate de que Docker y Docker Compose están instalados.
+
+Crea un archivo Docker Compose: Crea un archivo docker-compose.yml en la instancia y define los servicios que quieres desplegar. Asegúrate de que cada servicio esté configurado correctamente y que los puertos que necesitas estén expuestos.
+
+Ejecuta Docker Compose: Ejecuta el comando docker-compose up para desplegar los servicios. Si todo va bien, deberías poder acceder a los servicios desde su dirección IP o su nombre de dominio.
+
+### Creación de una base de datos en Google Cloud SQL
+
+Para crear una base de datos en Google Cloud SQL, se realizo:
+
+Crea una instancia de Google Cloud SQL: Ve a la consola de Google Cloud y crea una instancia de Google Cloud SQL. Asegúrate de seleccionar el motor de base de datos que necesitas (por ejemplo, MySQL o PostgreSQL).
+
+Configura la instancia: Configura la instancia según tus necesidades, incluyendo la región en la que quieres que esté alojada la instancia, la capacidad de almacenamiento, el tipo de máquina y las opciones de conexión.
+
+Configura la red: Configura la red de la instancia para permitir que las instancias de Google Cloud se comuniquen con la base de datos. Asegúrate de que el firewall de la instancia permita
 ## INTERFAZ GRAFICA
 ![a](assets/1.png)
 ![a](assets/2.png)
