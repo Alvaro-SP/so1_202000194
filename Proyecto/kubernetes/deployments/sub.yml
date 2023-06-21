@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sub-redis
+  namespace: proyecto
+spec:
+  selector:
+    matchLabels:
+      app: sub-redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sub-redis
+    spec:
+      containers:
+        - name: sub-redis
+          image: serchiboi/sub_redis:latest
+          env:
+            - name: REDIS_HOST
+              value: 34.136.99.148
+            - name: MYSQL_HOST
+              value: 35.188.106.165

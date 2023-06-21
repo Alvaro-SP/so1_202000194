@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pub-redis
+  namespace: proyecto
+spec:
+  selector:
+    matchLabels:
+      app: pub-redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pub-redis
+    spec:
+      containers:
+        - name: pub-redis
+          image: serchiboi/pub_redis:latest
+          env:
+            - name: REDIS_HOST
+              value: 34.136.99.148
+          ports:
+            - containerPort: 5000
+              name: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pub-redis
+  namespace: proyecto
+spec:
+  selector:
+    app: pub-redis
+  ports:
+    - name: pub-redis
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
+  loadBalancerIP: 35.225.22.102
+  
+  

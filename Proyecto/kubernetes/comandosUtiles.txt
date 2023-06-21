@@ -1,0 +1,56 @@
+# ver namespaces
+   get namespace
+
+# ver Deployments
+   get deployment -n <nombre_namespace>
+
+# listar pod de un namespace
+   kubectl get pods -n <nombre_namespace>
+   kubectl get pods -n proyecto
+
+# listar persistent volume claim
+   kubectl get pvc -n <nombre_namespace>
+   kubectl get pvc -n proyecto
+
+# ver la descripcion de persistent volume claim
+   kubectl describe pvc <nombre_del_pvc> -n <nombre_namespace>
+   kubectl describe pvc mysql-pvc -n proyecto
+
+
+#listar ingress
+   kubectl get ingress -n <nombre_namespace>
+   kubectl get ingress -n proyecto
+
+#ver la descipcion de un ingress
+   kubectl describe ingress example-ingress -n <nombre_namespace>
+   kubectl describe ingress my-ingress -n proyecto
+
+# listar servicios e ips
+   kubectl get services -n <nombre_namespace>
+   kubectl get services -n proyecto
+
+# ver la descripcoi de un servicios
+   kubectl describe service/<name_servicio> -n <nombre_namespace>
+   kubectl describe service/<name_servicio> -n proyecto
+
+# ver logs
+   kubectl logs pod/<name_pod> -n <nombre_namespace>
+   kubectl logs pod/<name_pod> -n proyecto
+
+#eliminiar un pod
+   kubectl delete pod <name_pod> -n <nombre_namespace>
+   kubectl delete pod <name_pod> -n proyecto
+
+#aplicar un yml
+   kubectl apply -f mysql.yml
+
+#elimnar lo aplicadopor yml   
+   kubectl delete -f mysql.yml
+
+#Inyectar Deployments
+   kubectl -n <my_namespace> get deploy -o yaml | linkerd inject - | kubectl apply -f -
+
+#Ingresar al Dashboard
+   linkerd viz dashboard
+
+

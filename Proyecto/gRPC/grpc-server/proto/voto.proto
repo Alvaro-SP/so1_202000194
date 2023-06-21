@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.voto";
+option java_outer_classname = "votoProto";
+option objc_class_prefix = "HLW";
+
+package voto;
+
+service Votos {
+    rpc AddVoto (VotoRequest) returns (Reply) {}
+    rpc ListarVotos (Empty) returns (stream VotoReply) {}
+}
+
+message VotoRequest {
+    int32 sede = 1;
+    string municipio = 2;
+    string departamento = 3;
+    string papeleta = 4;
+    string partido = 5;
+}
+
+message Reply {
+    string message = 1;
+}
+
+message Empty {}
+
+message VotoReply {
+    int32 sede = 1;
+    string municipio = 2;
+    string departamento = 3;
+    string papeleta = 4;
+    string partido = 5;
+}

@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: proyecto
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /NewMessage
+        pathType: Exact
+        backend:
+          service:
+            name: pub-redis
+            port:
+              number: 5000
+      - path: /NewMessages
+        pathType: Exact
+        backend:
+          service:
+            name: grpc-client
+            port:
+              number: 4000

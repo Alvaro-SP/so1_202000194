@@ -1,0 +1,204 @@
+#div1 {
+   overflow:scroll;
+   height:500px;
+   width:90%;
+   border: black 1px solid;
+   margin: auto;
+}
+
+#div3 {
+  overflow:scroll;
+  height:663px;
+  width:90%;
+  border: black 1px solid;
+  margin: auto;
+}
+
+#div4 {
+  overflow:scroll;
+  height:520px;
+  width:90%;
+  border: black 1px solid;
+  margin: auto;
+}
+
+
+#div3 {
+
+  width:90%;
+  border: black 1px solid;
+  margin: auto;
+}
+
+
+#div5 {
+   height:211px;
+   width:90%;
+   border: black 1px solid;
+   margin: auto;
+}
+
+#div1 table {
+  width:100%;
+}
+
+
+thead {
+  background-color: black;
+  color: white;
+}
+
+tbody {
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+ 
+  
+}
+
+h2 {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+  height: 100%;
+}
+#clock {
+  position: fixed;
+  top: 120px;
+  right: 0px;
+  width: 170px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: inline-block;
+  // padding: 10px;
+  background-color: #000;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+#clock h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#clock h1.faded {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 4s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.typography-poster {
+  font-size: 50px;
+  color: red;
+}
+
+@keyframes move {
+  0% {
+      transform: translateX(0px);
+  }
+  50% {
+      transform: translateX(10%);
+  }
+}
+// CSS OF TABLES
+table {
+  font-family: Arial, sans-serif;
+  width: 90%;
+  /* border-collapse: collapse;
+  border-radius: 10px; */
+  overflow: auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  align-self: center;
+  margin: 0 auto;
+  color: rgb(0, 0, 0);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #273f4bd1;
+  color: white;
+}
+.highlight:hover {
+  background-color: #1b1d1e00;
+  color: white;
+}
+.parent-row {
+  cursor: pointer;
+  background-color: #f5f5f5;
+  color: #666666;
+  transition: background-color 0.3s ease;
+}
+
+.parent-row:hover {
+  background-color: #c43838;
+}
+
+.parent-row.expanded {
+  background-color: #2980b9;
+  color: white;
+}
+
+.child-row {
+  background-color: #f2f2f2;
+}
+
+.child-row td {
+  padding-left: 50px;
+}

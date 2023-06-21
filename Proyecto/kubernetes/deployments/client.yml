@@ -1,0 +1,60 @@
+#* =========  GRPC CLIENT =========
+# ! ------------ Namespace GRPC ------------
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: proyecto
+
+# ! ------------ deployment grpc-client ------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grpc-client
+  name: grpc-client
+  namespace: proyecto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-client
+  template:
+    metadata:
+      labels:
+        app: grpc-client
+    spec:
+      containers:
+      - image: alvarosp24/proy1_clientgrpc
+        imagePullPolicy: Always
+        name: grpc-client
+        env:
+        - name: GRPC_SERVER
+          value: 34.171.229.233
+        ports:
+          - containerPort: 4000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+---
+# ! ------------ Service grpc-client ------------
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grpc-client
+  name: grpc-client
+  namespace: proyecto
+spec:
+  type: LoadBalancer
+  ports:
+    - name: grpc-client
+      port: 4000
+      protocol: TCP
+      targetPort: 4000
+  selector:
+    app: grpc-client
+  loadBalancerIP: 34.29.136.43

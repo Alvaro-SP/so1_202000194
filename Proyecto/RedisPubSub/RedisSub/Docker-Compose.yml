@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: serchiboi/sub_redis
+    restart: always
+    environment:
+      REDIS_HOST: 34.29.189.230
+      MYSQL_HOST: 35.192.166.24 
+
+

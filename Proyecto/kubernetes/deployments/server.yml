@@ -1,0 +1,60 @@
+#* =========  GRPC SERVER =========
+# ! ------------ Namespace GRPC ------------
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: proyecto
+
+# ! ------------ deployment grpc-server ------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grpc-server
+  name: grpc-server
+  namespace: proyecto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-server
+  template:
+    metadata:
+      labels:
+        app: grpc-server
+    spec:
+      containers:
+      - image: alvarosp24/proy1_servergrpc
+        imagePullPolicy: Always
+        name: grpc-server
+        env:
+        - name: MYSQL_HOST
+          value: 35.188.106.165
+        ports:
+          - containerPort: 50051
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+---
+# ! ------------ Service grpc-server ------------
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grpc-server
+  name: grpc-server
+  namespace: proyecto
+spec:
+  type: LoadBalancer
+  ports:
+    - name: grpc-server
+      port: 50051
+      protocol: TCP
+      targetPort: 50051
+  selector:
+    app: grpc-server
+  loadBalancerIP: 34.171.229.233

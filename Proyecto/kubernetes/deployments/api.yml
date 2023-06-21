@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-web
+  namespace: proyecto
+spec:
+  selector:
+    matchLabels:
+      app: api-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-web
+    spec:
+      containers:
+        - name: api-web
+          # image: serchiboi/proy1_api:latest
+          image: alvarosp24/proy1_api:latest
+          env:
+            - name: REDIS_HOST
+              value: 	34.136.99.148
+            - name: MYSQL_HOST
+              value: 35.188.106.165
+          ports:
+            - containerPort: 8080
+              name: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-web
+  namespace: proyecto
+spec:
+  selector:
+    app: api-web
+  ports:
+    - name: api-web
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+  loadBalancerIP: 34.72.220.209
+  
+  

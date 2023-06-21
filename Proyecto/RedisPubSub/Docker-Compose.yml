@@ -1,0 +1,46 @@
+version: '3.8'
+
+networks:
+  my-network:
+    driver: bridge
+
+services:
+  
+  redis:
+    image: redis
+    networks:
+      - my-network
+
+  mysql:
+    image: proy1_dbmysql
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: fullstack
+      MYSQL_USER: sopesuser
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: dbproy1sopes
+    networks:
+      - my-network
+
+  sub:
+    image: serchiboi/sub_redis
+    restart: always
+    depends_on:
+      - redis
+      - mysql
+    networks:
+      - my-network
+
+  pub:
+    image: serchiboi/pub_redis
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    networks:
+      - my-network
+  
+
+

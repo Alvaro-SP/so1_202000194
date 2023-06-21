@@ -1,0 +1,56 @@
+#* =========  API =========
+# ! ------------ Namespace API ------------
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: proyectosopes
+---
+# ! ------------ deployment API ------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api
+  name: api
+  namespace: proyectosopes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - image: alvarosp24/proy1_api
+        imagePullPolicy: Always
+        name: api
+        ports:
+          - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+---
+# ! ------------ Service API ------------
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: api
+  name: api
+  namespace: proyectosopes
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: api

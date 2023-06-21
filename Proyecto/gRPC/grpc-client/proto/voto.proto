@@ -1,0 +1,36 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true; // se definen varios files en java
+option java_package = "io.grpc.examples.voto"; // mas que el paquete donde se generara el codigo
+option java_outer_classname = "votoProto"; // especificar el nombre de la clase externa generada en Java
+option objc_class_prefix = "HLW";// especificar un prefijo para los nombres de clase generados en Objective-C
+
+package voto;  // este man es paquete cd votaciones y se debe de llamar igual que el archivo
+
+service Votos {
+  rpc AddVoto (VotoRequest) returns (Reply) {}
+  rpc ListarVotos (Empty) returns (stream VotoReply) {}
+}
+// el voto
+message VotoRequest {
+  int32 sede = 1;
+  string municipio = 2;
+  string departamento = 3;
+  string papeleta = 4;
+  string partido = 5;
+}
+
+message Reply {
+  string message = 1;
+}
+
+message Empty {}
+
+message VotoReply {
+  int32 sede = 1;
+  string municipio = 2;
+  string departamento = 3;
+  string papeleta = 4;
+  string partido = 5;
+}

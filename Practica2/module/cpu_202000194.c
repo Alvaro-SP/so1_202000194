@@ -1,9 +1,9 @@
 #include <linux/module.h>
 // para usar KERN_INFO
 #include <linux/kernel.h>
-//Header para los macros module_init y module_exit
+// Header para los macros module_init y module_exit
 #include <linux/init.h>
-//Header necesario porque se usara proc_fs
+// Header necesario porque se usara proc_fs
 #include <linux/proc_fs.h>
 
 /* for copy_from_user */
@@ -28,7 +28,6 @@
 
 #define PROC_NAME "cpu_202000194"
 
-
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("obtain CPU information");
 MODULE_AUTHOR("Alvaro Emmanuel Socop Perez");
@@ -44,31 +43,33 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     struct file *file;
     struct file *file2;
     char *filename = "/proc/stat";
-    char *strstate=""; // variable para guardar el estado del proceso
+    char *strstate = ""; // variable para guardar el estado del proceso
     char *filename2 = "/CPUANTERIOR";
     char buffer[256];
     int len;
-    long cpu_usage=20;
+    long cpu_usage = 20;
     struct sysinfo info;
     long mem_usage;
     bool first = true; // solo para el primer proceso la coma
     long memoria_total = 0;
     // variables para guardar cantidad de procesos
-    long int ejecucion= 0;
-    long int suspendido= 0;
-    long int detenido= 0;
-    long int zombie= 0;
-    long int totales= 0;
+    long int ejecucion = 0;
+    long int suspendido = 0;
+    long int detenido = 0;
+    long int zombie = 0;
+    long int totales = 0;
 
     // !------------------------ SE ABRE ARCHIVO GUARDADO --------------------------
     file = filp_open(filename, O_RDONLY, 0);
-    if (IS_ERR(file)) {
+    if (IS_ERR(file))
+    {
         printk(KERN_ERR "Error opening file %s\n", filename);
     }
 
     /* Read the contents of the file */
     len = kernel_read(file, buffer, sizeof(buffer), 0);
-    if (len < 0) {
+    if (len < 0)
+    {
         printk(KERN_ERR "Error reading file %s\n", filename);
         filp_close(file, NULL);
     }
@@ -97,7 +98,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
 
     // // Extrae los valores de tiempo de CPU después de 1 segundo
     // sscanf(buffer, "cpu %lu %lu %lu %lu %lu %lu %lu", &userx2, &nice2, &system2, &idle2, &iowait2, &irq2, &softirq2);
-    
+
     // !------------------ SE GUARDA EN FILENAME2 LO DE ACTUAL ----------------------
     // file2 = filp_open(filename2, O_WRONLY | O_CREAT, 0644);
     // if (IS_ERR(file2)) {
@@ -131,7 +132,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     total_time1 = userx + nice + system + idle + iowait + irq + softirq;
     total_time2 = userx2 + nice2 + system2 + idle2 + iowait2 + irq2 + softirq2;
 
-
     // delta_total_time = total_time2 - total_time1;
     // delta_idle_time = idle2 - idle;
     // cpu_usage = ((delta_total_time - delta_idle_time) * 100) / delta_total_time;
@@ -164,34 +164,43 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     memoria_total = (info.totalram * info.mem_unit) >> 10;
     // printk(KERN_INFO "Total memory: %lu MB\n", (memoria_total/1000000));
     seq_printf(archivo, "{\n");
-    seq_printf(archivo, "\"cpu_usage\":");   //* "cpu_usage": 25.35,
+    seq_printf(archivo, "\"cpu_usage\":"); //* "cpu_usage": 25.35,
     seq_printf(archivo, "%lu , \n", cpu_usage);
-    seq_printf(archivo, "\"data\": {");  //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
-    for_each_process(task) {
-        if (!first) {
+    seq_printf(archivo, "\"data\": {"); //* "data": { "proceso1":{"pid": 254, ... , "procesoshijos": [...]"}, "proceso2":{...}, ... },
+    for_each_process(task)
+    {
+        if (!first)
+        {
             seq_printf(archivo, ",");
         }
         //! 0 : ejecutando
         //! 4 : zombie
         //! 8 : detenido
         //! 1 o 1026 : suspendido
-        if(task->mm) {
-            memproc = (get_mm_rss(task->mm)<<(PAGE_SHIFT - 10));
+        if (task->mm)
+        {
+            memproc = (get_mm_rss(task->mm) << (PAGE_SHIFT - 10));
             // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
-            mem_usage = ((memproc*100 )/ (memoria_total >> 10));      //! PORCENTAJE CON 2 DECIMALES PARSEAR EN FRONT
+            mem_usage = ((memproc * 100) / (memoria_total >> 10)); //! PORCENTAJE CON 2 DECIMALES PARSEAR EN FRONT
             // printk(KERN_INFO "Porcentaje de memoria de %s: %lu %%\n", task->comm,mem_usage);
-
         }
-        if(task->state == 0 || task->state == 1026|| task->state == 2){
+        if (task->state == 0 || task->state == 1026 || task->state == 2)
+        {
             ejecucion++;
             strstate = "ejecucion";
-        }else if(task->state == 4){
+        }
+        else if (task->state == 4)
+        {
             zombie++;
             strstate = "zombie";
-        }else if(task->state == 8 || task->state == 8193){
+        }
+        else if (task->state == 8 || task->state == 8193)
+        {
             detenido++;
             strstate = "detenido";
-        }else if(task->state == 1 || task->state == 1026){\
+        }
+        else if (task->state == 1 || task->state == 1026)
+        {
             suspendido++;
             strstate = "suspendido";
         }
@@ -200,43 +209,44 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
         // char *nombre_usuario = get_cred_username(task->real_cred);
 
         seq_printf(archivo, "\"%d_%s\": {\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu, \n\"procesoshijos\": [",
-            indext,
-            task->comm,
-            task->pid,
-            task->comm,
-            task->cred->uid,
-            strstate
-            , mem_usage);
+                   indext,
+                   task->comm,
+                   task->pid,
+                   task->comm,
+                   task->cred->uid,
+                   strstate, mem_usage);
         indext++;
         task_lock(task);
         children = &(task->children);
-        list_for_each_entry(task_hijo, children, sibling) {
-            if(task_hijo->mm) {
+        list_for_each_entry(task_hijo, children, sibling)
+        {
+            if (task_hijo->mm)
+            {
                 // memproc2 = (get_mm_rss(task_hijo->mm)<<PAGE_SHIFT)/(1024*1024); // ! memoria de cada proceso hijo
                 // mem_usage = (memproc2*10000 / (long)(memoria_total/1000000));
 
-                memproc = (get_mm_rss(task_hijo->mm)<<(PAGE_SHIFT - 10));
-            // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
-                mem_usage = ((memproc*100 )/ (memoria_total >> 10));  
+                memproc = (get_mm_rss(task_hijo->mm) << (PAGE_SHIFT - 10));
+                // printk(KERN_INFO "Memoria de %s: %lu MB", task->comm, memproc);
+                mem_usage = ((memproc * 100) / (memoria_total >> 10));
             }
             /* Get the passwd structure for the UID */
             // pw = getpwuid(task_hijo->cred->uid.val);
             seq_printf(archivo, "{\"pid\": %d, \"nombre\": \"%s\", \"usuario\": \"%d\", \"estado\": \"%s\", \"ram\": %lu}",
-                task_hijo->pid,
-                task_hijo->comm,
-                task_hijo->real_cred->uid,
-                strstate,
-                mem_usage);
+                       task_hijo->pid,
+                       task_hijo->comm,
+                       task_hijo->real_cred->uid,
+                       strstate,
+                       mem_usage);
 
-            if (task_hijo->sibling.next != &task->children) {
+            if (task_hijo->sibling.next != &task->children)
+            {
                 seq_printf(archivo, ",");
             }
         }
         task_unlock(task);
         seq_printf(archivo, "]\n}");
-        first=false;
+        first = false;
     }
-
 
     seq_printf(archivo, "}, \n");
     seq_printf(archivo, "\"ejecucion\":");
@@ -255,10 +265,6 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     seq_printf(archivo, "%li  \n", totales);
     seq_printf(archivo, "}");
 
-    
-
-
-
     // current_cpu_time = total_cpu_time - jiffies_to_nsecs(get_jiffies_64());
     // cpu_percentage = ((total_cpu_time - current_cpu_time) * 100) / total_cpu_time;
     // printk(KERN_INFO "total_cpu_time: %llu%%\n", total_cpu_time);
@@ -269,7 +275,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v)
     return 0;
 }
 
-//Funcion que se ejecuta cuando se le hace un cat al modulo.
+// Funcion que se ejecuta cuando se le hace un cat al modulo.
 static int al_abrir(struct inode *inode, struct file *file)
 {
     return single_open(file, escribir_archivo, NULL);
@@ -277,10 +283,9 @@ static int al_abrir(struct inode *inode, struct file *file)
 
 // Si el su Kernel es 5.6 o mayor
 static struct proc_ops operaciones =
-{
-    .proc_open = al_abrir,
-    .proc_read = seq_read
-};
+    {
+        .proc_open = al_abrir,
+        .proc_read = seq_read};
 
 static int _insert(void)
 {

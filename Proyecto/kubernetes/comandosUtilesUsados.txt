@@ -1,0 +1,55 @@
+# ver namespaces
+   get namespace
+
+# ver Deployments
+   get deployment -n proyecto
+
+# listar pod de un namespace
+   kubectl get pods -n proyecto
+
+# listar persistent volume claim
+   kubectl get pvc -n proyecto
+
+# ver la descripcion de persistent volume claim
+   kubectl describe pvc mysql-pvc -n proyecto
+
+#listar ingress
+   kubectl get ingress -n proyecto
+
+#ver la descipcion de un ingress
+   kubectl describe ingress my-ingress -n proyecto
+
+# listar servicios e ips
+   kubectl get services -n proyecto
+
+# ver la descripcoi de un servicios
+   kubectl describe service/<name_servicio> -n proyecto
+
+# ver logs
+   kubectl logs pod/<name_pod> -n proyecto
+
+#eliminiar un pod
+   kubectl delete pod <name_pod> -n proyecto
+
+#aplicar un yml
+   kubectl apply -f <name>.yml
+
+#elimnar lo aplicadopor yml   
+   kubectl delete -f <name>.yml
+
+
+#Inyectar Deployments
+   kubectl -n proyecto get deploy -o yaml | linkerd inject - | kubectl apply -f -
+
+#Ingresar al Dashboard
+   linkerd viz dashboard
+
+
+curl -fsL https://run.linkerd.io/install | sh  
+export PATH=$PATH:$HOME/.linkerd2/bin 
+linkerd check --pre 
+linkerd install --crds | kubectl apply -f - 
+linkerd install | kubectl apply -f - 
+linkerd viz install | kubectl apply -f -
+kubectl -n proyecto get deploy -o yaml | linkerd inject - | kubectl apply -f - 
+linkerd viz dashboard
